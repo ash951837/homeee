@@ -22,7 +22,3 @@ Oyun:
 https://KULLANICI-ADI.github.io/REPO-ADI/oyun.html
 
 Not: Dosya adları tamamen küçük harf olmalıdır. "Oyun.html" ile "oyun.html" farklı dosyalardır.
-
-
---- Hikayemiz PWA notu ---
-Bu sürüm PWA hazırdır. GitHub Pages üzerinde HTTPS ile yayınlandıktan sonra telefonda uygulama gibi kurulabilir.
