@@ -1,6 +1,6 @@
-KURULUM:
-1) Hosting/GitHub Pages içindeki eski dosyaları tamamen sil.
-2) Bu zip içindeki TÜM dosyaları sitenin ana dizinine yükle.
-3) Site linki / veya /index.html açınca index.html gelir.
-4) index.html sağ alttaki OYUNA GİR butonu ./oyun.html açar.
-5) Telefonda eski PWA kısayolu varsa silip yeniden ana ekrana ekle.
+GITHUB YUKLEME
+
+1. Bu klasörün içindeki tüm dosyaları repository ana dizinine yükle.
+2. GitHub Pages kullanıyorsan Settings > Pages bölümünden branch seç.
+3. PWA ana açılış sayfası index.html, oyun sayfası oyun.html dosyasıdır.
+4. Eski cache takılırsa telefonda site ayarlarından site verilerini temizle veya yeni gizli sekmede dene.

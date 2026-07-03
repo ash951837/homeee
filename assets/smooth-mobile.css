@@ -1,0 +1,65 @@
+/* Mobile Ultra Performance Layer — generated 2026-07-04 */
+:root{
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --mobile-radius: clamp(18px, 5vw, 30px);
+}
+html{min-height:100%;-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:84px;}
+body{min-height:100dvh;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;overscroll-behavior-y:none;}
+img,picture,video,canvas,svg{max-width:100%;}
+img{height:auto;}
+a,button,[role="button"],input,select,textarea{touch-action:manipulation;-webkit-tap-highlight-color:transparent;}
+button,.nav-btn,.unlock-btn,.comfort-btn,.flip-btn,.restart-btn,.start-game-btn,.tool-btn,.primary-btn,.u5-btn{min-height:44px;}
+[hidden]{display:none!important;}
+.perf-pill{position:fixed;right:max(12px,var(--safe-right));top:calc(12px + var(--safe-top));z-index:9999;display:inline-flex;align-items:center;gap:7px;min-height:40px;padding:0 12px;border:1px solid rgba(255,255,255,.18);border-radius:999px;background:rgba(9,8,16,.68);color:#fff;box-shadow:0 12px 36px rgba(0,0,0,.26);backdrop-filter:blur(16px);font-size:11px;font-weight:900;letter-spacing:.02em;}
+.perf-pill:active{transform:scale(.97);}
+body.perf-lite .perf-pill{background:linear-gradient(135deg,rgba(103,239,194,.22),rgba(99,184,255,.18));border-color:rgba(103,239,194,.42);}
+body.perf-paused *{animation-play-state:paused!important;}
+@supports(content-visibility:auto){
+  body:not(.no-cv) .gallery-card, body:not(.no-cv) .memory-card, body:not(.no-cv) .u5-card, body:not(.no-cv) .option, body:not(.no-cv) .preset-card{content-visibility:auto;contain-intrinsic-size:1px 220px;}
+}
+body.perf-lite .ambient::before,body.perf-lite .ambient::after,body.perf-lite .ambient-particles,body.perf-lite .shooting-star,body.perf-lite .floating-heart,body.perf-lite .heart-particle,body.perf-lite .sparkle,body.perf-lite .butterfly,body.perf-lite .meteor,body.perf-lite .star-field,body.perf-lite .cursor-glow{display:none!important;}
+body.perf-lite *,body.reduce-motion *,body.u5-reduced-motion *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.08s!important;scroll-behavior:auto!important;}
+body.perf-lite .vinyl,body.perf-lite .stage-card.alive,body.perf-lite .world-launch::after,body.perf-lite .unlock-btn::after,body.perf-lite .nav-btn::after,body.perf-lite .primary-btn::after{animation:none!important;}
+
+/* Ana romantik site — mobil netlik */
+.game-page-fab{will-change:transform;transform:translateZ(0);}
+.side-page-link,.progress-dot,.luxury-nav-btn,.luxury-page-card{touch-action:manipulation;}
+@media(max-width:760px){
+  body{overflow-x:hidden;}
+  .section{min-height:100svh;padding-left:max(16px,var(--safe-left));padding-right:max(16px,var(--safe-right));}
+  .main-title,.finale-title{font-size:clamp(2.25rem,14vw,4.4rem)!important;line-height:.94!important;}
+  .section-title{font-size:clamp(1.9rem,10vw,3.2rem)!important;line-height:1.02!important;}
+  .subtitle,.section-subtitle,.love-letter,.comfort-text{font-size:clamp(1rem,4.2vw,1.22rem)!important;line-height:1.68!important;}
+  .game-page-fab{right:max(14px,var(--safe-right));bottom:calc(14px + var(--safe-bottom));min-height:52px;padding:0 17px;border-radius:999px;font-size:13px;box-shadow:0 18px 44px rgba(0,0,0,.38);}
+  .side-menu-toggle{left:max(12px,var(--safe-left));top:calc(12px + var(--safe-top));}
+  .side-page-list,.luxury-page-drawer{max-height:min(76svh,620px);overscroll-behavior:contain;}
+  .luxury-page-nav{bottom:calc(12px + var(--safe-bottom));left:max(12px,var(--safe-left));right:max(12px,var(--safe-right));}
+  .love-counter,.memory-grid,.gallery-grid,.reasons-grid,.promise-grid{grid-template-columns:1fr!important;gap:14px!important;}
+  .password-card,.content-card,.comfort-card,.finale-card{width:min(100%,680px);border-radius:var(--mobile-radius)!important;}
+  .unlock-btn,.nav-btn,.comfort-btn,.flip-btn,.restart-btn,.start-game-btn{width:100%;max-width:360px;}
+}
+
+/* Nightfall Academy — mobil oyun düzeni */
+@media(max-width:900px){
+  .app{padding:max(12px,var(--safe-top)) max(12px,var(--safe-right)) calc(86px + var(--safe-bottom)) max(12px,var(--safe-left))!important;}
+  .topbar{position:sticky;top:0;z-index:60;align-items:flex-start;flex-direction:column;border-radius:20px!important;margin-bottom:12px!important;background:rgba(13,10,20,.86)!important;}
+  .brand{width:100%;}.brand p,.pro-stats{display:none!important;}
+  .toolbar{width:100%;display:flex!important;flex-wrap:nowrap!important;justify-content:flex-start!important;overflow-x:auto;gap:8px;padding-bottom:2px;scrollbar-width:none;}.toolbar::-webkit-scrollbar{display:none;}
+  .toolbar .tool-btn,.toolbar .primary-btn,.toolbar .hk-theme-toggle{flex:0 0 auto;min-height:42px;padding-inline:12px!important;}
+  .workspace{display:flex!important;flex-direction:column!important;gap:12px!important;}
+  .stage-card{order:-1;min-height:min(64svh,620px)!important;border-radius:22px!important;}
+  .panel{min-height:auto!important;border-radius:22px!important;}
+  .editor-scroll{height:auto!important;max-height:none!important;overflow:visible!important;padding:14px!important;}
+  .categories{position:sticky;top:82px;z-index:55;display:flex!important;grid-template-columns:none!important;gap:8px;overflow-x:auto;padding:10px;background:rgba(20,16,30,.88)!important;backdrop-filter:blur(16px);scrollbar-width:none;}.categories::-webkit-scrollbar{display:none;}
+  .category-btn{flex:0 0 76px;min-height:58px;padding:8px 5px!important;}
+  .option-grid,.preset-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+  .swatches{grid-template-columns:repeat(6,minmax(0,1fr))!important;}
+  .modal-card,.export-card{width:calc(100vw - 24px)!important;max-height:88svh!important;overflow:auto!important;border-radius:24px!important;}
+  .perf-pill{top:auto;bottom:calc(72px + var(--safe-bottom));right:max(12px,var(--safe-right));}
+  
+}
+@media(max-width:430px){.option-grid,.preset-grid{grid-template-columns:1fr 1fr!important}.toolbar .tool-btn,.toolbar .primary-btn{font-size:12px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}.ambient::before,.ambient::after,.ambient-particles{display:none!important}}
