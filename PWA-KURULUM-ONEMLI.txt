@@ -1,0 +1,24 @@
+Hİkayemiz / Bizim PWA - ÖNEMLİ KURULUM
+
+1) Bu ZIP'in içindeki dosyaları GitHub deposunun ANA DİZİNİNE yükle.
+   Yani index.html, manifest.json ve service-worker.js aynı yerde görünmeli.
+   Ekstra klasörün içinde kalırsa PWA çalışmaz.
+
+2) GitHub Pages açıksa site adresin şöyle olmalı:
+   https://kullaniciadi.github.io/depo-adi/
+
+3) PWA file:// ile çalışmaz. Bilgisayardan çift tıklayınca kurulmaz.
+   HTTPS gerekir. GitHub Pages, Netlify ve Vercel uygundur.
+
+4) Güncellemeden sonra telefonda eski cache kalmış olabilir:
+   Chrome > Site ayarları > Depolama > Temizle
+   veya siteyi gizli sekmede açıp tekrar dene.
+
+5) Android:
+   Chrome ile aç > menü > Uygulamayı yükle / Ana ekrana ekle.
+
+6) iPhone:
+   Safari ile aç > Paylaş > Ana Ekrana Ekle.
+
+Uygulama adı: Hİkayemiz
+Telefonda kısa ad: Bizim

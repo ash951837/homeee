@@ -807,16 +807,18 @@ body.pro-focus .topbar{max-width:860px;margin-left:auto;margin-right:auto}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
-<!-- Hikayemiz PWA -->
+
+<!-- Hİkayemiz / Bizim PWA -->
 <link rel="manifest" href="./manifest.json">
-<link rel="icon" type="image/svg+xml" href="./icons/favicon.svg">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./icons/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
-<meta name="application-name" content="Hİkayemiz">
-<meta name="apple-mobile-web-app-title" content="Bizim">
+<meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Bizim">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="stylesheet" href="./pwa.css">
-<!-- /Hikayemiz PWA -->
+<!-- /Hİkayemiz / Bizim PWA -->
 </head>
 <body>
 <div class="ambient"></div>
@@ -2692,8 +2694,9 @@ body.pro-focus .topbar{max-width:860px;margin-left:auto;margin-right:auto}
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',()=>setTimeout(setup,30)); else setTimeout(setup,30);
 })();
 </script>
-<!-- Hikayemiz PWA -->
+
+<!-- Hİkayemiz / Bizim PWA -->
 <script src="./pwa.js" defer></script>
-<!-- /Hikayemiz PWA -->
+<!-- /Hİkayemiz / Bizim PWA -->
 </body>
 </html>
