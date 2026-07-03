@@ -1355,19 +1355,6 @@ body.hk-redesign .hk-theme-toggle{
 </style>
 
 
-<!-- HIKAYEMIZ SITE INDEX PWA -->
-<link rel="manifest" href="./manifest.webmanifest?v=2026-07-04-site-index-only-v1">
-<link rel="icon" href="./icons/favicon.svg?v=2026-07-04-site-index-only-v1" type="image/svg+xml">
-<link rel="apple-touch-icon" href="./icons/apple-touch-icon.png?v=2026-07-04-site-index-only-v1">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="application-name" content="Bizim hikayemiz">
-<meta name="apple-mobile-web-app-title" content="Bizim hikayemiz">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="msapplication-TileColor" content="#141022">
-<meta name="msapplication-TileImage" content="./icons/icon-192.png?v=2026-07-04-site-index-only-v1">
-<link rel="stylesheet" href="./pwa.css?v=2026-07-04-site-index-only-v1">
-<!-- /HIKAYEMIZ SITE INDEX PWA -->
 <script id="ios-home-name-helper">
 (function(){
   const APP_FULL_NAME = 'Hikayemiz';
@@ -1387,6 +1374,21 @@ body.hk-redesign .hk-theme-toggle{
   window.hikayemizAppInfo = { name: APP_FULL_NAME, shortName: APP_SHORT_NAME, version: VERSION };
 })();
 </script>
+
+<!-- PWA AYARLARI: site/PWA index.html açar, OYUNA GİR butonu oyun.html açar -->
+<link rel="manifest" href="./manifest.webmanifest?v=2026-07-04-index-oyun-v4">
+<link rel="icon" href="./icons/favicon.svg?v=2026-07-04-index-oyun-v4" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./icons/apple-touch-icon.png?v=2026-07-04-index-oyun-v4">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="application-name" content="Sümeyye Sürpriz">
+<meta name="apple-mobile-web-app-title" content="Sümeyye Sürpriz">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="msapplication-TileColor" content="#0B1026">
+<meta name="msapplication-TileImage" content="./icons/icon-192.png?v=2026-07-04-index-oyun-v4">
+<link rel="stylesheet" href="./pwa.css?v=2026-07-04-index-oyun-v4">
+<!-- /PWA AYARLARI -->
+
 </head>
 <body>
 <div class="ambient"></div>
@@ -3318,8 +3320,18 @@ body.hk-redesign .hk-theme-toggle{
 </script>
 
 
-<!-- HIKAYEMIZ SITE INDEX PWA -->
-<script src="./pwa.js?v=2026-07-04-site-index-only-v1" defer></script>
-<!-- /HIKAYEMIZ SITE INDEX PWA -->
+
+<script id="pwa-service-worker-register">
+(function() {
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('./service-worker.js?v=2026-07-04-index-oyun-v4').catch(function(err) {
+        console.warn('Service worker kayıt hatası:', err);
+      });
+    });
+  }
+})();
+</script>
+
 </body>
 </html>

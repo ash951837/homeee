@@ -3272,6 +3272,21 @@ body:not(.site-unlocked) .side-page-list,body:not(.site-unlocked) .side-menu-bac
   .game-page-fab .game-page-fab-icon { font-size: 1.35rem; }
 }
 </style>
+
+<!-- PWA AYARLARI: site/PWA index.html açar, OYUNA GİR butonu oyun.html açar -->
+<link rel="manifest" href="./manifest.webmanifest?v=2026-07-04-index-oyun-v4">
+<link rel="icon" href="./icons/favicon.svg?v=2026-07-04-index-oyun-v4" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./icons/apple-touch-icon.png?v=2026-07-04-index-oyun-v4">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="application-name" content="Sümeyye Sürpriz">
+<meta name="apple-mobile-web-app-title" content="Sümeyye Sürpriz">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="msapplication-TileColor" content="#0B1026">
+<meta name="msapplication-TileImage" content="./icons/icon-192.png?v=2026-07-04-index-oyun-v4">
+<link rel="stylesheet" href="./pwa.css?v=2026-07-04-index-oyun-v4">
+<!-- /PWA AYARLARI -->
+
 </head>
 <body>
 
@@ -7939,6 +7954,19 @@ document.addEventListener('DOMContentLoaded', startLoveNotificationSchedule);
     document.body.classList.remove('site-unlocked');
     showSection(0);
   });
+})();
+</script>
+
+
+<script id="pwa-service-worker-register">
+(function() {
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('./service-worker.js?v=2026-07-04-index-oyun-v4').catch(function(err) {
+        console.warn('Service worker kayıt hatası:', err);
+      });
+    });
+  }
 })();
 </script>
 

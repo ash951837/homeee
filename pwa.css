@@ -1,2 +1,5 @@
-/* Hikayemiz PWA destek dosyası */
-html,body{min-height:100%;}
+/* PWA yardımcı ayarları */
+html, body { min-height: 100%; }
+@media (display-mode: standalone) {
+  body { overscroll-behavior-y: contain; }
+}

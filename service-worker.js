@@ -1,73 +1,66 @@
-/* PWA Service Worker - link, site kökü ve PWA açılışı index.html */
-const CACHE_VERSION = 'sumeyye-index-pwa-20260704-v3';
-const APP_SHELL = [
+const CACHE_NAME = 'sumeyye-index-oyun-cache-2026-07-04-index-oyun-v4';
+const CORE_ASSETS = [
   './',
   './index.html',
+  './oyun.html',
   './manifest.webmanifest',
   './manifest.json',
+  './pwa.css',
+  './icons/favicon.svg',
   './icons/icon-192.png',
   './icons/icon-512.png',
-  './icons/maskable-192.png',
-  './icons/maskable-512.png',
   './icons/apple-touch-icon.png'
-];
-const OLD_CACHE_PREFIXES = [
-  'sumeyye', 'hikayemiz', 'nightfall', 'pwa-cache', 'app-cache', 'oyun', 'game'
 ];
 
 self.addEventListener('install', event => {
   self.skipWaiting();
-  event.waitUntil(
-    caches.open(CACHE_VERSION).then(cache => cache.addAll(APP_SHELL).catch(() => undefined))
-  );
+  event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(CORE_ASSETS)));
 });
 
 self.addEventListener('activate', event => {
   event.waitUntil((async () => {
     const keys = await caches.keys();
-    await Promise.all(keys.map(key => {
-      if (key !== CACHE_VERSION && OLD_CACHE_PREFIXES.some(prefix => key.toLowerCase().includes(prefix))) {
-        return caches.delete(key);
-      }
-      if (key !== CACHE_VERSION && key.startsWith('sumeyye-index-pwa-')) {
-        return caches.delete(key);
-      }
-    }));
+    await Promise.all(keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key)));
     await self.clients.claim();
   })());
 });
 
+async function networkFirst(request, fallbackUrl) {
+  const cache = await caches.open(CACHE_NAME);
+  try {
+    const fresh = await fetch(request);
+    if (fresh && fresh.ok) cache.put(request, fresh.clone());
+    return fresh;
+  } catch (err) {
+    return (await cache.match(request)) || (await cache.match(fallbackUrl));
+  }
+}
+
 self.addEventListener('fetch', event => {
-  const req = event.request;
-  if (req.method !== 'GET') return;
-  const url = new URL(req.url);
+  const request = event.request;
+  if (request.method !== 'GET') return;
+  const url = new URL(request.url);
+  if (url.origin !== self.location.origin) return;
 
-  // Aynı domainde sayfa/navigasyon istekleri her zaman index.html'e düşsün.
-  if (req.mode === 'navigate' && url.origin === self.location.origin) {
-    event.respondWith(
-      fetch('./index.html', { cache: 'no-store' })
-        .catch(() => caches.match('./index.html'))
-    );
+  if (request.mode === 'navigate') {
+    const path = url.pathname.replace(/\/+$/, '/');
+    if (path.endsWith('/oyun.html')) {
+      event.respondWith(networkFirst(request, './oyun.html'));
+      return;
+    }
+    if (path === '/' || path.endsWith('/index.html')) {
+      event.respondWith(networkFirst(request, './index.html'));
+      return;
+    }
+    event.respondWith(networkFirst(request, './index.html'));
     return;
   }
 
-  // Eski oyun.html isteği gelirse index.html ver.
-  if (url.origin === self.location.origin && /\/oyun\.html$/i.test(url.pathname)) {
-    event.respondWith(
-      fetch('./index.html', { cache: 'no-store' })
-        .catch(() => caches.match('./index.html'))
-    );
-    return;
-  }
-
-  // Assetlerde önce ağ, olmazsa cache.
-  event.respondWith(
-    fetch(req).then(res => {
-      const copy = res.clone();
-      if (url.origin === self.location.origin) {
-        caches.open(CACHE_VERSION).then(cache => cache.put(req, copy)).catch(() => undefined);
-      }
-      return res;
-    }).catch(() => caches.match(req))
-  );
+  event.respondWith(caches.match(request).then(cached => cached || fetch(request).then(response => {
+    if (response && response.ok) {
+      const copy = response.clone();
+      caches.open(CACHE_NAME).then(cache => cache.put(request, copy));
+    }
+    return response;
+  })));
 });

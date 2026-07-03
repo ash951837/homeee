@@ -1,12 +1,13 @@
 {
-  "redirects": [
+  "rewrites": [
     {
       "source": "/oyun.html",
-      "destination": "/index.html",
-      "permanent": true
-    }
-  ],
-  "rewrites": [
+      "destination": "/oyun.html"
+    },
+    {
+      "source": "/index.html",
+      "destination": "/index.html"
+    },
     {
       "source": "/(.*)",
       "destination": "/index.html"
