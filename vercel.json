@@ -1,10 +1,15 @@
 {
-  "cleanUrls": false,
-  "rewrites": [
-    { "source": "/", "destination": "/index.html" }
-  ],
   "redirects": [
-    { "source": "/oyun.html", "destination": "/index.html", "permanent": true },
-    { "source": "/hikayemiz_bizim_hikayemiz_final.html", "destination": "/index.html", "permanent": true }
+    {
+      "source": "/oyun.html",
+      "destination": "/index.html",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
   ]
 }

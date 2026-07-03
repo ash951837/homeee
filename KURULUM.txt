@@ -1,0 +1,7 @@
+KURULUM:
+1) Hosting/GitHub Pages/Netlify/Vercel içindeki eski dosyaları tamamen sil.
+2) Bu zip içindeki dosyaları sitenin ana dizinine yükle.
+3) Link olarak alan adının kökünü veya /index.html adresini kullan.
+4) Telefonda eski PWA kısayolunu silip siteyi yeniden Ana Ekrana Ekle.
+
+Bu pakette ana dosya index.html'dir. oyun.html dosyası yoktur. Eski /oyun.html istekleri index.html'e yönlendirilir.
