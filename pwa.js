@@ -2,7 +2,7 @@
 (function(){
   const APP_NAME = 'Hikayemiz';
   const SHORT_NAME = 'Bizim hikayemiz';
-  const VERSION = '2026-07-04-index-kesin-v3';
+  const VERSION = '2026-07-04-site-index-only-v1';
 
   function setMeta(name, content){
     let m = document.querySelector('meta[name="'+name+'"]');
@@ -15,7 +15,7 @@
   setMeta('apple-mobile-web-app-title', SHORT_NAME);
   try{ localStorage.setItem('hikayemiz_pwa_version', VERSION); }catch(e){}
 
-  // Eski cache'leri temizle; böylece eski oyun.html açılışı kalmasın.
+  // Eski cacheleri temizle; site doğrudan index.html ile açılsın.
   if('caches' in window){
     caches.keys().then(keys => Promise.all(keys.map(k => caches.delete(k)))).catch(function(){});
   }

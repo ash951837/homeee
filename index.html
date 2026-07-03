@@ -1355,30 +1355,19 @@ body.hk-redesign .hk-theme-toggle{
 </style>
 
 
-<script id="force-index-url">
-(function(){
-  try{
-    var u = new URL(window.location.href);
-    if (/\/oyun\.html$/i.test(u.pathname)) {
-      u.pathname = u.pathname.replace(/oyun\.html$/i, 'index.html');
-      window.history.replaceState(null, '', u.href);
-    }
-  }catch(e){}
-})();
-</script>
-<!-- HIKAYEMIZ FINAL PWA -->
-<link rel="manifest" href="./manifest.webmanifest?v=2026-07-04-index-kesin-v3">
-<link rel="icon" href="./icons/favicon.svg?v=2026-07-04-index-kesin-v3" type="image/svg+xml">
-<link rel="apple-touch-icon" href="./icons/apple-touch-icon.png?v=2026-07-04-index-kesin-v3">
+<!-- HIKAYEMIZ SITE INDEX PWA -->
+<link rel="manifest" href="./manifest.webmanifest?v=2026-07-04-site-index-only-v1">
+<link rel="icon" href="./icons/favicon.svg?v=2026-07-04-site-index-only-v1" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./icons/apple-touch-icon.png?v=2026-07-04-site-index-only-v1">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="application-name" content="Bizim hikayemiz">
 <meta name="apple-mobile-web-app-title" content="Bizim hikayemiz">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="msapplication-TileColor" content="#141022">
-<meta name="msapplication-TileImage" content="./icons/icon-192.png?v=2026-07-04-index-kesin-v3">
-<link rel="stylesheet" href="./pwa.css?v=2026-07-04-index-kesin-v3">
-<!-- /HIKAYEMIZ FINAL PWA -->
+<meta name="msapplication-TileImage" content="./icons/icon-192.png?v=2026-07-04-site-index-only-v1">
+<link rel="stylesheet" href="./pwa.css?v=2026-07-04-site-index-only-v1">
+<!-- /HIKAYEMIZ SITE INDEX PWA -->
 <script id="ios-home-name-helper">
 (function(){
   const APP_FULL_NAME = 'Hikayemiz';
@@ -3329,8 +3318,8 @@ body.hk-redesign .hk-theme-toggle{
 </script>
 
 
-<!-- HIKAYEMIZ FINAL PWA -->
-<script src="./pwa.js?v=2026-07-04-index-kesin-v3" defer></script>
-<!-- /HIKAYEMIZ FINAL PWA -->
+<!-- HIKAYEMIZ SITE INDEX PWA -->
+<script src="./pwa.js?v=2026-07-04-site-index-only-v1" defer></script>
+<!-- /HIKAYEMIZ SITE INDEX PWA -->
 </body>
 </html>

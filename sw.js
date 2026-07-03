@@ -1,5 +1,5 @@
-const CACHE_NAME = 'hikayemiz-2026-07-04-index-kesin-v3';
-const CORE = ['./index.html', './manifest.webmanifest', './manifest.json', './pwa.js', './pwa.css', './icons/icon-192.png', './icons/icon-512.png', './icons/apple-touch-icon.png', './icons/favicon.svg'];
+const CACHE_NAME = 'hikayemiz-2026-07-04-site-index-only-v1';
+const CORE = ['./', './index.html', './manifest.webmanifest', './manifest.json', './pwa.js', './pwa.css', './icons/icon-192.png', './icons/icon-512.png', './icons/apple-touch-icon.png', './icons/favicon.svg'];
 
 self.addEventListener('install', event => {
   self.skipWaiting();
@@ -17,8 +17,7 @@ self.addEventListener('fetch', event => {
 
   if(req.mode === 'navigate') {
     event.respondWith(
-      fetch('./index.html', {cache:'reload'})
-        .catch(() => caches.match('./index.html'))
+      fetch(req).catch(() => caches.match('./index.html'))
     );
     return;
   }
