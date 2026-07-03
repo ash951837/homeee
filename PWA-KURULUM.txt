@@ -1,0 +1,25 @@
+Hikayemiz PWA hazırlandı.
+
+Uygulama adı: Hİkayemiz
+Telefonda görünen kısa ad: Bizim
+
+Eklenen dosyalar:
+- manifest.json
+- service-worker.js
+- pwa.js
+- pwa.css
+- offline.html
+- icons/icon-192.png
+- icons/icon-512.png
+- icons/apple-touch-icon.png
+- icons/favicon.svg
+
+Yayınlama:
+1) Bu klasördeki tüm dosyaları GitHub Pages, Netlify veya Vercel'e yükle.
+2) Site HTTPS ile açılmalı. GitHub Pages/Netlify/Vercel otomatik HTTPS verir.
+3) Android Chrome'da siteyi açınca "Uygulamayı Yükle" butonu çıkabilir.
+4) iPhone Safari'de Paylaş > Ana Ekrana Ekle yapılır.
+
+Not:
+- PWA kurulumu localhost veya HTTPS üzerinde çalışır.
+- Bilgisayardan direkt dosyayı açarsan service worker çalışmaz; siteyi bir sunucuda yayınlamalısın.

@@ -1,0 +1,59 @@
+/* Hikayemiz PWA yardımcı stilleri */
+.pwa-install-button {
+  position: fixed;
+  right: max(16px, env(safe-area-inset-right));
+  bottom: max(16px, env(safe-area-inset-bottom));
+  z-index: 999999;
+  display: none;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(255,255,255,.28);
+  border-radius: 999px;
+  padding: 12px 16px;
+  color: #fff;
+  background: linear-gradient(135deg, rgba(232,160,180,.96), rgba(201,168,232,.96));
+  box-shadow: 0 18px 40px rgba(0,0,0,.32);
+  font: 800 13px/1 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing: .02em;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: transform .2s ease, opacity .2s ease, box-shadow .2s ease;
+}
+.pwa-install-button:hover { transform: translateY(-2px); box-shadow: 0 22px 48px rgba(0,0,0,.38); }
+.pwa-install-button:active { transform: translateY(0) scale(.98); }
+.pwa-install-button.is-visible { display: inline-flex; }
+.pwa-install-button svg { width: 18px; height: 18px; flex: 0 0 auto; }
+.pwa-ios-hint {
+  position: fixed;
+  left: 50%;
+  bottom: max(18px, env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  z-index: 999998;
+  width: min(92vw, 420px);
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 20px;
+  padding: 14px 42px 14px 16px;
+  color: #fff;
+  background: rgba(11,16,38,.92);
+  box-shadow: 0 20px 60px rgba(0,0,0,.45);
+  font: 600 13px/1.45 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.pwa-ios-hint button {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+@media (max-width: 520px) {
+  .pwa-install-button { left: 50%; right: auto; transform: translateX(-50%); white-space: nowrap; }
+  .pwa-install-button:hover { transform: translateX(-50%) translateY(-2px); }
+  .pwa-install-button:active { transform: translateX(-50%) scale(.98); }
+}

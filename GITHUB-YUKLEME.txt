@@ -1,13 +1,28 @@
-NIGHTFALL STUDIO 6 — GITHUB PAGES KURULUMU
+GITHUB PAGES KURULUMU
 
 1. ZIP dosyasını bilgisayarında çıkart.
-2. ZIP'in kendisini değil, içindeki bütün dosyaları GitHub deposunun ana dizinine yükle.
-3. index.html ve oyun.html aynı klasörde olmalı.
-4. GitHub > Settings > Pages bölümünde:
+2. ZIP dosyasının kendisini yükleme.
+3. İçindeki şu dosyaların tamamını GitHub reposunun ana dizinine yükle:
+   index.html
+   oyun.html
+   404.html
+   .nojekyll
+   GITHUB-YUKLEME.txt
+4. Eski index.html ve oyun.html için "Replace files" seç.
+5. GitHub > Settings > Pages:
    Source: Deploy from a branch
    Branch: main
    Folder: /(root)
-5. Kaydet ve sayfayı yenilerken Ctrl+F5 kullan.
+6. Kaydet.
 
-Ana site: https://kullaniciadi.github.io/repo-adi/
-Oyun:     https://kullaniciadi.github.io/repo-adi/oyun.html
+Ana site:
+https://KULLANICI-ADI.github.io/REPO-ADI/
+
+Oyun:
+https://KULLANICI-ADI.github.io/REPO-ADI/oyun.html
+
+Not: Dosya adları tamamen küçük harf olmalıdır. "Oyun.html" ile "oyun.html" farklı dosyalardır.
+
+
+--- Hikayemiz PWA notu ---
+Bu sürüm PWA hazırdır. GitHub Pages üzerinde HTTPS ile yayınlandıktan sonra telefonda uygulama gibi kurulabilir.
