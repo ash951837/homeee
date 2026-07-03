@@ -1,0 +1,24 @@
+GITHUB PAGES KURULUMU
+
+1. ZIP dosyasını bilgisayarında çıkart.
+2. ZIP dosyasının kendisini yükleme.
+3. İçindeki şu dosyaların tamamını GitHub reposunun ana dizinine yükle:
+   index.html
+   oyun.html
+   404.html
+   .nojekyll
+   GITHUB-YUKLEME.txt
+4. Eski index.html ve oyun.html için "Replace files" seç.
+5. GitHub > Settings > Pages:
+   Source: Deploy from a branch
+   Branch: main
+   Folder: /(root)
+6. Kaydet.
+
+Ana site:
+https://KULLANICI-ADI.github.io/REPO-ADI/
+
+Oyun:
+https://KULLANICI-ADI.github.io/REPO-ADI/oyun.html
+
+Not: Dosya adları tamamen küçük harf olmalıdır. "Oyun.html" ile "oyun.html" farklı dosyalardır.
