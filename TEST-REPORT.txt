@@ -1,0 +1,75 @@
+NIGHTFALL ACADEMY ULTRA 5.0 — TEST REPORT
+===========================================
+Test date: 2026-07-03
+Build: Living Academy
+
+STATIC VALIDATION
+-----------------
+[PASS] Main HTML parsed successfully.
+[PASS] Main inline JavaScript passed Node syntax validation.
+[PASS] ultra5.js passed Node syntax validation.
+[PASS] manifest.webmanifest parsed as valid JSON.
+[PASS] No duplicate HTML IDs were found (107 unique IDs).
+[PASS] All local index asset references exist:
+       - ultra5.css
+       - ultra5.js
+       - manifest.webmanifest
+[PASS] Service worker cache list includes the Ultra 5 assets.
+
+AUTOMATED BROWSER VALIDATION
+----------------------------
+The browser environment blocks direct localhost/file navigation, so the same
+HTML, CSS and JavaScript were loaded as inlined assets for interaction tests.
+
+[PASS] Base avatar engine rendered body SVG paths.
+[PASS] 10 main avatar editor categories rendered.
+[PASS] Living Academy launch button rendered.
+[PASS] Academy map rendered 8 clickable locations.
+[PASS] Story page rendered 8 chapters.
+[PASS] Story dialogue opened and displayed selectable choices.
+[PASS] Layered wardrobe page rendered.
+[PASS] Wardrobe selection produced 7 SVG paths in the live avatar layer.
+[PASS] Dorm decorator rendered and accepted wall changes.
+[PASS] Duck care page rendered 4 live need meters.
+[PASS] Duck interaction buttons executed without page errors.
+[PASS] Runway submission generated a detailed score.
+[PASS] Collection rendered 36 items.
+[PASS] Photo studio rendered scene and composition controls.
+[PASS] Settings page rendered 7 controls/rows.
+[PASS] High contrast setting changed the document state.
+[PASS] World overlay opened and closed correctly.
+[PASS] No JavaScript page errors occurred in the final browser run.
+
+RESPONSIVE VALIDATION
+---------------------
+[PASS] 1600 × 1000 desktop layout rendered.
+[PASS] 390 × 844 mobile layout rendered.
+[PASS] No horizontal overflow was detected at 390 px width.
+[PASS] Mobile bottom navigation rendered.
+
+PERSISTENCE AND FALLBACKS
+-------------------------
+[PASS] World progress uses persistent browser storage when available.
+[PASS] In-memory safe storage fallback prevents startup failure when browser
+       storage is restricted.
+[PASS] World progress can be exported and imported as JSON.
+[PASS] Existing avatar save/export systems remain available.
+
+CONTENT COUNTS
+--------------
+- 8 story chapters
+- 8 map locations plus the world navigation system
+- 36 collection items
+- 5 runway themes
+- 6 photo presets
+- 7 layered wardrobe groups
+- 9 dorm decoration groups
+- 4 duck care needs
+- 3 character relationship tracks
+
+IMPORTANT NOTE
+--------------
+No new mini-game was added in Ultra 5. The existing Altın Ördek Göleti from
+Ultra 4 remains available. Ultra 5 focuses on story, academy exploration,
+layered fashion, room decoration, duck care, runway scoring, collection and
+photo systems.
