@@ -4,9 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#15111f" />
-  <meta name="description" content="Nightfall Academy Ultra 5.0 — yaşayan okul dünyası, hikâye modu, katmanlı gardırop, yurt dekorasyonu, ördek bakımı ve profesyonel avatar stüdyosu." />
+  <meta name="description" content="Nightfall Studio 6 — sade, mobil uyumlu ve gelişmiş avatar tasarım stüdyosu." />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Cdefs%3E%3ClinearGradient id=%27g%27 x2=%271%27 y2=%271%27%3E%3Cstop stop-color=%27%23ff4ca0%27/%3E%3Cstop offset=%271%27 stop-color=%27%239b6cff%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%2764%27 height=%2764%27 rx=%2718%27 fill=%27url(%23g)%27/%3E%3Cpath d=%27M32 10l5 17 17 5-17 5-5 17-5-17-17-5 17-5z%27 fill=%27white%27/%3E%3C/svg%3E" />
-<title>Nightfall Academy Ultra 5 — Living Academy</title>
+<title>Nightfall Studio 6 — Avatar Tasarım Stüdyosu</title>
   <style>
 /* Nightfall Academy Ultra 5 — Living Academy expansion */
 :root{--u5-gold:#ffd85c;--u5-mint:#67efc2;--u5-blue:#63b8ff;--u5-red:#ff657e;--u5-panel:#16111f;--u5-ink:#fff9ff}
@@ -808,6 +808,109 @@ body.pro-focus .topbar{max-width:860px;margin-left:auto;margin-right:auto}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
 
+
+<style id="nightfall-v6-elegant-ui">
+:root{
+  --v6-bg:#09090c;--v6-panel:#121217;--v6-panel-2:#18181e;--v6-panel-3:#202027;
+  --v6-text:#faf9fc;--v6-muted:#9997a3;--v6-line:rgba(255,255,255,.09);
+  --v6-line-2:rgba(255,255,255,.16);--v6-rose:#ef78a8;--v6-violet:#9b8cff;
+  --v6-green:#8ed7b6;--v6-radius:20px;--v6-shadow:0 24px 70px rgba(0,0,0,.34)
+}
+html{background:var(--v6-bg)}
+body{background:radial-gradient(circle at 50% -18%,rgba(155,140,255,.09),transparent 34rem),var(--v6-bg)!important}
+.app{width:min(1320px,100%);padding:16px}
+.topbar{min-height:62px;border-radius:17px;background:rgba(14,14,18,.92);box-shadow:0 12px 35px rgba(0,0,0,.22)}
+.brand-mark{background:linear-gradient(145deg,#fff,#dedbe7);color:#16151a}
+.brand h1{font-size:16px}.brand h1 span{color:#a6a3af!important}
+.workspace{grid-template-columns:minmax(0,1.42fr) minmax(350px,.58fr);gap:14px}
+.panel,.stage-card{border-color:var(--v6-line);border-radius:20px;background:var(--v6-panel);box-shadow:var(--v6-shadow)}
+.workspace>.stage-card{background:linear-gradient(180deg,#111116,#0d0d12);min-height:730px}
+.workspace>aside.panel:first-child{min-height:730px}
+.pro-editor-head{padding:16px 16px 13px}.pro-editor-head b{font-size:15px}.pro-editor-head small{font-size:10px}
+.categories{gap:5px;padding:8px;background:rgba(18,18,23,.97)}
+.category-btn{flex-basis:64px;min-width:64px;min-height:55px;border-radius:11px}
+.category-btn.active{background:#25242c;border-color:rgba(255,255,255,.14)}
+.editor-scroll{max-height:646px;padding:13px 15px 18px}
+.section-head{margin-bottom:15px}.section-head h2{font-size:18px}.section-head p{font-size:11px}
+.control-group{margin-bottom:18px}.option-grid{gap:7px}.option{min-height:68px;border-radius:12px}.option .icon{font-size:22px}.option .label{font-size:9px}
+.stage-top .badge:first-child{background:rgba(14,14,18,.64)}
+.identity-card{background:rgba(12,12,16,.74)}
+
+/* Live compact overview */
+.nf-v6-overview{margin:0 0 12px;padding:12px;border:1px solid var(--v6-line);border-radius:14px;background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.012))}
+.nf-v6-overview-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:9px}
+.nf-v6-overview-top b{font-size:11px}.nf-v6-score{display:inline-flex;align-items:center;gap:5px;color:var(--v6-green);font-size:10px;font-weight:850}
+.nf-v6-score::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;box-shadow:0 0 12px currentColor}
+.nf-v6-chips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}.nf-v6-chips::-webkit-scrollbar{display:none}
+.nf-v6-chip{flex:0 0 auto;padding:6px 8px;border:1px solid var(--v6-line);border-radius:999px;background:rgba(255,255,255,.025);color:#c7c4ce;font-size:9px;white-space:nowrap}
+.nf-v6-chip span{color:#777581;margin-right:3px}
+
+/* Search */
+.nf-v6-search{position:relative;display:flex;gap:7px;margin:0 0 13px}
+.nf-v6-search input{width:100%;height:40px;padding:0 39px 0 34px;border:1px solid var(--v6-line);border-radius:12px;background:#0d0d12;color:var(--v6-text);outline:0;font-size:11px}
+.nf-v6-search input:focus{border-color:rgba(239,120,168,.48);box-shadow:0 0 0 3px rgba(239,120,168,.08)}
+.nf-v6-search::before{content:"⌕";position:absolute;left:12px;top:8px;color:#797784;font-size:18px;pointer-events:none}
+.nf-v6-search-clear{position:absolute;right:6px;top:5px;width:30px;height:30px;border:0;border-radius:9px;background:transparent;color:#8b8994;cursor:pointer}
+.nf-v6-search-clear:hover{background:rgba(255,255,255,.06);color:#fff}
+.nf-v6-empty{display:none;padding:22px 10px;text-align:center;color:var(--v6-muted);font-size:11px}
+
+/* Assistant modal */
+.nf-v6-backdrop{position:fixed;inset:0;z-index:1200;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(3,3,5,.78);backdrop-filter:blur(12px)}
+.nf-v6-backdrop.open{display:flex}
+.nf-v6-assistant{width:min(900px,100%);max-height:min(88dvh,840px);overflow:hidden;border:1px solid var(--v6-line-2);border-radius:22px;background:#131318;box-shadow:0 35px 110px rgba(0,0,0,.68)}
+.nf-v6-assistant-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 20px;border-bottom:1px solid var(--v6-line)}
+.nf-v6-assistant-head h2{margin:0;font-size:19px;letter-spacing:-.03em}.nf-v6-assistant-head p{margin:4px 0 0;color:var(--v6-muted);font-size:10px}
+.nf-v6-close{width:38px;height:38px;border:1px solid var(--v6-line);border-radius:11px;background:rgba(255,255,255,.035);color:#fff;cursor:pointer}
+.nf-v6-assistant-body{max-height:calc(min(88dvh,840px) - 76px);overflow:auto;padding:18px 20px 24px}
+.nf-v6-section{margin-bottom:22px}.nf-v6-section:last-child{margin-bottom:0}
+.nf-v6-section-head{display:flex;align-items:end;justify-content:space-between;gap:10px;margin:0 0 10px}
+.nf-v6-section-head h3{margin:0;font-size:13px}.nf-v6-section-head p{margin:3px 0 0;color:var(--v6-muted);font-size:9px}.nf-v6-section-head button{border:0;background:transparent;color:#bdb9c6;cursor:pointer;font-size:9px}
+.nf-v6-palette-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.nf-v6-palette{min-height:94px;padding:12px;border:1px solid var(--v6-line);border-radius:14px;background:rgba(255,255,255,.025);color:#fff;text-align:left;cursor:pointer;transition:.15s}
+.nf-v6-palette:hover{border-color:var(--v6-line-2);background:rgba(255,255,255,.05)}
+.nf-v6-colors{display:flex;gap:5px;margin-bottom:11px}.nf-v6-colors i{width:21px;height:21px;border-radius:50%;border:1px solid rgba(255,255,255,.22);background:var(--c)}
+.nf-v6-palette b{display:block;font-size:11px}.nf-v6-palette small{display:block;margin-top:4px;color:var(--v6-muted);font-size:8px;line-height:1.4}
+.nf-v6-atmospheres{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.nf-v6-atmosphere{min-height:76px;padding:9px;border:1px solid var(--v6-line);border-radius:13px;background:linear-gradient(145deg,var(--a),var(--b));color:#fff;cursor:pointer;text-align:left;text-shadow:0 1px 12px rgba(0,0,0,.45)}
+.nf-v6-atmosphere span{display:block;font-size:19px}.nf-v6-atmosphere b{display:block;margin-top:7px;font-size:9px}
+.nf-v6-favorite-actions{display:flex;gap:8px;margin-bottom:10px}.nf-v6-input{flex:1;min-height:42px;padding:0 12px;border:1px solid var(--v6-line);border-radius:12px;background:#0d0d12;color:#fff;outline:0;font-size:11px}
+.nf-v6-primary,.nf-v6-secondary{min-height:42px;padding:0 14px;border-radius:12px;cursor:pointer;font-size:10px;font-weight:850}
+.nf-v6-primary{border:0;background:#f5f3f8;color:#111116}.nf-v6-secondary{border:1px solid var(--v6-line);background:rgba(255,255,255,.035);color:#fff}
+.nf-v6-favorites{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.nf-v6-favorite{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:11px;border:1px solid var(--v6-line);border-radius:13px;background:rgba(255,255,255,.022)}
+.nf-v6-favorite b{display:block;font-size:10px}.nf-v6-favorite small{display:block;margin-top:3px;color:var(--v6-muted);font-size:8px}.nf-v6-favorite-btns{display:flex;gap:5px}.nf-v6-favorite-btns button{width:32px;height:32px;border:1px solid var(--v6-line);border-radius:9px;background:rgba(255,255,255,.035);color:#fff;cursor:pointer}
+.nf-v6-empty-fav{grid-column:1/-1;padding:20px;border:1px dashed var(--v6-line);border-radius:13px;color:var(--v6-muted);text-align:center;font-size:10px}
+.nf-v6-settings{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.nf-v6-setting{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px;border:1px solid var(--v6-line);border-radius:13px;background:rgba(255,255,255,.022)}
+.nf-v6-setting b{display:block;font-size:10px}.nf-v6-setting small{display:block;margin-top:3px;color:var(--v6-muted);font-size:8px}
+.nf-v6-toggle{position:relative;width:43px;height:25px;border:0;border-radius:99px;background:#33323b;cursor:pointer}.nf-v6-toggle::after{content:"";position:absolute;left:3px;top:3px;width:19px;height:19px;border-radius:50%;background:#fff;transition:.18s}.nf-v6-toggle.on{background:linear-gradient(90deg,var(--v6-rose),var(--v6-violet))}.nf-v6-toggle.on::after{left:21px}
+.nf-v6-assistant-open{display:flex!important;align-items:center!important;justify-content:flex-start!important;gap:8px!important}
+.nf-v6-favorite-stage{font-size:17px}
+
+/* Clarity modes */
+body.nf-v6-roomy .option{min-height:79px}body.nf-v6-roomy .editor-scroll{padding:18px}
+body.nf-v6-contrast{--v6-line:rgba(255,255,255,.20);--v6-muted:#c7c4ce}.nf-v6-contrast .panel,.nf-v6-contrast .stage-card{border-color:rgba(255,255,255,.24)}
+body.nf-v6-calm *,body.nf-v6-calm *::before,body.nf-v6-calm *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+body.nf-v6-calm .stage-card::after{display:none}
+
+/* Living Academy remains rich but visually quiet */
+.u5-content{padding:20px}.u5-hero{min-height:190px;padding:23px;border-radius:20px;background:linear-gradient(145deg,rgba(155,108,255,.12),rgba(255,76,160,.05))}.u5-hero::after{opacity:.45}.u5-card{border-radius:15px;background:rgba(255,255,255,.025)}.u5-grid{gap:9px}.u5-btn{border-radius:10px}.u5-sidebar{padding:13px 10px}.u5-nav button{border-radius:11px}
+
+@media(max-width:980px){.workspace{grid-template-columns:minmax(0,1fr) 340px}.nf-v6-palette-grid{grid-template-columns:repeat(2,1fr)}.nf-v6-atmospheres{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:760px){
+  body{padding-bottom:76px}.app{padding:7px}.topbar{min-height:52px;margin-bottom:7px;backdrop-filter:none!important}.toolbar{width:auto!important;z-index:2000!important;backdrop-filter:none!important}.pro-menu-panel{z-index:2100!important}.brand h1{font-size:14px}
+  .workspace>.stage-card,.avatar-wrap{min-height:455px}.workspace>aside.panel:first-child{border-radius:16px}
+  #avatarSvg{max-height:455px}.pro-editor-head{padding:12px}.categories{scroll-snap-type:x proximity}.category-btn{scroll-snap-align:center;min-width:62px;flex-basis:62px}
+  .editor-scroll{padding:11px 12px 16px}.nf-v6-overview{padding:10px;margin-bottom:9px}.nf-v6-search{margin-bottom:10px}
+  .nf-v6-backdrop{align-items:flex-end;padding:0}.nf-v6-assistant{width:100%;max-height:92dvh;border-radius:22px 22px 0 0;border-bottom:0}
+  .nf-v6-assistant-head{padding:15px 16px}.nf-v6-assistant-body{max-height:calc(92dvh - 70px);padding:14px 14px calc(24px + env(safe-area-inset-bottom))}
+  .nf-v6-palette-grid{grid-template-columns:repeat(2,1fr)}.nf-v6-atmospheres{grid-template-columns:repeat(2,1fr)}.nf-v6-settings{grid-template-columns:1fr}.nf-v6-favorites{grid-template-columns:1fr}
+  .nf-v6-favorite-actions{flex-direction:column}.nf-v6-primary{width:100%}
+  .identity-card{max-width:185px}.stage-controls{grid-template-columns:repeat(2,37px)}
+  .u5-content{padding:11px 11px 90px}.u5-hero{min-height:180px;padding:18px}.u5-hero h3{font-size:27px}.u5-grid,.u5-grid.three,.u5-grid.two{grid-template-columns:1fr}
+}
+@media(max-width:420px){.workspace>.stage-card,.avatar-wrap{min-height:415px}#avatarSvg{max-height:415px}.nf-v6-palette-grid{grid-template-columns:repeat(2,1fr)}.nf-v6-atmospheres{grid-template-columns:repeat(2,1fr)}.nf-v6-palette{min-height:84px}}
+</style>
+
 </head>
 <body>
 <div class="ambient"></div>
@@ -954,9 +1057,9 @@ body.pro-focus .topbar{max-width:860px;margin-left:auto;margin-right:auto}
 
 <div class="modal-backdrop" id="challengeModal" role="dialog" aria-modal="true" aria-labelledby="challengeTitle">
   <div class="modal wide">
-    <div class="modal-head"><div><h2 id="challengeTitle">Stil Görevleri</h2><p>Temaya uygun bir karakter oluştur, puanını yükselt ve yıldız kazan.</p></div><button class="icon-close" data-close-modal="challengeModal" aria-label="Kapat">✕</button></div>
+    <div class="modal-head"><div><h2 id="challengeTitle">Stil Briefleri</h2><p>Bir tema seç, görünümünü oluştur ve tasarım uyumunu değerlendir.</p></div><button class="icon-close" data-close-modal="challengeModal" aria-label="Kapat">✕</button></div>
     <div class="modal-body"><div class="challenge-grid" id="challengeGrid"></div></div>
-    <div class="modal-actions"><button class="tool-btn" id="clearChallengeBtn">Görevi Bırak</button><button class="primary-btn" id="submitChallengeBtn">Aktif Görevi Tamamla</button></div>
+    <div class="modal-actions"><button class="tool-btn" id="clearChallengeBtn">Briefi Kapat</button><button class="primary-btn" id="submitChallengeBtn">Briefi Tamamla</button></div>
   </div>
 </div>
 <div class="modal-backdrop" id="galleryModal" role="dialog" aria-modal="true" aria-labelledby="galleryTitle">
@@ -981,14 +1084,6 @@ body.pro-focus .topbar{max-width:860px;margin-left:auto;margin-right:auto}
   </div>
 </div>
 
-
-<div class="modal-backdrop" id="duckPondModal" role="dialog" aria-modal="true" aria-labelledby="duckPondTitle">
-  <div class="modal wide">
-    <div class="modal-head"><div><h2 id="duckPondTitle">Altın Ördek Göleti</h2><p>Dokuz ördekten altın olanı bul. Her tur XP ve ördek parası kazandırır.</p></div><button class="icon-close" data-close-modal="duckPondModal" aria-label="Kapat">✕</button></div>
-    <div class="modal-body"><div class="pond-score"><span id="pondRound">TUR 1/3</span><span id="pondCoins">🪙 0</span><span id="pondMessage">Altın ördeği seç!</span></div><div class="duck-pond" id="duckPondGrid"></div></div>
-    <div class="modal-actions"><button class="tool-btn" id="restartPondBtn">↺ Yeni Oyun</button><button class="primary-btn" data-close-modal="duckPondModal">Stüdyoya Dön</button></div>
-  </div>
-</div>
 
 <script>
 (() => {
@@ -1291,6 +1386,20 @@ body.pro-focus .topbar{max-width:860px;margin-left:auto;margin-right:auto}
   let profile = loadProfile();
   let deferredInstallPrompt = null;
 
+  window.NightfallStudioAPI = {
+    getState: () => structuredClone(state),
+    getDefaults: () => structuredClone(defaults),
+    getOptions: () => options,
+    getPresets: () => presets,
+    applyPatch: patch => commit(structuredClone(patch || {})),
+    replaceState: next => {
+      state = {...structuredClone(defaults), ...structuredClone(next || {})};
+      pushHistory();
+      renderAll(false);
+      scheduleSave();
+    }
+  };
+
   const presets = [
     {name:"Moon Heiress", desc:"Soğuk ay ışığı ve kraliyet detayları", color:"#9b6cff", patch:{skin:"#e6d5f4",hairStyle:"long",hairColor:"#d9d5da",hairSecondary:"#9b6cff",hairBlend:"ombre",eyeColor:"#8a63d2",outfitStyle:"royal",clothesColor:"#3b2545",accentColor:"#9b6cff",horns:"small",background:"moon",eyeshadow:"soft"}},
     {name:"Neon Rebel", desc:"Siber gece kulübü enerjisi", color:"#56d8dc", patch:{skin:"#87b7c8",hairStyle:"mohawk",hairColor:"#17131e",hairSecondary:"#56d8dc",hairBlend:"split",eyeColor:"#4ec7c8",outfitStyle:"street",clothesColor:"#16131d",accentColor:"#56d8dc",glasses:"square",background:"neon",eyeshadow:"neon"}},
@@ -1529,15 +1638,14 @@ body.pro-focus .topbar{max-width:860px;margin-left:auto;margin-right:auto}
         </div>
       `,
       studio: `
-        <div class="section-head"><h2>Oyun & Stüdyo</h2><p>Görevlerini, koleksiyonunu ve profesyonel araçlarını yönet.</p></div>
+        <div class="section-head"><h2>Stüdyo Merkezi</h2><p>Stil brieflerini, koleksiyonunu ve profesyonel araçlarını düzenli biçimde yönet.</p></div>
         <div class="game-card" id="studioProfileCard"></div>
-        <div class="game-card"><div class="game-card-head"><div><h3>Stil Görevleri</h3><p>Temaya göre giydir, canlı puanı yükselt ve yıldız kazan.</p></div><span class="rarity">OYUN</span></div><button class="primary-btn" style="width:100%" id="studioChallengeBtn">🏆 Görevleri Aç</button></div>
+        <div class="game-card"><div class="game-card-head"><div><h3>Stil Briefleri</h3><p>Hazır temalardan ilham al, görünüm uyumunu değerlendir ve koleksiyonunu geliştir.</p></div><span class="rarity">STİL</span></div><button class="primary-btn" style="width:100%" id="studioChallengeBtn">✦ Briefleri Aç</button></div>
         <div class="game-card"><div class="game-card-head"><div><h3>Karakter Koleksiyonu</h3><p>Mevcut görünümü galeriye ekle veya eski karakterlerini geri yükle.</p></div><span class="rarity">12 YUVA</span></div><button class="tool-btn" style="width:100%" id="studioGalleryBtn">▦ Galeriyi Aç</button></div>
-        <div class="game-card daily-card" id="dailyGiftCard"><div class="game-card-head"><div><h3>Günlük Sürpriz Kutu</h3><p>Her gün bir kez XP, ördek parası ve sürpriz görünüm kazan.</p></div><span class="rarity">GÜNLÜK</span></div><button class="primary-btn" style="width:100%" id="dailyGiftBtn">🎁 Hediyeyi Aç</button></div>
-        <div class="game-card"><div class="game-card-head"><div><h3>Altın Ördek Göleti</h3><p>Altın ördeği bul, üç turu tamamla ve özel başarımlar kazan.</p></div><span class="rarity">MİNİ OYUN</span></div><button class="tool-btn" style="width:100%" id="duckPondBtn">🦆 Gölete Gir</button></div>
+        <div class="game-card daily-card" id="dailyGiftCard"><div class="game-card-head"><div><h3>Günlük İlham</h3><p>Her gün yeni bir renk, aksesuar veya görünüm fikri keşfet.</p></div><span class="rarity">GÜNLÜK</span></div><button class="primary-btn" style="width:100%" id="dailyGiftBtn">✦ İlhamı Al</button></div>
         <div class="fine-card"><h3>Tasarım Dosyası</h3><p style="color:var(--muted);font-size:10px;line-height:1.5">Karakterini JSON dosyası olarak yedekle veya başka cihazdan içe aktar.</p><div class="data-tools"><button class="tool-btn" id="exportJsonBtn">↓ JSON Kaydet</button><button class="tool-btn" id="importJsonBtn">↑ JSON Yükle</button></div><input class="hidden-file" type="file" id="importJsonFile" accept="application/json,.json"></div>
         <div class="fine-card"><h3>Hızlı Kayıt Yuvaları</h3><p style="color:var(--muted);font-size:11px;line-height:1.55;margin:0 0 13px">Üç çalışma taslağını cihazında saklayabilirsin.</p><div id="saveSlots">${saveSlotsHTML()}</div></div>
-        <div class="fine-card"><h3>Uygulama</h3><div class="install-note">Siteyi bir sunucudan açtığında çevrimdışı kullanım ve uygulama olarak yükleme özellikleri etkinleşir.</div><button class="tool-btn" style="width:100%;margin-top:9px" id="installBtn" disabled>Uygulamayı Yükle</button><button class="tool-btn" style="width:100%;margin-top:7px" id="helpBtn">? Nasıl Oynanır</button></div>
+        <div class="fine-card"><h3>Uygulama</h3><div class="install-note">Siteyi bir sunucudan açtığında çevrimdışı kullanım ve uygulama olarak yükleme özellikleri etkinleşir.</div><button class="tool-btn" style="width:100%;margin-top:9px" id="installBtn" disabled>Uygulamayı Yükle</button><button class="tool-btn" style="width:100%;margin-top:7px" id="helpBtn">? Nasıl Kullanılır</button></div>
         <div class="fine-card"><h3>Otomatik Kayıt</h3><p style="color:var(--muted);font-size:11px;line-height:1.55;margin:0 0 13px">Son değişikliklerin otomatik olarak korunur.</p><button class="tool-btn" style="width:100%" id="clearSaveBtn">Otomatik Kaydı Temizle</button></div>
       `
     };
@@ -2271,7 +2379,7 @@ body.pro-focus .topbar{max-width:860px;margin-left:auto;margin-right:auto}
   function movePetDrag(e){if(!petDragging||e.pointerId!==petDragging.pointerId)return;const svg=$("#avatarSvg"),pt=svg.createSVGPoint();pt.x=e.clientX;pt.y=e.clientY;const p=pt.matrixTransform(svg.getScreenCTM().inverse()),dx=p.x-petDragging.startX,dy=p.y-petDragging.startY;if(Math.abs(dx)+Math.abs(dy)>3)petDragging.moved=true;state={...state,companionX:Math.max(-130,Math.min(95,Math.round(petDragging.baseX+dx))),companionY:Math.max(-120,Math.min(75,Math.round(petDragging.baseY+dy)))};scheduleSave();renderAvatar();syncControls();}
   function endPetDrag(e){if(!petDragging||e.pointerId!==petDragging.pointerId)return;const moved=petDragging.moved;petDragging=null;if(moved)pushHistory();else interactPet("talk")}
   function todayKey(){return new Date().toLocaleDateString("en-CA")}
-  function updateDailyGiftUI(){const b=$("#dailyGiftBtn"),card=$("#dailyGiftCard"),claimed=safeStorage.getItem("nightfall-daily-gift")===todayKey();if(b){b.disabled=claimed;b.textContent=claimed?"✓ Bugünkü Hediye Alındı":"🎁 Hediyeyi Aç"}card?.classList.toggle("claimed",claimed)}
+  function updateDailyGiftUI(){const b=$("#dailyGiftBtn"),card=$("#dailyGiftCard"),claimed=safeStorage.getItem("nightfall-daily-gift")===todayKey();if(b){b.disabled=claimed;b.textContent=claimed?"✓ Bugünkü Hediye Alındı":"✦ İlhamı Al"}card?.classList.toggle("claimed",claimed)}
   function claimDailyGift(){if(safeStorage.getItem("nightfall-daily-gift")===todayKey()){showToast("Bugünkü hediyeni zaten aldın.");return}const gifts=[{name:"50 XP",xp:50,coins:5},{name:"Ördek Prenses Paketi",xp:25,coins:8,patch:{companion:"duck",companionAccessory:"crown",companionColor:"#ffd83d",aura:"duckglow",background:"duckpond",sticker:"duckparty"}},{name:"Ay Ördeği Paketi",xp:30,coins:6,patch:{companion:"moonduck",companionAccessory:"scarf",companionColor:"#b8a8ff",photoFilter:"moonlight",weather:"stars"}},{name:"Şeker Parti Paketi",xp:30,coins:7,patch:{companion:"duckling",companionAccessory:"bow",sticker:"hearts",photoFilter:"candy",background:"candy"}}],g=randomFrom(gifts);if(g.patch)commit(g.patch);profile.xp=(profile.xp||0)+g.xp;profile.duckCoins=(profile.duckCoins||0)+g.coins;profile.dailyGifts=(profile.dailyGifts||0)+1;safeStorage.setItem("nightfall-daily-gift",todayKey());saveProfile();checkAchievements();updateDailyGiftUI();showToast(`Günlük hediye: ${g.name} + ${g.coins} ördek parası!`)}
   function startDuckPond(){pondState={round:1,golden:Math.floor(Math.random()*9),locked:false,coins:0};renderDuckPond();openModal("duckPondModal")}
   function renderDuckPond(){const grid=$("#duckPondGrid");if(!grid)return;grid.innerHTML=Array.from({length:9},(_,i)=>`<button class="pond-duck" data-pond-pick="${i}" aria-label="Ördek ${i+1}">🦆</button>`).join("");$("#pondRound").textContent=`TUR ${pondState.round}/3`;$("#pondCoins").textContent=`🪙 ${(profile.duckCoins||0)+pondState.coins}`;$("#pondMessage").textContent="Altın ördeği seç!"}
@@ -2681,6 +2789,124 @@ body.pro-focus .topbar{max-width:860px;margin-left:auto;margin-right:auto}
     nav?.addEventListener('click',e=>{const b=e.target.closest('.category-btn');if(!b)return;b.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'});if(innerWidth<=760){setTimeout(()=>document.querySelector('.editor-scroll')?.scrollIntoView({behavior:'smooth',block:'start'}),120)}});
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',()=>setTimeout(setup,30)); else setTimeout(setup,30);
+})();
+</script>
+
+
+<script id="nightfall-v6-elegant-script">
+(function(){
+  'use strict';
+  const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+  const STORAGE='nightfall-v6-favorites';
+  const PREFS='nightfall-v6-prefs';
+  const palettes=[
+    {name:'Ay İpeği',desc:'Soğuk ve zarif',colors:['#ddd9f2','#7e6cba','#30243f','#a9ddff'],patch:{hairColor:'#ddd9f2',hairSecondary:'#9b8cff',clothesColor:'#30243f',accentColor:'#9b8cff',eyeColor:'#78c8da'}},
+    {name:'Kadife Gül',desc:'Romantik ve dengeli',colors:['#6c314e','#e88aae','#241922','#f3c1d4'],patch:{hairColor:'#3b2432',hairSecondary:'#e88aae',clothesColor:'#4b263a',accentColor:'#e88aae',eyeColor:'#c487a0'}},
+    {name:'Gece Ormanı',desc:'Doğal ve gizemli',colors:['#1b302b','#557e68','#b9d3a8','#d0aa73'],patch:{hairColor:'#1b2421',hairSecondary:'#557e68',clothesColor:'#203a34',accentColor:'#9bbb83',eyeColor:'#7eaa70'}},
+    {name:'Kristal Buz',desc:'Temiz ve parlak',colors:['#d9f4ff','#5fcad8','#3a5680','#c4b4ff'],patch:{hairColor:'#d9f4ff',hairSecondary:'#5fcad8',clothesColor:'#344a72',accentColor:'#8be4ed',eyeColor:'#57c6d2'}},
+    {name:'Karanlık Altın',desc:'Güçlü ve seçkin',colors:['#171218','#6a4550','#d7a85f','#f1d69a'],patch:{hairColor:'#18131a',hairSecondary:'#6a4550',clothesColor:'#241b24',accentColor:'#d7a85f',eyeColor:'#b98443'}},
+    {name:'Neon Sis',desc:'Modern ve enerjik',colors:['#15131d','#e75da7','#6de2df','#9b8cff'],patch:{hairColor:'#17151d',hairSecondary:'#6de2df',clothesColor:'#201a2b',accentColor:'#e75da7',eyeColor:'#6de2df'}}
+  ];
+  const atmospheres=[
+    {name:'Sakin Ay',icon:'☾',a:'#4c4772',b:'#171824',patch:{background:'moon',lighting:'moon',weather:'stars',photoFilter:'moonlight',aura:'magic'}},
+    {name:'Kadife Salon',icon:'❀',a:'#723d59',b:'#22151e',patch:{background:'rose',lighting:'warm',weather:'petals',photoFilter:'vintage',aura:'hearts'}},
+    {name:'Karanlık Akademi',icon:'♜',a:'#34313f',b:'#101116',patch:{background:'hall',lighting:'neutral',weather:'rain',photoFilter:'noir',aura:'none'}},
+    {name:'Kristal Rüya',icon:'◇',a:'#4a7b91',b:'#28243f',patch:{background:'crystalcave',lighting:'dream',weather:'snow',photoFilter:'pastel',aura:'frost'}},
+    {name:'Neon Gece',icon:'✦',a:'#8a2e69',b:'#13234d',patch:{background:'neon',lighting:'neon',weather:'rain',photoFilter:'candy',aura:'electric'}},
+    {name:'Sisli Orman',icon:'❧',a:'#375c50',b:'#17231f',patch:{background:'forest',lighting:'dream',weather:'embers',photoFilter:'vintage',aura:'nature'}}
+  ];
+  let api=null;
+  function toast(message){
+    const el=$('#toast'); if(!el)return; el.textContent=message; el.classList.add('show'); clearTimeout(el._v6t); el._v6t=setTimeout(()=>el.classList.remove('show'),2200);
+  }
+  function state(){return api?.getState?.()||{}}
+  function options(){return api?.getOptions?.()||{}}
+  function label(group,id){const item=(options()[group]||[]).find(x=>x.id===id);return item?.label||String(id||'—')}
+  function safeRead(key,fallback){try{return JSON.parse(localStorage.getItem(key)||'null')||fallback}catch{return fallback}}
+  function safeWrite(key,value){try{localStorage.setItem(key,JSON.stringify(value))}catch{}}
+  function favorites(){return safeRead(STORAGE,[])}
+  function saveFavorites(list){safeWrite(STORAGE,list.slice(0,8))}
+  function quality(s){
+    const keys=['hairBlend','eyeshadow','outfitPattern','glasses','earrings','necklace','wings','aura','headwear','companion','companionAccessory','prop','weather','frame','sticker','photoFilter'];
+    const active=keys.filter(k=>s[k]&&!['none','solid'].includes(s[k])).length;
+    const colorSet=new Set([s.hairColor,s.hairSecondary,s.clothesColor,s.accentColor,s.eyeColor].filter(Boolean));
+    return Math.min(100,48+active*3+Math.min(12,colorSet.size*2));
+  }
+  function addOverview(){
+    const scroll=$('#editorSections'); if(!scroll||$('.nf-v6-overview',scroll))return;
+    const box=document.createElement('div');box.className='nf-v6-overview';box.innerHTML='<div class="nf-v6-overview-top"><b>Canlı görünüm özeti</b><span class="nf-v6-score" id="nfV6Score">Hazır</span></div><div class="nf-v6-chips" id="nfV6Chips"></div>';
+    const search=document.createElement('div');search.className='nf-v6-search';search.innerHTML='<input id="nfV6Search" type="search" autocomplete="off" placeholder="Bu kategoride ara…" aria-label="Seçeneklerde ara"><button class="nf-v6-search-clear" id="nfV6SearchClear" type="button" aria-label="Aramayı temizle">×</button>';
+    const empty=document.createElement('div');empty.className='nf-v6-empty';empty.id='nfV6Empty';empty.textContent='Bu aramayla eşleşen seçenek bulunamadı.';
+    scroll.prepend(empty);scroll.prepend(search);scroll.prepend(box);
+    const input=$('#nfV6Search'); input.addEventListener('input',filterOptions); $('#nfV6SearchClear').addEventListener('click',()=>{input.value='';filterOptions();input.focus()});
+  }
+  function filterOptions(){
+    const q=($('#nfV6Search')?.value||'').trim().toLocaleLowerCase('tr'); const panel=$('.editor-section.active'); if(!panel)return;
+    let shown=0; $$('.option',panel).forEach(card=>{const hit=!q||(card.textContent||'').toLocaleLowerCase('tr').includes(q);card.style.display=hit?'':'none';if(hit)shown++});
+    const empty=$('#nfV6Empty');if(empty)empty.style.display=q&&shown===0?'block':'none';
+  }
+  function updateOverview(){
+    const s=state(); if(!s||!$('#nfV6Chips'))return;
+    $('#nfV6Score').textContent=`${quality(s)}% uyum`;
+    $('#nfV6Chips').innerHTML=[['Saç',label('hairStyle',s.hairStyle)],['Stil',label('outfitStyle',s.outfitStyle)],['Sahne',label('background',s.background)],['Dost',label('companion',s.companion)]].map(([a,b])=>`<span class="nf-v6-chip"><span>${a}</span>${b}</span>`).join('');
+  }
+  function assistantMarkup(){
+    return `<div class="nf-v6-backdrop" id="nfV6Backdrop" role="dialog" aria-modal="true" aria-labelledby="nfV6Title"><section class="nf-v6-assistant"><header class="nf-v6-assistant-head"><div><h2 id="nfV6Title">Stil Asistanı</h2><p>Renk, atmosfer ve favori tasarımları tek yerde yönet.</p></div><button class="nf-v6-close" id="nfV6Close" aria-label="Kapat">✕</button></header><div class="nf-v6-assistant-body"><section class="nf-v6-section"><div class="nf-v6-section-head"><div><h3>Akıllı renk paletleri</h3><p>Bir dokunuşla dengeli renk kombinasyonları uygula.</p></div></div><div class="nf-v6-palette-grid">${palettes.map((p,i)=>`<button class="nf-v6-palette" data-v6-palette="${i}"><span class="nf-v6-colors">${p.colors.map(c=>`<i style="--c:${c}"></i>`).join('')}</span><b>${p.name}</b><small>${p.desc}</small></button>`).join('')}</div></section><section class="nf-v6-section"><div class="nf-v6-section-head"><div><h3>Atmosfer paketleri</h3><p>Sahne, ışık, hava ve filtre birlikte değişir.</p></div></div><div class="nf-v6-atmospheres">${atmospheres.map((a,i)=>`<button class="nf-v6-atmosphere" style="--a:${a.a};--b:${a.b}" data-v6-atmosphere="${i}"><span>${a.icon}</span><b>${a.name}</b></button>`).join('')}</div></section><section class="nf-v6-section"><div class="nf-v6-section-head"><div><h3>Favori görünümler</h3><p>En fazla 8 tasarımı cihazında sakla.</p></div><button id="nfV6ClearFav" type="button">Tümünü temizle</button></div><div class="nf-v6-favorite-actions"><input class="nf-v6-input" id="nfV6FavName" maxlength="28" placeholder="Görünüm adı"><button class="nf-v6-primary" id="nfV6SaveFav">♡ Favoriye Kaydet</button></div><div class="nf-v6-favorites" id="nfV6Favorites"></div></section><section class="nf-v6-section"><div class="nf-v6-section-head"><div><h3>Görünüm tercihleri</h3><p>Arayüzü sana en rahat gelen biçime getir.</p></div></div><div class="nf-v6-settings"><div class="nf-v6-setting"><div><b>Rahat aralık</b><small>Seçenekleri biraz büyütür.</small></div><button class="nf-v6-toggle" data-v6-pref="roomy" aria-label="Rahat aralık"></button></div><div class="nf-v6-setting"><div><b>Sakin hareket</b><small>Animasyonları azaltır.</small></div><button class="nf-v6-toggle" data-v6-pref="calm" aria-label="Sakin hareket"></button></div><div class="nf-v6-setting"><div><b>Yüksek kontrast</b><small>Metin ve çizgileri belirginleştirir.</small></div><button class="nf-v6-toggle" data-v6-pref="contrast" aria-label="Yüksek kontrast"></button></div></div></section></div></section></div>`;
+  }
+  function renderFavorites(){
+    const list=favorites(),el=$('#nfV6Favorites');if(!el)return;
+    el.innerHTML=list.length?list.map((f,i)=>`<article class="nf-v6-favorite"><div><b>${escapeHtml(f.name)}</b><small>${escapeHtml(f.summary||'Kaydedilmiş görünüm')}</small></div><div class="nf-v6-favorite-btns"><button data-v6-load="${i}" title="Yükle">↗</button><button data-v6-delete="${i}" title="Sil">×</button></div></article>`).join(''):'<div class="nf-v6-empty-fav">Henüz favori görünüm yok. Karakterini hazırlayıp kaydedebilirsin.</div>';
+  }
+  function escapeHtml(v){return String(v).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+  function saveFavorite(){
+    const s=state(),list=favorites();const fallback=(s.characterName||'Nightfall')+' görünümü';const name=($('#nfV6FavName')?.value||'').trim()||fallback;
+    list.unshift({name,summary:`${label('hairStyle',s.hairStyle)} · ${label('outfitStyle',s.outfitStyle)} · ${label('background',s.background)}`,state:s,created:Date.now()});saveFavorites(list);renderFavorites();if($('#nfV6FavName'))$('#nfV6FavName').value='';toast('Görünüm favorilere kaydedildi.');
+  }
+  function applyPrefs(){
+    const p=safeRead(PREFS,{roomy:false,calm:false,contrast:false});document.body.classList.toggle('nf-v6-roomy',!!p.roomy);document.body.classList.toggle('nf-v6-calm',!!p.calm);document.body.classList.toggle('nf-v6-contrast',!!p.contrast);$$('[data-v6-pref]').forEach(b=>b.classList.toggle('on',!!p[b.dataset.v6Pref]));
+  }
+  function togglePref(key){const p=safeRead(PREFS,{roomy:false,calm:false,contrast:false});p[key]=!p[key];safeWrite(PREFS,p);applyPrefs()}
+  function openAssistant(){const b=$('#nfV6Backdrop');if(!b)return;b.classList.add('open');document.body.style.overflow='hidden';renderFavorites();applyPrefs();setTimeout(()=>$('#nfV6Close')?.focus(),30)}
+  function closeAssistant(){const b=$('#nfV6Backdrop');if(!b)return;b.classList.remove('open');document.body.style.overflow=''}
+  function addAssistant(){
+    if($('#nfV6Backdrop'))return;document.body.insertAdjacentHTML('beforeend',assistantMarkup());
+    $('#nfV6Close').addEventListener('click',closeAssistant);$('#nfV6Backdrop').addEventListener('click',e=>{if(e.target.id==='nfV6Backdrop')closeAssistant()});
+    $('#nfV6SaveFav').addEventListener('click',saveFavorite);$('#nfV6ClearFav').addEventListener('click',()=>{if(confirm('Bütün favori görünümler silinsin mi?')){saveFavorites([]);renderFavorites()}});
+    $('#nfV6Backdrop').addEventListener('click',e=>{
+      const p=e.target.closest('[data-v6-palette]');if(p){api.applyPatch(palettes[+p.dataset.v6Palette].patch);toast(`${palettes[+p.dataset.v6Palette].name} paleti uygulandı.`);updateOverview();return}
+      const a=e.target.closest('[data-v6-atmosphere]');if(a){api.applyPatch(atmospheres[+a.dataset.v6Atmosphere].patch);toast(`${atmospheres[+a.dataset.v6Atmosphere].name} atmosferi uygulandı.`);updateOverview();return}
+      const load=e.target.closest('[data-v6-load]');if(load){const f=favorites()[+load.dataset.v6Load];if(f){api.replaceState(f.state);toast(`${f.name} yüklendi.`);updateOverview();closeAssistant()}return}
+      const del=e.target.closest('[data-v6-delete]');if(del){const list=favorites();list.splice(+del.dataset.v6Delete,1);saveFavorites(list);renderFavorites();return}
+      const pref=e.target.closest('[data-v6-pref]');if(pref){togglePref(pref.dataset.v6Pref);return}
+    });
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('#nfV6Backdrop')?.classList.contains('open'))closeAssistant()});
+  }
+  function addOpeners(){
+    const panel=$('.pro-menu-panel');if(panel&&!$('.nf-v6-assistant-open',panel)){const btn=document.createElement('button');btn.type='button';btn.className='tool-btn nf-v6-assistant-open';btn.innerHTML='✦ <span>Stil Asistanı</span>';btn.addEventListener('click',openAssistant);panel.insertBefore(btn,panel.children[1]||null)}
+    const controls=$('.stage-controls');if(controls&&!$('.nf-v6-favorite-stage',controls)){const btn=document.createElement('button');btn.type='button';btn.className='stage-control nf-v6-favorite-stage';btn.title='Favoriye kaydet';btn.setAttribute('aria-label','Görünümü favoriye kaydet');btn.textContent='♡';btn.addEventListener('click',saveFavorite);controls.prepend(btn)}
+  }
+  function cleanMiniGame(){
+    $('#duckPondModal')?.remove();$('#duckPondBtn')?.closest('.game-card')?.remove();
+    $$('.achievement').forEach(x=>{if((x.textContent||'').includes('Gölet Şampiyonu'))x.remove()});
+    $$('h2,h3,p,button,.rarity').forEach(el=>{const t=(el.textContent||'').trim();if(t==='Stil Görevleri')el.textContent='Stil Briefleri';if(t==='🏆 Görevleri Aç')el.textContent='✦ Briefleri Aç';if(t==='Görevler')el.textContent='Briefler'});
+  }
+  function polishCopy(){
+    const title=$('.brand h1');if(title)title.innerHTML='Nightfall <span>Studio 6</span>';
+    const subtitle=$('.pro-editor-head small');if(subtitle)subtitle.textContent='Kategori seç, detayları sade bir akışta düzenle.';
+    const editorTitle=$('.pro-editor-head b');if(editorTitle)editorTitle.textContent='Avatar Tasarım Stüdyosu';
+    const download=$('#downloadBtn');if(download)download.textContent='Kaydet';
+    const random=$('#randomBtn');if(random)random.textContent='✦ İlham Ver';
+  }
+  function setup(){
+    api=window.NightfallStudioAPI;if(!api){setTimeout(setup,80);return}
+    addOverview();addAssistant();addOpeners();cleanMiniGame();polishCopy();applyPrefs();updateOverview();
+    $('#categoryNav')?.addEventListener('click',()=>{if($('#nfV6Search'))$('#nfV6Search').value='';setTimeout(()=>{filterOptions();updateOverview()},30)});
+    document.addEventListener('click',e=>{if(e.target.closest('.option,.swatch,.segmented button,[data-preset],[data-toggle-key]'))setTimeout(updateOverview,40)});
+    document.addEventListener('input',e=>{if(e.target.matches('input[type="range"],input[type="color"],#characterName'))setTimeout(updateOverview,30)});
+    const observer=new MutationObserver(()=>{cleanMiniGame();addOpeners()});observer.observe(document.body,{childList:true,subtree:true});
+    setInterval(updateOverview,1200);
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>setTimeout(setup,80));else setTimeout(setup,80);
 })();
 </script>
 
