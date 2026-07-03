@@ -1,0 +1,7 @@
+GITHUB PAGES KURULUMU
+
+1) Bu ZIP dosyasını bilgisayarında çıkart.
+2) index.html, oyun.html, 404.html ve .nojekyll dosyalarını repository ana dizinine yükle.
+3) Settings > Pages > Deploy from a branch > main > /(root) seç.
+4) Eski oyun klasörü varsa silebilirsin; bu sürüm klasör kullanmaz.
+5) GitHub Pages yayını yenilendikten sonra ana sayfadaki OYUNA GİR düğmesi ./oyun.html adresini açar.
