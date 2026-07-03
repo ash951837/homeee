@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#15111f" />
-  <meta name="description" content="Nightfall Academy Ultra 5.0 — yaşayan okul dünyası, hikâye modu, katmanlı gardırop, yurt dekorasyonu, ördek bakımı ve profesyonel avatar stüdyosu." />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Cdefs%3E%3ClinearGradient id=%27g%27 x2=%271%27 y2=%271%27%3E%3Cstop stop-color=%27%23ff4ca0%27/%3E%3Cstop offset=%271%27 stop-color=%27%239b6cff%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%2764%27 height=%2764%27 rx=%2718%27 fill=%27url(%23g)%27/%3E%3Cpath d=%27M32 10l5 17 17 5-17 5-5 17-5-17-17-5 17-5z%27 fill=%27white%27/%3E%3C/svg%3E" />
-<title>Nightfall Academy Ultra 5 — Living Academy</title>
+  <meta name="theme-color" content="#141022">
+  <meta name="description" content="Hikayemiz — mobil uyumlu avatar tasarım oyunu." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20512%20512%27%3E%0A%3Cdefs%3E%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%3Cstop%20offset%3D%270%25%27%20stop-color%3D%27%23ff5aa7%27/%3E%3Cstop%20offset%3D%27100%25%27%20stop-color%3D%27%238f6bff%27/%3E%3C/linearGradient%3E%3C/defs%3E%0A%3Crect%20width%3D%27512%27%20height%3D%27512%27%20rx%3D%27140%27%20fill%3D%27url%28%23g%29%27/%3E%0A%3Cpath%20d%3D%27M256%20383c-12%200-23-4-32-11-71-56-149-120-149-199%200-45%2037-82%2082-82%2035%200%2060%2019%2078%2045%2018-26%2043-45%2078-45%2045%200%2082%2037%2082%2082%200%2079-78%20143-149%20199-9%207-20%2011-32%2011z%27%20fill%3D%27white%27/%3E%0A%3C/svg%3E" />
+<title>Hikayemiz</title>
   <style>
 /* Nightfall Academy Ultra 5 — Living Academy expansion */
 :root{--u5-gold:#ffd85c;--u5-mint:#67efc2;--u5-blue:#63b8ff;--u5-red:#ff657e;--u5-panel:#16111f;--u5-ink:#fff9ff}
@@ -808,6 +808,585 @@ body.pro-focus .topbar{max-width:860px;margin-left:auto;margin-right:auto}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
 
+<style id="hikayemiz-signature-redesign">
+/* =========================================================
+   HIKAYEMIZ STUDIO — SIGNATURE REDESIGN 2026
+   Bu katman mevcut oyunun çalışan JavaScript yapısını bozmaz;
+   sadece arayüz, mobil görünüm ve okunabilirliği güçlendirir.
+   ========================================================= */
+:root{
+  --hk-bg-0:#070610;
+  --hk-bg-1:#120d1e;
+  --hk-panel:rgba(18,15,30,.72);
+  --hk-panel-2:rgba(32,25,48,.62);
+  --hk-line:rgba(255,255,255,.13);
+  --hk-line-strong:rgba(255,255,255,.22);
+  --hk-text:#fff7ff;
+  --hk-muted:#c7b9d9;
+  --hk-soft:#92849f;
+  --hk-pink:#ff5ead;
+  --hk-pink-2:#ff8ac6;
+  --hk-purple:#8d6bff;
+  --hk-blue:#67e8ff;
+  --hk-mint:#75f0c9;
+  --hk-gold:#ffe079;
+  --hk-danger:#ff6f8a;
+  --hk-radius:26px;
+  --hk-radius-sm:16px;
+  --hk-shadow:0 24px 80px rgba(0,0,0,.42);
+  --hk-shadow-soft:0 12px 34px rgba(0,0,0,.24);
+  --hk-glow:0 0 0 1px rgba(255,255,255,.08),0 22px 70px rgba(255,94,173,.12);
+}
+html{scroll-behavior:smooth;}
+body.hk-redesign{
+  color:var(--hk-text);
+  background:
+    radial-gradient(circle at 8% 8%,rgba(255,94,173,.20),transparent 30rem),
+    radial-gradient(circle at 92% 4%,rgba(103,232,255,.14),transparent 33rem),
+    radial-gradient(circle at 50% 95%,rgba(141,107,255,.18),transparent 34rem),
+    linear-gradient(145deg,var(--hk-bg-0),var(--hk-bg-1) 52%,#080610);
+  letter-spacing:-.01em;
+}
+body.hk-redesign::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  pointer-events:none;
+  background:
+    linear-gradient(120deg,transparent 0 34%,rgba(255,255,255,.045) 35%,transparent 48% 100%),
+    radial-gradient(circle at 50% 50%,transparent 0 50%,rgba(0,0,0,.25) 100%);
+  opacity:.72;
+}
+body.hk-redesign::after{
+  opacity:.035;
+  background-size:64px 64px;
+}
+body.hk-redesign *::selection{background:rgba(255,94,173,.35);color:white;}
+body.hk-redesign .ambient::before,
+body.hk-redesign .ambient::after{opacity:.22;filter:blur(110px);}
+body.hk-redesign .app{
+  width:min(1560px,100%);
+  padding:clamp(10px,2vw,24px);
+}
+body.hk-redesign .topbar{
+  position:sticky;
+  top:14px;
+  z-index:70;
+  overflow:visible;
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:28px;
+  padding:14px;
+  background:linear-gradient(145deg,rgba(16,13,27,.82),rgba(27,21,42,.66));
+  box-shadow:var(--hk-shadow-soft),inset 0 1px rgba(255,255,255,.10);
+  backdrop-filter:blur(26px) saturate(1.15);
+}
+body.hk-redesign .topbar::before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  z-index:-1;
+  border-radius:inherit;
+  background:linear-gradient(135deg,rgba(255,94,173,.56),rgba(103,232,255,.24),rgba(255,224,121,.20));
+  opacity:.45;
+  filter:blur(10px);
+}
+body.hk-redesign .brand{gap:14px;}
+body.hk-redesign .brand-mark{
+  width:50px;
+  border-radius:18px;
+  background:
+    radial-gradient(circle at 30% 25%,rgba(255,255,255,.55),transparent 26%),
+    linear-gradient(145deg,var(--hk-pink),var(--hk-purple));
+  box-shadow:0 15px 38px rgba(255,94,173,.25),inset 0 1px rgba(255,255,255,.42);
+}
+body.hk-redesign .brand h1{
+  font-size:clamp(18px,2vw,28px);
+  line-height:1;
+  letter-spacing:-.045em;
+}
+body.hk-redesign .brand h1 .hk-title-main{
+  display:inline-block;
+  background:linear-gradient(135deg,#fff,var(--hk-pink-2) 46%,#bfaeff);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+body.hk-redesign .brand h1 .hk-title-sub{color:var(--hk-muted);font-weight:800;}
+body.hk-redesign .brand p{color:var(--hk-muted);font-size:12px;}
+body.hk-redesign .version-pill,
+body.hk-redesign .pro-stat,
+body.hk-redesign .profile-chip{
+  border-color:rgba(255,255,255,.14);
+  background:rgba(255,255,255,.065);
+  color:#efe7f8;
+}
+body.hk-redesign .pro-stats{gap:8px;margin-top:9px;}
+body.hk-redesign .pro-stat{
+  padding:5px 9px;
+  border:1px solid rgba(255,255,255,.10);
+  box-shadow:inset 0 1px rgba(255,255,255,.08);
+}
+body.hk-redesign .toolbar{gap:9px;align-items:center;}
+body.hk-redesign .tool-btn,
+body.hk-redesign .primary-btn,
+body.hk-redesign .site-back-btn,
+body.hk-redesign .mini-btn,
+body.hk-redesign .stage-control,
+body.hk-redesign .u5-btn{
+  border-radius:15px;
+  border:1px solid rgba(255,255,255,.13);
+  background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.035));
+  box-shadow:inset 0 1px rgba(255,255,255,.08),0 10px 24px rgba(0,0,0,.18);
+  transition:transform .18s ease,border-color .18s ease,background .18s ease,box-shadow .18s ease,opacity .18s ease;
+  text-decoration:none;
+}
+body.hk-redesign .tool-btn:hover,
+body.hk-redesign .site-back-btn:hover,
+body.hk-redesign .mini-btn:hover,
+body.hk-redesign .stage-control:hover,
+body.hk-redesign .u5-btn:hover{
+  transform:translateY(-2px);
+  border-color:rgba(255,255,255,.28);
+  box-shadow:inset 0 1px rgba(255,255,255,.13),0 16px 34px rgba(0,0,0,.28);
+}
+body.hk-redesign .primary-btn,
+body.hk-redesign .u5-btn.primary{
+  border:0;
+  background:linear-gradient(135deg,var(--hk-pink),var(--hk-purple) 60%,#6fdfff);
+  box-shadow:0 16px 34px rgba(255,94,173,.25),inset 0 1px rgba(255,255,255,.26);
+}
+body.hk-redesign .world-launch,
+body.hk-redesign .u5-btn.gold{
+  border:0!important;
+  color:#231627!important;
+  background:linear-gradient(135deg,#fff1a3,var(--hk-gold),#f2a64d)!important;
+  box-shadow:0 16px 36px rgba(255,224,121,.18)!important;
+}
+body.hk-redesign .hk-hero{
+  position:relative;
+  overflow:hidden;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:18px;
+  align-items:center;
+  margin:0 0 18px;
+  padding:20px;
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:30px;
+  background:
+    radial-gradient(circle at 83% 22%,rgba(255,224,121,.20),transparent 17rem),
+    radial-gradient(circle at 7% 20%,rgba(103,232,255,.12),transparent 18rem),
+    linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.028));
+  box-shadow:var(--hk-shadow-soft),inset 0 1px rgba(255,255,255,.10);
+  backdrop-filter:blur(22px);
+}
+body.hk-redesign .hk-hero::after{
+  content:"✦";
+  position:absolute;
+  right:28px;
+  top:-16px;
+  font-size:130px;
+  color:rgba(255,255,255,.05);
+  transform:rotate(12deg);
+}
+body.hk-redesign .hk-hero-kicker{
+  display:inline-flex;
+  gap:7px;
+  align-items:center;
+  padding:7px 10px;
+  border:1px solid rgba(255,224,121,.28);
+  border-radius:999px;
+  color:#fff0a8;
+  background:rgba(255,224,121,.08);
+  font-size:10px;
+  font-weight:950;
+  letter-spacing:.13em;
+}
+body.hk-redesign .hk-hero h2{
+  margin:12px 0 6px;
+  max-width:780px;
+  font-size:clamp(28px,3.7vw,54px);
+  line-height:.96;
+  letter-spacing:-.065em;
+}
+body.hk-redesign .hk-hero h2 span{
+  background:linear-gradient(135deg,#fff,var(--hk-pink-2),#a995ff);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+body.hk-redesign .hk-hero p{
+  max-width:680px;
+  margin:0;
+  color:var(--hk-muted);
+  font-size:13px;
+  line-height:1.65;
+}
+body.hk-redesign .hk-hero-actions{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;position:relative;z-index:1;}
+body.hk-redesign .hk-hero-chip{
+  display:inline-grid;
+  place-items:center;
+  min-height:42px;
+  padding:0 13px;
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:999px;
+  background:rgba(255,255,255,.06);
+  color:#efe8f7;
+  font-size:11px;
+  font-weight:900;
+  white-space:nowrap;
+}
+body.hk-redesign .workspace{
+  grid-template-columns:minmax(340px,.85fr) minmax(520px,1.3fr) minmax(300px,.80fr);
+  gap:18px;
+  align-items:start;
+}
+body.hk-redesign .panel,
+body.hk-redesign .stage-card{
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:30px;
+  background:linear-gradient(145deg,rgba(23,18,36,.78),rgba(15,12,24,.72));
+  box-shadow:var(--hk-shadow),inset 0 1px rgba(255,255,255,.08);
+  backdrop-filter:blur(26px) saturate(1.12);
+}
+body.hk-redesign .stage-card{
+  position:sticky;
+  top:106px;
+  min-height:760px;
+  background:
+    radial-gradient(circle at 50% 18%,rgba(255,255,255,.18),transparent 15rem),
+    radial-gradient(circle at 50% 73%,rgba(255,94,173,.16),transparent 22rem),
+    linear-gradient(180deg,rgba(21,16,35,.78),rgba(11,9,17,.90));
+  overflow:hidden;
+}
+body.hk-redesign .stage-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  background:
+    linear-gradient(110deg,transparent 0 18%,rgba(255,255,255,.07) 18.5%,transparent 34% 100%),
+    radial-gradient(ellipse at 50% 92%,rgba(255,255,255,.14),transparent 44%);
+  box-shadow:inset 0 -150px 170px rgba(0,0,0,.35),inset 0 0 0 1px rgba(255,255,255,.05);
+}
+body.hk-redesign .stage-card::after{
+  z-index:0;
+  opacity:.12;
+}
+body.hk-redesign .avatar-wrap{min-height:760px;}
+body.hk-redesign #avatarSvg{
+  width:min(100%,680px);
+  max-height:745px;
+  filter:drop-shadow(0 34px 40px rgba(0,0,0,.46));
+}
+body.hk-redesign .stage-top{top:18px;left:18px;right:18px;z-index:8;}
+body.hk-redesign .badge{
+  border-color:rgba(255,255,255,.16);
+  background:rgba(9,7,16,.62);
+  box-shadow:0 12px 28px rgba(0,0,0,.24),inset 0 1px rgba(255,255,255,.08);
+}
+body.hk-redesign .save-state{color:var(--hk-mint);}
+body.hk-redesign .identity-card{
+  z-index:9;
+  left:20px;
+  bottom:20px;
+  border-radius:22px;
+  border-color:rgba(255,255,255,.17);
+  background:linear-gradient(145deg,rgba(13,10,22,.68),rgba(27,20,42,.58));
+  box-shadow:0 20px 50px rgba(0,0,0,.35),inset 0 1px rgba(255,255,255,.08);
+}
+body.hk-redesign .identity-label{color:#d7c7e7;}
+body.hk-redesign .identity-input{font-size:22px;}
+body.hk-redesign .stage-controls{z-index:9;gap:8px;}
+body.hk-redesign .stage-control{
+  width:45px;
+  height:45px;
+  background:rgba(11,9,18,.66);
+}
+body.hk-redesign .challenge-hud,
+body.hk-redesign .pet-hud,
+body.hk-redesign .filter-badge,
+body.hk-redesign .companion-speech{
+  z-index:9;
+  border-color:rgba(255,255,255,.16);
+  background:rgba(10,8,16,.66);
+  box-shadow:0 14px 32px rgba(0,0,0,.25);
+  backdrop-filter:blur(16px);
+}
+body.hk-redesign .categories{
+  position:sticky;
+  top:0;
+  z-index:5;
+  display:flex;
+  gap:8px;
+  overflow:auto;
+  padding:12px;
+  border-color:rgba(255,255,255,.11);
+  background:rgba(13,10,23,.66);
+  backdrop-filter:blur(18px);
+  scrollbar-width:thin;
+}
+body.hk-redesign .category-btn{
+  flex:0 0 76px;
+  min-height:68px;
+  border-radius:18px;
+  color:#bcaed0;
+  border:1px solid transparent;
+}
+body.hk-redesign .category-btn span{font-size:23px;}
+body.hk-redesign .category-btn.active{
+  color:white;
+  border-color:rgba(255,94,173,.42);
+  background:linear-gradient(145deg,rgba(255,94,173,.18),rgba(141,107,255,.16));
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.06),0 14px 25px rgba(255,94,173,.12);
+}
+body.hk-redesign .pro-editor-head,
+body.hk-redesign .right-head{
+  border-color:rgba(255,255,255,.10);
+  background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.02));
+}
+body.hk-redesign .pro-editor-head b,
+body.hk-redesign .right-head h2,
+body.hk-redesign .section-head h2{letter-spacing:-.04em;}
+body.hk-redesign .editor-scroll,
+body.hk-redesign .fine-controls{scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.24) transparent;}
+body.hk-redesign .editor-scroll::-webkit-scrollbar,
+body.hk-redesign .fine-controls::-webkit-scrollbar{width:8px;height:8px;}
+body.hk-redesign .editor-scroll::-webkit-scrollbar-thumb,
+body.hk-redesign .fine-controls::-webkit-scrollbar-thumb{background:rgba(255,255,255,.18);border-radius:999px;}
+body.hk-redesign .section-head{
+  padding:2px 2px 0;
+  margin-bottom:16px;
+}
+body.hk-redesign .control-title{color:#efe6fa;font-size:12px;}
+body.hk-redesign .control-title output{color:var(--hk-blue);}
+body.hk-redesign .option-grid{gap:9px;}
+body.hk-redesign .option,
+body.hk-redesign .fine-card,
+body.hk-redesign .save-slot,
+body.hk-redesign .game-card,
+body.hk-redesign .u5-card,
+body.hk-redesign .export-option,
+body.hk-redesign .custom-color{
+  border-color:rgba(255,255,255,.12);
+  background:linear-gradient(145deg,rgba(255,255,255,.060),rgba(255,255,255,.024));
+  box-shadow:inset 0 1px rgba(255,255,255,.055);
+}
+body.hk-redesign .option{
+  min-height:78px;
+  border-radius:18px;
+}
+body.hk-redesign .option:hover{
+  transform:translateY(-3px);
+  border-color:rgba(255,255,255,.27);
+  box-shadow:0 14px 28px rgba(0,0,0,.22),inset 0 1px rgba(255,255,255,.10);
+}
+body.hk-redesign .option.active{
+  border-color:rgba(255,94,173,.72);
+  background:linear-gradient(145deg,rgba(255,94,173,.20),rgba(141,107,255,.13));
+  box-shadow:0 0 0 2px rgba(255,94,173,.13),0 15px 30px rgba(255,94,173,.10),inset 0 1px rgba(255,255,255,.14);
+}
+body.hk-redesign .option .icon{font-size:28px;}
+body.hk-redesign .option .label{color:#f2e8fb;}
+body.hk-redesign .swatches{gap:10px;}
+body.hk-redesign .swatch{
+  width:38px;
+  height:38px;
+  border-radius:14px;
+  border-color:rgba(255,255,255,.22);
+  box-shadow:inset 0 1px rgba(255,255,255,.38),0 10px 18px rgba(0,0,0,.20);
+}
+body.hk-redesign .swatch.active{
+  border-color:white;
+  box-shadow:0 0 0 3px rgba(255,94,173,.34),0 0 24px rgba(255,94,173,.22);
+}
+body.hk-redesign input[type="range"]{accent-color:var(--hk-pink);}
+body.hk-redesign input[type="range"]::-webkit-slider-thumb{filter:drop-shadow(0 0 8px rgba(255,94,173,.35));}
+body.hk-redesign .segmented{
+  padding:6px;
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(0,0,0,.20);
+}
+body.hk-redesign .segmented button.active{
+  background:linear-gradient(135deg,rgba(255,94,173,.45),rgba(141,107,255,.40));
+}
+body.hk-redesign .right-actions,
+body.hk-redesign .pro-advanced .right-actions{border-color:rgba(255,255,255,.10);}
+body.hk-redesign .modal-backdrop{background:rgba(6,5,11,.76);backdrop-filter:blur(18px);}
+body.hk-redesign .modal{
+  border-radius:28px;
+  border-color:rgba(255,255,255,.17);
+  background:linear-gradient(145deg,#1c1528,#11101a);
+}
+body.hk-redesign .toast{
+  border-radius:18px;
+  border-color:rgba(255,255,255,.16);
+  background:rgba(17,13,27,.88);
+  backdrop-filter:blur(18px);
+}
+body.hk-redesign .u5-overlay{
+  background:
+    radial-gradient(circle at 20% 10%,rgba(255,94,173,.17),transparent 32rem),
+    radial-gradient(circle at 80% 0,rgba(103,232,255,.12),transparent 31rem),
+    linear-gradient(145deg,#080711,#171023 58%,#080711);
+}
+body.hk-redesign .u5-sidebar,
+body.hk-redesign .u5-topbar{
+  background:rgba(13,10,20,.74);
+  border-color:rgba(255,255,255,.12);
+  backdrop-filter:blur(24px);
+}
+body.hk-redesign .u5-card,
+body.hk-redesign .u5-hero,
+body.hk-redesign .academy-map,
+body.hk-redesign .dialogue-stage,
+body.hk-redesign .dorm-preview,
+body.hk-redesign .wardrobe-preview,
+body.hk-redesign .duck-sanctuary,
+body.hk-redesign .runway-stage,
+body.hk-redesign .photo-canvas{
+  border-color:rgba(255,255,255,.13);
+  box-shadow:0 20px 55px rgba(0,0,0,.22),inset 0 1px rgba(255,255,255,.06);
+}
+body.hk-redesign .u5-nav button.active{box-shadow:inset 3px 0 var(--hk-pink);}
+body.hk-redesign .collection-item,
+body.hk-redesign .theme-card,
+body.hk-redesign .care-meter,
+body.hk-redesign .decor-group,
+body.hk-redesign .wardrobe-group{
+  border-color:rgba(255,255,255,.12);
+  background:rgba(255,255,255,.045);
+}
+body.hk-redesign.hk-calm{
+  --hk-pink:#9db4ff;
+  --hk-pink-2:#b7c6ff;
+  --hk-purple:#82e7d2;
+  --hk-blue:#d7fbff;
+}
+body.hk-redesign.hk-calm .topbar::before{opacity:.26;}
+body.hk-redesign .hk-theme-toggle{
+  min-height:42px;
+  padding:0 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.13);
+  background:rgba(255,255,255,.06);
+  cursor:pointer;
+  font-size:11px;
+  font-weight:900;
+}
+@media(max-width:1180px){
+  body.hk-redesign .workspace{grid-template-columns:minmax(320px,.85fr) minmax(480px,1.15fr);} 
+  body.hk-redesign .stage-card{top:100px;}
+  body.hk-redesign .right-panel{grid-column:1/-1;}
+}
+@media(max-width:980px){
+  body.hk-redesign .topbar{top:10px;border-radius:22px;}
+  body.hk-redesign .hk-hero{grid-template-columns:1fr;border-radius:24px;}
+  body.hk-redesign .hk-hero-actions{justify-content:flex-start;}
+  body.hk-redesign .workspace{display:flex;flex-direction:column;}
+  body.hk-redesign .stage-card{position:relative;top:auto;order:-1;width:100%;min-height:670px;}
+  body.hk-redesign .avatar-wrap{min-height:670px;}
+  body.hk-redesign #avatarSvg{max-height:660px;}
+  body.hk-redesign .panel{min-height:auto;}
+}
+@media(max-width:760px){
+  body.hk-redesign{padding-bottom:84px;}
+  body.hk-redesign .app{padding:8px;}
+  body.hk-redesign .topbar{position:relative;top:auto;margin-bottom:10px;padding:10px;border-radius:20px;}
+  body.hk-redesign .brand-mark{width:40px;border-radius:14px;}
+  body.hk-redesign .brand h1{font-size:18px;}
+  body.hk-redesign .hk-hero{padding:16px;margin-bottom:10px;border-radius:20px;}
+  body.hk-redesign .hk-hero h2{font-size:31px;}
+  body.hk-redesign .hk-hero p{font-size:12px;}
+  body.hk-redesign .hk-hero-actions{display:grid;grid-template-columns:1fr 1fr;width:100%;}
+  body.hk-redesign .hk-hero-chip{border-radius:15px;justify-content:center;}
+  body.hk-redesign .toolbar{
+    position:fixed;
+    left:8px;right:8px;bottom:max(8px,env(safe-area-inset-bottom));
+    z-index:120;
+    display:grid;
+    grid-template-columns:44px 1fr 1fr 44px;
+    gap:7px;
+    padding:8px;
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,.16);
+    background:rgba(13,10,22,.88);
+    box-shadow:0 18px 55px rgba(0,0,0,.50);
+    backdrop-filter:blur(22px);
+  }
+  body.hk-redesign .toolbar .hk-theme-toggle{display:none;}
+  body.hk-redesign .toolbar>.tool-btn,
+  body.hk-redesign .toolbar>.primary-btn,
+  body.hk-redesign .site-back-btn,
+  body.hk-redesign .pro-menu>summary{min-height:46px;border-radius:14px;}
+  body.hk-redesign .stage-card{min-height:530px;border-radius:22px;}
+  body.hk-redesign .avatar-wrap{min-height:530px;}
+  body.hk-redesign #avatarSvg{max-height:520px;width:min(100%,500px);}
+  body.hk-redesign .panel{border-radius:22px;}
+  body.hk-redesign .categories{padding:9px;border-radius:0;}
+  body.hk-redesign .category-btn{flex-basis:68px;min-width:68px;min-height:60px;font-size:9px;}
+  body.hk-redesign .identity-card{width:205px;left:10px;bottom:10px;padding:10px;border-radius:17px;}
+  body.hk-redesign .identity-input{font-size:17px;}
+  body.hk-redesign .stage-controls{right:10px;bottom:10px;}
+  body.hk-redesign .stage-control{width:38px;height:38px;border-radius:13px;}
+  body.hk-redesign .option-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+  body.hk-redesign .option{min-height:74px;}
+}
+@media(max-width:430px){
+  body.hk-redesign .brand p,body.hk-redesign .pro-stats{display:none;}
+  body.hk-redesign .brand h1{font-size:16px;}
+  body.hk-redesign .hk-hero h2{font-size:27px;}
+  body.hk-redesign .hk-hero-actions{grid-template-columns:1fr;}
+  body.hk-redesign .stage-card,body.hk-redesign .avatar-wrap{min-height:470px;}
+  body.hk-redesign #avatarSvg{max-height:460px;}
+  body.hk-redesign .identity-card{width:185px;}
+}
+@media(prefers-reduced-motion:reduce){
+  body.hk-redesign *,body.hk-redesign *::before,body.hk-redesign *::after{animation:none!important;transition:none!important;}
+}
+</style>
+
+
+<style id="hikayemiz-clean-ui">
+/* Temiz sürüm: üst tanıtım bandı kapalıdır, oyun doğrudan editörle açılır. */
+.hk-hero{display:none!important;}
+</style>
+
+
+<!-- HIKAYEMIZ SITE INDEX PWA -->
+<link rel="manifest" href="./manifest.webmanifest?v=2026-07-04-site-index-only-v1">
+<link rel="icon" href="./icons/favicon.svg?v=2026-07-04-site-index-only-v1" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./icons/apple-touch-icon.png?v=2026-07-04-site-index-only-v1">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="application-name" content="Bizim hikayemiz">
+<meta name="apple-mobile-web-app-title" content="Bizim hikayemiz">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="msapplication-TileColor" content="#141022">
+<meta name="msapplication-TileImage" content="./icons/icon-192.png?v=2026-07-04-site-index-only-v1">
+<link rel="stylesheet" href="./pwa.css?v=2026-07-04-site-index-only-v1">
+<!-- /HIKAYEMIZ SITE INDEX PWA -->
+<script id="ios-home-name-helper">
+(function(){
+  const APP_FULL_NAME = 'Hikayemiz';
+  const APP_SHORT_NAME = 'Bizim hikayemiz';
+  const VERSION = '2026-07-04-index-kesin-v3';
+  try {
+    document.title = APP_FULL_NAME;
+    const setMeta = (name, content) => {
+      let m = document.querySelector(`meta[name="${name}"]`);
+      if(!m){ m = document.createElement('meta'); m.setAttribute('name', name); document.head.appendChild(m); }
+      m.setAttribute('content', content);
+    };
+    setMeta('application-name', APP_SHORT_NAME);
+    setMeta('apple-mobile-web-app-title', APP_SHORT_NAME);
+    localStorage.setItem('hikayemiz_pwa_version', VERSION);
+  } catch(e){}
+  window.hikayemizAppInfo = { name: APP_FULL_NAME, shortName: APP_SHORT_NAME, version: VERSION };
+})();
+</script>
 </head>
 <body>
 <div class="ambient"></div>
@@ -2684,5 +3263,63 @@ body.pro-focus .topbar{max-width:860px;margin-left:auto;margin-right:auto}
 })();
 </script>
 
+<script id="hikayemiz-signature-redesign-script">
+(function(){
+  const ready = (fn)=>document.readyState==='loading'?document.addEventListener('DOMContentLoaded',fn):fn();
+  function enhance(){
+    document.body.classList.add('hk-redesign');
+    try{ if(localStorage.getItem('hikayemiz_theme_mode')==='calm') document.body.classList.add('hk-calm'); }catch(e){}
+    const brandTitle = document.querySelector('.brand h1');
+    if(brandTitle){
+      brandTitle.innerHTML = '<span class="hk-title-main">Hikayemiz</span>';
+    }
+    const brandText = document.querySelector('.brand p');
+    if(brandText) brandText.textContent = 'Mobil uyumlu avatar tasarım oyunu';
+    const stats = document.querySelector('.pro-stats');
+    if(stats){
+      stats.innerHTML = '<span class="pro-stat">Mobil uyumlu</span><span class="pro-stat">Kayıt sistemi</span><span class="pro-stat">Avatar düzenleme</span>';
+    }
+    const toolbar = document.querySelector('.toolbar');
+    if(toolbar && !toolbar.querySelector('.hk-theme-toggle')){
+      const theme = document.createElement('button');
+      theme.className = 'hk-theme-toggle';
+      theme.type = 'button';
+      theme.textContent = document.body.classList.contains('hk-calm') ? '🌙 Sakin' : '💖 Canlı';
+      theme.title = 'Tasarım modunu değiştir';
+      theme.addEventListener('click',()=>{
+        document.body.classList.toggle('hk-calm');
+        const calm = document.body.classList.contains('hk-calm');
+        theme.textContent = calm ? '🌙 Sakin' : '💖 Canlı';
+        try{localStorage.setItem('hikayemiz_theme_mode', calm ? 'calm' : 'vivid')}catch(e){}
+        const toast = document.getElementById('toast');
+        if(toast){toast.textContent = calm ? 'Sakin tema açıldı.' : 'Canlı tema açıldı.'; toast.classList.add('show'); setTimeout(()=>toast.classList.remove('show'),1600);}
+      });
+      toolbar.appendChild(theme);
+    }
+    const labels = {
+      undoBtn:'↶', redoBtn:'↷', randomBtn:'🎲 Rastgele', challengeBtn:'🏆 Görev', galleryBtn:'▦ Galeri',
+      resetBtn:'↺ Sıfırla', downloadBtn:'Kaydet', downloadBtnBottom:'Profesyonel Dışa Aktar', copyBtn:'Kopyala', pasteBtn:'Yapıştır'
+    };
+    Object.entries(labels).forEach(([id,text])=>{const el=document.getElementById(id); if(el) el.textContent=text;});
+    const back = document.querySelector('.site-back-btn');
+    if(back){ back.textContent='←'; back.title='Ana sayfaya dön'; back.setAttribute('aria-label','Ana sayfaya dön'); }
+    const stage = document.getElementById('stageCard');
+    if(stage){ stage.classList.add('alive'); }
+    const editorHead = document.querySelector('.pro-editor-head b');
+    if(editorHead) editorHead.textContent = 'Tasarım Paneli';
+    const editorSub = document.querySelector('.pro-editor-head small');
+    if(editorSub) editorSub.textContent = 'Renk, stil, efekt ve sahneyi hızlıca düzenle.';
+    const saveState = document.getElementById('saveState');
+    if(saveState) saveState.textContent = '● Hazır';
+    document.documentElement.style.setProperty('--avatar-zoom', getComputedStyle(document.documentElement).getPropertyValue('--avatar-zoom') || '1');
+  }
+  ready(()=>{ enhance(); setTimeout(enhance,160); setTimeout(enhance,650); });
+})();
+</script>
+
+
+<!-- HIKAYEMIZ SITE INDEX PWA -->
+<script src="./pwa.js?v=2026-07-04-site-index-only-v1" defer></script>
+<!-- /HIKAYEMIZ SITE INDEX PWA -->
 </body>
 </html>
