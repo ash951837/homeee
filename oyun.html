@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#15111f">
+  <meta name="description" content="Nightfall Academy Ultra 5 oyun sayfası.">
+  <title>Nightfall Academy — Oyun</title>
+  <style>
+    :root { color-scheme: dark; --bar-h: 64px; }
+    * { box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: #08070c; }
+    body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    .game-shell { width: 100%; height: 100%; display: grid; grid-template-rows: var(--bar-h) minmax(0,1fr); }
+    .game-bar {
+      position: relative;
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px max(14px, env(safe-area-inset-right)) 10px max(14px, env(safe-area-inset-left));
+      border-bottom: 1px solid rgba(255,255,255,.11);
+      background: linear-gradient(135deg, rgba(15,12,22,.98), rgba(35,21,49,.98));
+      box-shadow: 0 12px 35px rgba(0,0,0,.35);
+    }
+    .game-brand { min-width: 0; display: flex; align-items: center; gap: 10px; color: #fff; }
+    .game-logo { display: grid; place-items: center; width: 40px; height: 40px; flex: 0 0 auto; border-radius: 13px; background: linear-gradient(145deg,#ff67b4,#8b63ff); box-shadow: 0 8px 22px rgba(255,76,160,.28); }
+    .game-title { min-width: 0; }
+    .game-title strong { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 15px; }
+    .game-title span { display: block; margin-top: 2px; color: #b9aec8; font-size: 11px; }
+    .game-actions { display: flex; align-items: center; gap: 8px; flex: 0 0 auto; }
+    .game-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      min-height: 42px;
+      padding: 0 14px;
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 13px;
+      background: rgba(255,255,255,.065);
+      color: #fff;
+      font: inherit;
+      font-size: 12px;
+      font-weight: 750;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform .18s ease, background .18s ease, border-color .18s ease;
+    }
+    .game-btn:hover { transform: translateY(-2px); background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.3); }
+    .game-btn.primary { border: 0; background: linear-gradient(135deg,#ff4ca0,#9b6cff); box-shadow: 0 8px 22px rgba(204,78,190,.25); }
+    .game-frame { width: 100%; height: 100%; border: 0; display: block; background: #08070c; }
+    .load-note { position: fixed; inset: var(--bar-h) 0 0; z-index: 1; display: grid; place-items: center; color: #c8bdd4; font-size: 13px; pointer-events: none; }
+    @media (max-width: 680px) {
+      :root { --bar-h: 58px; }
+      .game-bar { padding-top: 8px; padding-bottom: 8px; }
+      .game-logo { width: 38px; height: 38px; }
+      .game-title span { display: none; }
+      .game-btn { width: 42px; padding: 0; }
+      .game-btn .btn-text { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="game-shell" id="gameShell">
+    <header class="game-bar">
+      <div class="game-brand">
+        <div class="game-logo" aria-hidden="true">✨</div>
+        <div class="game-title">
+          <strong>Nightfall Academy Ultra 5</strong>
+          <span>Living Academy oyun sayfası</span>
+        </div>
+      </div>
+      <nav class="game-actions" aria-label="Oyun sayfası araçları">
+        <a class="game-btn" href="index.html" title="Ana sayfaya dön"><span aria-hidden="true">←</span><span class="btn-text">Ana Sayfa</span></a>
+        <button class="game-btn" type="button" id="reloadGame" title="Oyunu yeniden yükle"><span aria-hidden="true">↻</span><span class="btn-text">Yenile</span></button>
+        <button class="game-btn primary" type="button" id="fullscreenGame" title="Tam ekran"><span aria-hidden="true">⛶</span><span class="btn-text">Tam Ekran</span></button>
+      </nav>
+    </header>
+    <div class="load-note" id="loadNote">Oyun yükleniyor…</div>
+    <iframe
+      id="gameFrame"
+      class="game-frame"
+      src="nightfall-academy-ultra-5/index.html"
+      title="Nightfall Academy Ultra 5 oyunu"
+      allow="fullscreen; clipboard-write"
+      loading="eager"
+    ></iframe>
+  </main>
+  <script>
+    const frame = document.getElementById('gameFrame');
+    const note = document.getElementById('loadNote');
+    frame.addEventListener('load', () => { note.hidden = true; });
+    document.getElementById('reloadGame').addEventListener('click', () => {
+      note.hidden = false;
+      frame.contentWindow.location.reload();
+    });
+    document.getElementById('fullscreenGame').addEventListener('click', async () => {
+      try {
+        if (!document.fullscreenElement) await document.getElementById('gameShell').requestFullscreen();
+        else await document.exitFullscreen();
+      } catch (_) {
+        frame.contentWindow.location.href = frame.src;
+      }
+    });
+  </script>
+</body>
+</html>
