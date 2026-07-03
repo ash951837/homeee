@@ -1,5 +1,24 @@
-const CACHE="nightfall-ultra5-v1";
-const ASSETS=["./","./index.html","./ultra5.css","./ultra5.js","./manifest.webmanifest","./icon-192.png","./icon-512.png"];
-self.addEventListener("install",e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS))));
-self.addEventListener("activate",e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k))))));
-self.addEventListener("fetch",e=>e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request).then(res=>{const copy=res.clone();caches.open(CACHE).then(c=>c.put(e.request,copy));return res}).catch(()=>caches.match("./index.html")))));
+const CACHE_NAME = 'hikayemiz-2026-07-04-iphone-final';
+const CORE = ['./', './index.html', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png', './icons/apple-touch-icon.png', './icons/favicon.svg'];
+self.addEventListener('install', event => {
+  self.skipWaiting();
+  event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(CORE.map(u => new Request(u, {cache:'reload'}))).catch(()=>{}));
+});
+self.addEventListener('activate', event => {
+  event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))));
+  self.clients.claim();
+});
+self.addEventListener('fetch', event => {
+  const req = event.request;
+  if(req.method !== 'GET') return;
+  const url = new URL(req.url);
+  if(req.mode === 'navigate' || url.pathname.endsWith('.html')) {
+    event.respondWith(fetch(req, {cache:'no-store'}).catch(() => caches.match('./index.html')));
+    return;
+  }
+  event.respondWith(fetch(req).then(res => {
+    const copy = res.clone();
+    caches.open(CACHE_NAME).then(cache => cache.put(req, copy)).catch(()=>{});
+    return res;
+  }).catch(() => caches.match(req)));
+});

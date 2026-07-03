@@ -1,43 +1,26 @@
 {
-  "name": "Hİkayemiz",
-  "short_name": "Bizim",
-  "description": "Hİkayemiz - telefona eklenebilir mobil uyumlu PWA uygulaması.",
+  "name": "Hikayemiz",
+  "short_name": "Bizim hikayemiz",
   "id": "./",
-  "start_url": "./",
+  "start_url": "./index.html?v=2026-07-04-iphone-final",
   "scope": "./",
   "display": "standalone",
-  "display_override": [
-    "standalone",
-    "minimal-ui",
-    "browser"
-  ],
-  "orientation": "portrait",
-  "background_color": "#0B1026",
-  "theme_color": "#0B1026",
-  "lang": "tr-TR",
-  "dir": "ltr",
-  "categories": [
-    "lifestyle",
-    "entertainment"
-  ],
+  "orientation": "portrait-primary",
+  "background_color": "#141022",
+  "theme_color": "#141022",
+  "description": "Hikayemiz — mobil uyumlu avatar tasarım oyunu.",
   "icons": [
     {
-      "src": "icons/icon-192.png",
+      "src": "./icons/icon-192.png?v=2026-07-04-iphone-final",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "icons/icon-512.png",
+      "src": "./icons/icon-512.png?v=2026-07-04-iphone-final",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
-    },
-    {
-      "src": "icons/apple-touch-icon.png",
-      "sizes": "180x180",
-      "type": "image/png",
-      "purpose": "any"
     }
   ]
 }
