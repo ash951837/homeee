@@ -2334,296 +2334,6 @@
     .main-title { font-size: clamp(2.25rem, 12vw, 4.2rem); }
   }
 
-
-
-  /* ===== FIXED PREMIUM PAGE NAVIGATION - FINAL ===== */
-  .upgraded-page-nav {
-    position: fixed !important;
-    left: 50% !important;
-    right: auto !important;
-    bottom: max(14px, env(safe-area-inset-bottom)) !important;
-    transform: translateX(-50%) !important;
-    z-index: 260 !important;
-    width: min(680px, calc(100vw - 20px)) !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px !important;
-    padding: 10px !important;
-    border-radius: 28px !important;
-    background: linear-gradient(135deg, rgba(11,16,38,.88), rgba(42,16,48,.78)) !important;
-    border: 1px solid rgba(232,196,168,.42) !important;
-    box-shadow: 0 18px 55px rgba(0,0,0,.42), 0 0 30px rgba(212,160,143,.18) !important;
-    backdrop-filter: blur(18px) saturate(1.15) !important;
-    overflow: visible !important;
-  }
-  .upgraded-page-nav .page-arrow,
-  .upgraded-page-nav .page-status,
-  .upgraded-page-nav .page-drawer-head button,
-  .upgraded-page-nav .page-chip {
-    font-family: var(--font-ui) !important;
-  }
-  .upgraded-page-nav .page-arrow {
-    flex: 0 0 48px;
-    width: 48px;
-    height: 48px;
-    border-radius: 18px;
-    border: 1px solid rgba(232,196,168,.45);
-    background: rgba(245,237,227,.06);
-    color: var(--gold-light);
-    font-size: 2rem;
-    line-height: 1;
-    cursor: pointer;
-    transition: transform .2s ease, background .2s ease, opacity .2s ease;
-  }
-  .upgraded-page-nav .page-arrow:hover:not(:disabled) { transform: translateY(-2px); background: rgba(212,160,143,.16); }
-  .upgraded-page-nav .page-arrow:disabled { opacity: .35; cursor: not-allowed; }
-  .upgraded-page-nav .page-status {
-    min-width: 0;
-    flex: 1 1 auto;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    grid-template-areas: "kicker count" "title count";
-    align-items: center;
-    gap: 2px 12px;
-    text-align: left;
-    padding: 9px 16px;
-    border-radius: 20px;
-    border: 1px solid rgba(212,160,143,.28);
-    background: radial-gradient(circle at 20% 0%, rgba(232,160,180,.17), transparent 48%), rgba(245,237,227,.07);
-    color: var(--cream);
-    cursor: pointer;
-  }
-  .upgraded-page-nav .page-status-kicker { grid-area: kicker; font-size: .62rem; letter-spacing: .16em; text-transform: uppercase; color: rgba(245,237,227,.55); }
-  .upgraded-page-nav #pageStatusTitle { grid-area: title; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 1rem; color: var(--gold-light); }
-  .upgraded-page-nav #pageStatusCount { grid-area: count; font-size: .72rem; color: rgba(245,237,227,.7); border: 1px solid rgba(212,160,143,.25); border-radius: 999px; padding: 5px 8px; }
-  .upgraded-page-nav .page-drawer {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: calc(100% + 12px);
-    max-height: min(58vh, 430px);
-    padding: 12px;
-    border-radius: 26px;
-    border: 1px solid rgba(232,196,168,.42);
-    background: linear-gradient(160deg, rgba(11,16,38,.96), rgba(30,18,56,.94));
-    box-shadow: 0 22px 70px rgba(0,0,0,.55), 0 0 40px rgba(212,160,143,.18);
-    backdrop-filter: blur(20px);
-    opacity: 0;
-    transform: translateY(10px) scale(.98);
-    pointer-events: none;
-    transition: opacity .22s ease, transform .22s ease;
-  }
-  .upgraded-page-nav.drawer-open .page-drawer { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
-  .upgraded-page-nav .page-drawer-head { display:flex; justify-content:space-between; align-items:center; gap:10px; margin-bottom:10px; color:var(--gold-light); font-family:var(--font-display); }
-  .upgraded-page-nav .page-drawer-head button { border:1px solid rgba(212,160,143,.35); background:rgba(245,237,227,.06); color:var(--gold-light); border-radius:999px; padding:7px 12px; cursor:pointer; }
-  .upgraded-page-nav .page-chip-row { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; overflow:auto; max-height:calc(min(58vh, 430px) - 54px); padding-right:3px; }
-  .upgraded-page-nav .page-chip {
-    width: 100%; height: auto; min-height: 42px;
-    border-radius: 14px;
-    border: 1px solid rgba(212,160,143,.22);
-    background: rgba(245,237,227,.055);
-    color: rgba(245,237,227,.82);
-    padding: 8px 9px;
-    font-size: .74rem;
-    line-height: 1.2;
-    text-align: left;
-    cursor: pointer;
-    display:flex;
-    align-items:center;
-    gap:7px;
-    transition: transform .18s ease, border-color .18s ease, background .18s ease;
-  }
-  .upgraded-page-nav .page-chip span { flex:0 0 24px; width:24px; height:24px; display:inline-flex; align-items:center; justify-content:center; border-radius:50%; background:rgba(212,160,143,.13); color:var(--gold-light); font-size:.67rem; }
-  .upgraded-page-nav .page-chip:hover { transform: translateY(-2px); border-color: rgba(232,196,168,.65); background: rgba(212,160,143,.13); }
-  .upgraded-page-nav .page-chip.active { border-color: var(--gold); background: linear-gradient(135deg, rgba(212,160,143,.28), rgba(232,160,180,.16)); box-shadow: 0 0 18px rgba(212,160,143,.22); color: var(--cream); }
-  @media (max-width: 620px) {
-    .upgraded-page-nav { width: calc(100vw - 12px) !important; padding: 8px !important; gap: 7px !important; border-radius: 22px !important; }
-    .upgraded-page-nav .page-arrow { flex-basis: 40px; width: 40px; height: 40px; border-radius: 15px; font-size: 1.65rem; }
-    .upgraded-page-nav .page-status { padding: 7px 10px; border-radius: 17px; }
-    .upgraded-page-nav .page-status-kicker { display: none; }
-    .upgraded-page-nav #pageStatusTitle { font-size: .9rem; }
-    .upgraded-page-nav #pageStatusCount { font-size: .63rem; padding: 4px 7px; }
-    .upgraded-page-nav .page-drawer { left: 2px; right: 2px; bottom: calc(100% + 10px); max-height: 60vh; padding: 10px; border-radius: 22px; }
-    .upgraded-page-nav .page-chip-row { grid-template-columns: repeat(2,minmax(0,1fr)); gap:7px; max-height:calc(60vh - 52px); }
-    .upgraded-page-nav .page-chip { font-size: .7rem; min-height: 40px; padding: 7px; }
-  }
-  @media (max-width: 360px) {
-    .upgraded-page-nav .page-chip-row { grid-template-columns: 1fr; }
-    .upgraded-page-nav .page-arrow { flex-basis: 36px; width:36px; height:36px; }
-  }
-
-
-
-  /* ===== ULTRA LUXURY BOTTOM MENU - SITE THEME MATCH ===== */
-  .luxury-page-nav {
-    position: fixed !important;
-    left: 50% !important;
-    bottom: max(14px, env(safe-area-inset-bottom)) !important;
-    transform: translateX(-50%) !important;
-    z-index: 280 !important;
-    width: min(760px, calc(100vw - 18px)) !important;
-    display: flex;
-    align-items: center;
-    gap: 10px !important;
-    padding: 10px !important;
-    border-radius: 30px !important;
-    background:
-      linear-gradient(135deg, rgba(11,16,38,.82), rgba(30,16,54,.74) 52%, rgba(62,25,60,.70)),
-      radial-gradient(circle at 18% 0%, rgba(232,160,180,.22), transparent 38%);
-    border: 1px solid rgba(232,196,168,.48) !important;
-    box-shadow:
-      0 22px 70px rgba(0,0,0,.50),
-      0 0 42px rgba(212,160,143,.22),
-      inset 0 1px 0 rgba(255,255,255,.14) !important;
-    backdrop-filter: blur(22px) saturate(1.25) !important;
-    -webkit-backdrop-filter: blur(22px) saturate(1.25) !important;
-    overflow: visible !important;
-  }
-  .luxury-page-nav::before {
-    content: '';
-    position: absolute;
-    inset: 1px;
-    border-radius: inherit;
-    border: 1px solid rgba(255,255,255,.08);
-    pointer-events: none;
-  }
-  .luxury-nav-glow {
-    position: absolute;
-    inset: -18px 8%;
-    z-index: -1;
-    background: radial-gradient(ellipse at center, rgba(232,160,180,.28), transparent 70%);
-    filter: blur(16px);
-    opacity: .78;
-    pointer-events: none;
-    animation: luxuryMenuBreath 4.8s ease-in-out infinite;
-  }
-  @keyframes luxuryMenuBreath { 0%,100%{opacity:.45; transform:scale(.98);} 50%{opacity:.85; transform:scale(1.03);} }
-  .luxury-nav-btn {
-    flex: 0 0 50px;
-    width: 50px;
-    height: 50px;
-    border: 1px solid rgba(232,196,168,.45);
-    border-radius: 18px;
-    background: linear-gradient(180deg, rgba(245,237,227,.11), rgba(212,160,143,.08));
-    color: var(--gold-light);
-    font-size: 2.15rem;
-    line-height: .7;
-    cursor: pointer;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,.10), 0 8px 22px rgba(0,0,0,.20);
-    transition: transform .2s ease, background .2s ease, border-color .2s ease, opacity .2s ease;
-  }
-  .luxury-nav-btn:hover:not(:disabled) {
-    transform: translateY(-3px) scale(1.03);
-    border-color: rgba(245,237,227,.72);
-    background: linear-gradient(180deg, rgba(232,196,168,.20), rgba(232,160,180,.12));
-  }
-  .luxury-nav-btn:disabled { opacity:.34; cursor:not-allowed; transform:none; }
-  .luxury-page-card {
-    min-width: 0;
-    flex: 1 1 auto;
-    height: 54px;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    grid-template-areas: "kicker count" "title hint";
-    align-items: center;
-    gap: 1px 12px;
-    padding: 8px 17px;
-    border-radius: 22px;
-    border: 1px solid rgba(212,160,143,.34);
-    background:
-      radial-gradient(circle at 22% 0%, rgba(232,160,180,.20), transparent 42%),
-      linear-gradient(180deg, rgba(245,237,227,.105), rgba(245,237,227,.045));
-    color: var(--cream);
-    text-align: left;
-    cursor: pointer;
-    font-family: var(--font-ui) !important;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,.10);
-    transition: transform .2s ease, border-color .2s ease, background .2s ease;
-  }
-  .luxury-page-card:hover { transform: translateY(-2px); border-color: rgba(232,196,168,.72); background: rgba(245,237,227,.10); }
-  .luxury-kicker { grid-area:kicker; font-size:.61rem; letter-spacing:.18em; text-transform:uppercase; color:rgba(245,237,227,.55); }
-  #pageStatusTitle { grid-area:title; min-width:0; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; font-size:1.02rem; color:var(--gold-light); text-shadow:0 0 18px rgba(212,160,143,.32); }
-  .luxury-count { grid-area:count; justify-self:end; border:1px solid rgba(212,160,143,.34); border-radius:999px; padding:4px 9px; font-size:.70rem; color:rgba(245,237,227,.78); background:rgba(11,16,38,.24); }
-  .luxury-open-hint { grid-area:hint; justify-self:end; font-size:.68rem; color:rgba(232,196,168,.78); letter-spacing:.08em; }
-  .luxury-page-drawer {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: calc(100% + 13px);
-    max-height: min(62vh, 470px);
-    padding: 14px;
-    border-radius: 28px;
-    border: 1px solid rgba(232,196,168,.46);
-    background:
-      radial-gradient(circle at 18% 0%, rgba(232,160,180,.20), transparent 35%),
-      linear-gradient(160deg, rgba(11,16,38,.97), rgba(24,18,52,.96) 58%, rgba(42,16,48,.95));
-    box-shadow: 0 26px 90px rgba(0,0,0,.62), 0 0 48px rgba(212,160,143,.20), inset 0 1px 0 rgba(255,255,255,.10);
-    backdrop-filter: blur(24px) saturate(1.25);
-    -webkit-backdrop-filter: blur(24px) saturate(1.25);
-    opacity: 0;
-    transform: translateY(12px) scale(.985);
-    pointer-events: none;
-    transition: opacity .24s ease, transform .24s ease;
-  }
-  .luxury-page-nav.drawer-open .luxury-page-drawer { opacity:1; transform:translateY(0) scale(1); pointer-events:auto; }
-  .luxury-drawer-head { display:flex; align-items:center; justify-content:space-between; gap:14px; margin-bottom:12px; padding:0 2px; }
-  .luxury-drawer-head span { display:block; font-family:var(--font-display); color:var(--gold-light); font-size:1.16rem; }
-  .luxury-drawer-head small { display:block; margin-top:2px; font-family:var(--font-ui); font-size:.68rem; color:rgba(245,237,227,.50); letter-spacing:.08em; }
-  .luxury-drawer-head button {
-    width:36px; height:36px; border-radius:50%; border:1px solid rgba(212,160,143,.42);
-    background:rgba(245,237,227,.07); color:var(--gold-light); cursor:pointer; font-family:var(--font-ui); transition:.2s ease;
-  }
-  .luxury-drawer-head button:hover { background:rgba(212,160,143,.18); transform:rotate(6deg) scale(1.04); }
-  .luxury-chip-grid { display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:9px; overflow:auto; max-height:calc(min(62vh, 470px) - 58px); padding:2px 4px 4px 1px; scrollbar-width:thin; scrollbar-color:rgba(212,160,143,.45) transparent; }
-  .luxury-chip {
-    width:100% !important;
-    height:auto !important;
-    min-height:46px;
-    border-radius:16px !important;
-    border:1px solid rgba(212,160,143,.24) !important;
-    background:linear-gradient(180deg, rgba(245,237,227,.07), rgba(245,237,227,.035)) !important;
-    color:rgba(245,237,227,.84) !important;
-    padding:8px 9px !important;
-    display:flex !important;
-    align-items:center;
-    gap:8px;
-    text-align:left;
-    cursor:pointer;
-    font-family:var(--font-ui) !important;
-    font-size:.73rem;
-    line-height:1.18;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,.06);
-    transition: transform .18s ease, border-color .18s ease, background .18s ease, box-shadow .18s ease;
-  }
-  .luxury-chip .chip-num { flex:0 0 27px; width:27px; height:27px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; background:rgba(212,160,143,.14); color:var(--gold-light); font-size:.68rem; box-shadow:inset 0 0 0 1px rgba(232,196,168,.16); }
-  .luxury-chip .chip-text { min-width:0; overflow:hidden; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; }
-  .luxury-chip:hover { transform:translateY(-3px); border-color:rgba(232,196,168,.70) !important; background:linear-gradient(180deg, rgba(212,160,143,.17), rgba(232,160,180,.09)) !important; }
-  .luxury-chip.active { border-color:var(--gold) !important; color:var(--cream) !important; background:linear-gradient(135deg, rgba(212,160,143,.30), rgba(232,160,180,.18), rgba(201,168,232,.10)) !important; box-shadow:0 0 22px rgba(212,160,143,.27), inset 0 1px 0 rgba(255,255,255,.12); }
-  .luxury-chip.active .chip-num { background:var(--gold); color:#1a0a05; font-weight:800; }
-  #comfortQuickBtn, #dailyNoteBtn { bottom: calc(max(14px, env(safe-area-inset-bottom)) + 76px) !important; }
-  .daily-note-popup { bottom: calc(max(14px, env(safe-area-inset-bottom)) + 132px) !important; }
-  @media (max-width: 720px) {
-    .luxury-page-nav { width:calc(100vw - 12px) !important; padding:8px !important; gap:7px !important; border-radius:24px !important; }
-    .luxury-nav-btn { flex-basis:42px; width:42px; height:42px; border-radius:16px; font-size:1.75rem; }
-    .luxury-page-card { height:48px; padding:7px 11px; border-radius:18px; grid-template-columns:1fr auto; grid-template-areas:"title count" "hint hint"; }
-    .luxury-kicker { display:none; }
-    #pageStatusTitle { font-size:.92rem; }
-    .luxury-count { font-size:.63rem; padding:3px 7px; }
-    .luxury-open-hint { justify-self:start; font-size:.60rem; }
-    .luxury-page-drawer { left:2px; right:2px; bottom:calc(100% + 10px); max-height:64vh; padding:11px; border-radius:24px; }
-    .luxury-chip-grid { grid-template-columns:repeat(2, minmax(0,1fr)); gap:7px; max-height:calc(64vh - 56px); }
-    .luxury-chip { min-height:42px; font-size:.69rem; padding:7px !important; border-radius:14px !important; }
-    .luxury-chip .chip-num { flex-basis:24px; width:24px; height:24px; }
-  }
-  @media (max-width: 360px) {
-    .luxury-chip-grid { grid-template-columns:1fr; }
-    .luxury-nav-btn { flex-basis:38px; width:38px; height:38px; }
-    .luxury-page-card { padding:6px 9px; }
-  }
-
-
-
   /* ===== PREMIUM ROMANTIC ADDITIONS V5 ===== */
   .gallery-grid.premium-memory-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -3176,7 +2886,7 @@ body{line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimize
 .section.hidden{display:none!important}
 button,input,select,textarea{touch-action:manipulation}
 button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid rgba(245,198,214,.62);outline-offset:3px}
-.progress-nav,.luxury-page-nav,.mobile-story-dock,.bottom-nav,.mobile-bottom-nav,.mobile-nav,.quick-nav,.floating-nav,.tab-bar,.page-bar{display:none!important;visibility:hidden!important;pointer-events:none!important}
+.progress-nav,.mobile-story-dock,.bottom-nav,.mobile-bottom-nav,.mobile-nav,.quick-nav,.floating-nav,.tab-bar,.page-bar{display:none!important;visibility:hidden!important;pointer-events:none!important}
 
 .side-menu-toggle{position:fixed;top:max(14px,env(safe-area-inset-top));left:max(14px,env(safe-area-inset-left));z-index:10002;display:none;align-items:center;gap:7px;min-height:44px;padding:10px 15px;border:1px solid rgba(212,160,143,.46);border-radius:999px;background:rgba(11,16,38,.92);color:var(--gold-light);font:700 .8rem var(--font-ui);cursor:pointer;backdrop-filter:blur(14px);box-shadow:0 12px 32px rgba(0,0,0,.32)}
 body.site-unlocked .side-menu-toggle{display:inline-flex}
@@ -3287,10 +2997,11 @@ body:not(.site-unlocked) .side-page-list,body:not(.site-unlocked) .side-menu-bac
 <link rel="stylesheet" href="./pwa.css?v=2026-07-04-index-oyun-v4">
 <!-- /PWA AYARLARI -->
 
-  <link rel="stylesheet" href="./assets/smooth-mobile.css?v=2026-07-04-mobile-ultra">
-<link rel="stylesheet" href="./assets/premium-v2.css?v=2026-07-04-v2">
+  <link rel="stylesheet" href="./assets/smooth-mobile.css?v=2026-07-04-v12-no-toggle">
+<link rel="stylesheet" href="./assets/premium-v2.css?v=2026-07-04-v12-no-toggle">
 <link rel="stylesheet" href="./assets/index-v6.css?v=2026-07-04-index-v8-no-panel">
-<link rel="stylesheet" href="./assets/index-v7.css?v=2026-07-04-index-v8-native-scroll">
+<link rel="stylesheet" href="./assets/index-v7.css?v=2026-07-04-v12-no-toggle">
+<link rel="stylesheet" href="./assets/site-mobile-v13.css?v=2026-07-04-v13-mobile-clean">
 </head>
 <body>
 <div id="main" tabindex="-1"></div>
@@ -3380,66 +3091,6 @@ body:not(.site-unlocked) .side-page-list,body:not(.site-unlocked) .side-menu-bac
   <button class="mini-play-btn" id="miniPlayBtn" onclick="toggleMusic()">▶</button>
 </div>
 
-<!-- Progress Nav -->
-
-  <button class="luxury-nav-btn" type="button" id="pagePrevBtn" onclick="goPrevPage()" aria-label="Önceki sayfa">‹</button>
-
-  <button class="luxury-page-card" type="button" id="pageStatusBtn" onclick="togglePageDrawer()" aria-expanded="false" aria-controls="pageDrawer">
-
-    <strong id="pageStatusTitle">Yıldızlı Gece</strong>
-    <span class="luxury-count" id="pageStatusCount">1 / 34</span>
-    <span class="luxury-open-hint">Sayfalar ✦</span>
-  </button>
-
-  <button class="luxury-nav-btn" type="button" id="pageNextBtn" onclick="goNextPage()" aria-label="Sonraki sayfa">›</button>
-
-  <div class="luxury-page-drawer" id="pageDrawer">
-    <div class="luxury-drawer-head">
-      <div>
-        <span>Tüm Sayfalar</span>
-        <small>Gitmek istediğin bölümü seç</small>
-      </div>
-      <button type="button" onclick="togglePageDrawer(false)" aria-label="Menüyü kapat">✕</button>
-    </div>
-    <div class="luxury-chip-grid">
-      <button class="progress-dot luxury-chip" type="button" data-page="0" onclick="goToSection(0)" title="Şifre"><span class="chip-num">🔒</span><span class="chip-text">Şifre</span></button>
-      <button class="progress-dot luxury-chip" type="button" data-page="1" onclick="goToSection(1)" title="Yıldızlı Gece"><span class="chip-num">1</span><span class="chip-text">Yıldızlı Gece</span></button>
-      <button class="progress-dot luxury-chip" type="button" data-page="2" onclick="goToSection(2)" title="Kızdığında Buraya Tıkla"><span class="chip-num">2</span><span class="chip-text">Kızdığında Buraya Tıkla</span></button>
-      <button class="progress-dot luxury-chip" type="button" data-page="3" onclick="goToSection(3)" title="Müzik"><span class="chip-num">3</span><span class="chip-text">Müzik</span></button>
-      <button class="progress-dot luxury-chip" type="button" data-page="4" onclick="goToSection(4)" title="Kalp Yağmuru"><span class="chip-num">4</span><span class="chip-text">Kalp Yağmuru</span></button>
-      <button class="progress-dot luxury-chip" type="button" data-page="5" onclick="goToSection(5)" title="Anılarımız"><span class="chip-num">5</span><span class="chip-text">Anılarımız</span></button>
-      <button class="progress-dot luxury-chip" type="button" data-page="6" onclick="goToSection(6)" title="Hafıza Oyunu"><span class="chip-num">6</span><span class="chip-text">Hafıza Oyunu</span></button>
-      <button class="progress-dot luxury-chip" type="button" data-page="7" onclick="goToSection(7)" title="Puzzle"><span class="chip-num">7</span><span class="chip-text">Puzzle</span></button>
-      <button class="progress-dot luxury-chip" type="button" data-page="8" onclick="goToSection(8)" title="Kalp Yakala"><span class="chip-num">8</span><span class="chip-text">Kalp Yakala</span></button>
-      <button class="progress-dot luxury-chip" type="button" data-page="9" onclick="goToSection(9)" title="Ördek Uçur"><span class="chip-num">9</span><span class="chip-text">Ördek Uçur</span></button>
-      <button class="progress-dot luxury-chip" type="button" data-page="10" onclick="goToSection(10)" title="Yazı Tura"><span class="chip-num">10</span><span class="chip-text">Yazı Tura</span></button>
-      <button class="progress-dot luxury-chip" type="button" data-page="11" onclick="goToSection(11)" title="Kapılar"><span class="chip-num">11</span><span class="chip-text">Kapılar</span></button>
-      <button class="progress-dot luxury-chip" type="button" data-page="12" onclick="goToSection(12)" title="Dünya"><span class="chip-num">12</span><span class="chip-text">Dünya</span></button>
-      <button class="progress-dot luxury-chip" type="button" data-page="13" onclick="goToSection(13)" title="Aşk Testi"><span class="chip-num">13</span><span class="chip-text">Aşk Testi</span></button>
-      <button class="progress-dot luxury-chip" type="button" data-page="14" onclick="goToSection(14)" title="100 Sebep"><span class="chip-num">14</span><span class="chip-text">100 Sebep</span></button>
-      <button class="progress-dot luxury-chip" type="button" data-page="15" onclick="goToSection(15)" title="Şu An Neredeyiz"><span class="chip-num">15</span><span class="chip-text">Şu An Neredeyiz</span></button>
-      <button class="progress-dot luxury-chip" type="button" data-page="16" onclick="goToSection(16)" title="Zaman Çizgimiz"><span class="chip-num">16</span><span class="chip-text">Zaman Çizgimiz</span></button>
-      <button class="progress-dot luxury-chip" type="button" data-page="17" onclick="goToSection(17)" title="Kum Saati"><span class="chip-num">17</span><span class="chip-text">Kum Saati</span></button>
-      <button class="progress-dot luxury-chip" type="button" data-page="18" onclick="goToSection(18)" title="Buradayım"><span class="chip-num">18</span><span class="chip-text">Buradayım</span></button>
-      <button class="progress-dot luxury-chip" type="button" data-page="19" onclick="goToSection(19)" title="Mektup"><span class="chip-num">19</span><span class="chip-text">Mektup</span></button>
-      <button class="progress-dot luxury-chip" type="button" data-page="20" onclick="goToSection(20)" title="Sana Söz Veriyorum"><span class="chip-num">20</span><span class="chip-text">Sana Söz Veriyorum</span></button>
-      <button class="progress-dot luxury-chip" type="button" data-page="21" onclick="goToSection(21)" title="Gizli Bahçe"><span class="chip-num">21</span><span class="chip-text">Gizli Bahçe</span></button>
-      <button class="progress-dot luxury-chip" type="button" data-page="22" onclick="goToSection(22)" title="Göğe Mesaj"><span class="chip-num">22</span><span class="chip-text">Göğe Mesaj</span></button>
-      <button class="progress-dot luxury-chip" type="button" data-page="23" onclick="goToSection(23)" title="Randevu Çarkı"><span class="chip-num">23</span><span class="chip-text">Randevu Çarkı</span></button>
-      <button class="progress-dot luxury-chip" type="button" data-page="24" onclick="goToSection(24)" title="Aşk Sarayı"><span class="chip-num">24</span><span class="chip-text">Aşk Sarayı</span></button>
-      <button class="progress-dot luxury-chip" type="button" data-page="25" onclick="goToSection(25)" title="Anı Kavanozu"><span class="chip-num">25</span><span class="chip-text">Anı Kavanozu</span></button>
-      <button class="progress-dot luxury-chip" type="button" data-page="26" onclick="goToSection(26)" title="Sanal Buket"><span class="chip-num">26</span><span class="chip-text">Sanal Buket</span></button>
-      <button class="progress-dot luxury-chip" type="button" data-page="27" onclick="goToSection(27)" title="Geleceğe Mektup"><span class="chip-num">27</span><span class="chip-text">Geleceğe Mektup</span></button>
-      <button class="progress-dot luxury-chip" type="button" data-page="28" onclick="goToSection(28)" title="Bizim Filmimiz"><span class="chip-num">28</span><span class="chip-text">Bizim Filmimiz</span></button>
-      <button class="progress-dot luxury-chip" type="button" data-page="29" onclick="goToSection(29)" title="Yıldız Sözleri"><span class="chip-num">29</span><span class="chip-text">Yıldız Sözleri</span></button>
-      <button class="progress-dot luxury-chip" type="button" data-page="30" onclick="goToSection(30)" title="Kraliyet Galaksisi"><span class="chip-num">30</span><span class="chip-text">Kraliyet Galaksisi</span></button>
-      <button class="progress-dot luxury-chip" type="button" data-page="31" onclick="goToSection(31)" title="Aşk Kütüphanesi"><span class="chip-num">31</span><span class="chip-text">Aşk Kütüphanesi</span></button>
-      <button class="progress-dot luxury-chip" type="button" data-page="32" onclick="goToSection(32)" title="Dilek Bestesi"><span class="chip-num">32</span><span class="chip-text">Dilek Bestesi</span></button>
-      <button class="progress-dot luxury-chip" type="button" data-page="33" onclick="goToSection(33)" title="Altın Bilet"><span class="chip-num">33</span><span class="chip-text">Altın Bilet</span></button>
-      <button class="progress-dot luxury-chip" type="button" data-page="34" onclick="goToSection(34)" title="Son"><span class="chip-num">34</span><span class="chip-text">Son</span></button>
-    </div>
-  </div>
-</div>
 <!-- Floating comfort button: always reachable -->
 <button class="mini-play-btn" id="comfortQuickBtn" title="Kendini kötü hissediyorsan tıkla" onclick="goToSection(21)"
   style="position:fixed; bottom:24px; left:20px; z-index:50; background:rgba(11,16,38,0.8); border:1px solid rgba(212,160,143,0.3); border-radius:50%; width:46px; height:46px; font-size:1.3rem; display:none; align-items:center; justify-content:center;">🧸</button>
@@ -3909,11 +3560,6 @@ body:not(.site-unlocked) .side-page-list,body:not(.site-unlocked) .side-menu-bac
     scroll-snap-align: center;
   }
   .mobile-story-dock { display:grid; }
-  .progress-nav.luxury-page-nav { max-width: calc(100vw - 16px); bottom: max(8px, env(safe-area-inset-bottom)); }
-  .luxury-page-card { min-width: 0; }
-  .luxury-kicker, .luxury-open-hint { display:none; }
-  #pageStatusTitle { font-size: .88rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 42vw; display:block; }
-  .luxury-page-drawer { max-height: min(58vh, 520px); }
 }
 @media (max-width: 420px) {
   .blog-card { flex-basis: 88%; }
@@ -7154,26 +6800,8 @@ function renderPageBlog() {
   `).join('');
   feed.dataset.rendered = '1';
 }
-// ===== LUXURY PAGE MENU CONTROL =====
-const PREMIUM_PAGE_NAMES = ['Şifre', 'Yıldızlı Gece', 'Kızdığında Tıkla', 'Müzik', 'Kalp Yağmuru', 'Anılarımız', 'Mutluluk Köşesi', 'İltifat Kutusu', 'Mutlu Etme Planım', 'Hafıza Oyunu', 'Puzzle', 'Kalp Yakala', 'Ördek Uçur', 'Yazı Tura', 'Kapılar', 'Dünya', 'Aşk Testi', '100 Sebep', 'Şu An Neredeyiz', 'Zaman Çizgimiz', 'Kum Saati', 'Buradayım', 'Mektup', 'Sana Söz', 'Gizli Bahçe', 'Göğe Mesaj', 'Randevu Çarkı', 'Aşk Sarayı', 'Anı Kavanozu', 'Sanal Buket', 'Geleceğe Mektup', 'Bizim Filmimiz', 'Yıldız Sözleri', 'Kraliyet Galaksisi', 'Aşk Kütüphanesi', 'Dilek Bestesi', 'Altın Bilet', 'Bugünün Sürprizi', 'Kalp Ritmi', 'Mutlu Etme Görevleri', 'Tatlı Not Duvarı', 'Kraliçe Sertifikası', 'Sanal Sefa', 'Kalp Falı', 'Hayal Randevusu', 'Sanal Sarılma', 'Zaman Kapsülü', 'Sevgi Takvimi', 'Öpücük Mührü', 'Hikaye Akışı', 'Sanal Bildirim', 'Son'];
 
-function rebuildLuxuryMenu() {
-  const grid = document.querySelector('.luxury-chip-grid');
-  if (!grid) return;
-  grid.innerHTML = PREMIUM_PAGE_NAMES.map((name, i) => {
-    const num = i === 0 ? '🔒' : i;
-    return `<button class="progress-dot luxury-chip" type="button" data-page="${i}" onclick="goToSection(${i})" title="${name}"><span class="chip-num">${num}</span><span class="chip-text">${name}</span></button>`;
-  }).join('');
-}
-
-function togglePageDrawer(force) {
-  const nav = document.getElementById('progressNav');
-  const btn = document.getElementById('pageStatusBtn');
-  if (!nav) return;
-  const open = typeof force === 'boolean' ? force : !nav.classList.contains('drawer-open');
-  nav.classList.toggle('drawer-open', open);
-  if (btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-}
+// ===== SIMPLE PAGE NAV HELPERS (drawer removed) =====
 function goPrevPage() {
   if (currentSection > 1) transitionTo(currentSection - 1);
 }
@@ -7181,49 +6809,15 @@ function goNextPage() {
   if (currentSection < TOTAL_SECTIONS - 1) transitionTo(currentSection + 1);
 }
 (function(){
-  rebuildLuxuryMenu();
-  const oldGoToSection = window.goToSection;
-  window.goToSection = function(idx) {
-    togglePageDrawer(false);
-    if (typeof oldGoToSection === 'function') return oldGoToSection(idx);
-  };
-  const oldTransitionTo = window.transitionTo;
-  window.transitionTo = function(idx) {
-    togglePageDrawer(false);
-    if (typeof oldTransitionTo === 'function') return oldTransitionTo(idx);
-  };
   const oldUpdateProgressDots = window.updateProgressDots;
   window.updateProgressDots = function() {
     if (typeof oldUpdateProgressDots === 'function') oldUpdateProgressDots();
-    const title = document.getElementById('pageStatusTitle');
-    const count = document.getElementById('pageStatusCount');
-    const prev = document.getElementById('pagePrevBtn');
-    const next = document.getElementById('pageNextBtn');
-    const shownIndex = Math.max(1, currentSection);
-    const total = Math.max(1, TOTAL_SECTIONS - 1);
     if (SITE_SECTIONS[currentSection] === 'aiCloneSection') initAiClone();
     if (SITE_SECTIONS[currentSection] === 'notificationSection') startLoveNotificationSchedule();
-    if (title) title.textContent = PREMIUM_PAGE_NAMES[currentSection] || 'Sayfa';
-    if (count) count.textContent = `${shownIndex} / ${total}`;
-    if (prev) prev.disabled = currentSection <= 1;
-    if (next) next.disabled = currentSection >= TOTAL_SECTIONS - 1;
     const dock = document.getElementById('mobileStoryDock');
     if (dock) dock.style.display = currentSection > 0 ? '' : 'none';
-    document.querySelectorAll('.luxury-page-nav .progress-dot').forEach((dot, i) => {
-      dot.classList.toggle('active', i === currentSection);
-      if (i === currentSection && document.getElementById('progressNav')?.classList.contains('drawer-open')) {
-        dot.scrollIntoView({block:'nearest', inline:'nearest'});
-      }
-    });
   };
-  document.addEventListener('click', function(e){
-    const nav = document.getElementById('progressNav');
-    if (nav && nav.classList.contains('drawer-open') && !nav.contains(e.target)) togglePageDrawer(false);
-  });
-  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') togglePageDrawer(false); });
-  window.addEventListener('resize', function(){ if (typeof window.updateProgressDots === 'function') window.updateProgressDots(); });
 })();
-
 
 
 // ===== SANAL BILDIRIMLER =====
@@ -7587,11 +7181,7 @@ document.addEventListener('DOMContentLoaded', startLoveNotificationSchedule);
     .door-grid { gap: 14px; }
     .memory-grid { width: min(92vw, 360px); gap: 8px; }
     .puzzle-board, #gameCanvas { width: min(92vw, 330px) !important; height: min(92vw, 330px) !important; }
-    .progress-nav.luxury-page-nav { left: 10px; right: 10px; bottom: calc(10px + var(--safe-bottom)); transform: none; width: auto; max-width: none; padding: 8px; gap: 8px; border-radius: 22px; }
-    .luxury-page-card { flex: 1; min-width: 0; }
-    .luxury-page-card strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-    .luxury-page-drawer { left: 0 !important; right: 0 !important; width: 100% !important; max-height: 55svh; overflow: auto; }
-    .music-player-mini { top: calc(10px + var(--safe-top)); right: 10px; max-width: calc(100vw - 20px); }
+.music-player-mini { top: calc(10px + var(--safe-top)); right: 10px; max-width: calc(100vw - 20px); }
     .daily-note-popup { left: 12px; right: 12px; bottom: calc(76px + var(--safe-bottom)); max-width: none; }
     .gallery-lightbox { padding: 14px; }
     .gallery-lightbox-nav { width: 42px; height: 42px; background: rgba(11,16,38,.55); }
@@ -7636,21 +7226,6 @@ document.addEventListener('DOMContentLoaded', startLoveNotificationSchedule);
 /* ===== PROFESSIONAL STABILITY FIX: page routing + mobile safe guards ===== */
 (function(){
   function safe(id){ return document.getElementById(id); }
-  function syncNavigationLabels(){
-    try {
-      if (!Array.isArray(window.PREMIUM_PAGE_NAMES) && typeof PREMIUM_PAGE_NAMES === 'undefined') return;
-    } catch(e) { return; }
-    const names = (typeof PREMIUM_PAGE_NAMES !== 'undefined') ? PREMIUM_PAGE_NAMES : [];
-    const sections = (typeof SITE_SECTIONS !== 'undefined') ? SITE_SECTIONS : [];
-    const grid = document.querySelector('.luxury-chip-grid');
-    if (grid && sections.length) {
-      grid.innerHTML = sections.map(function(id, i){
-        const title = names[i] || (safe(id)?.querySelector('.section-title,.main-title,.comfort-title,.finale-title')?.textContent || 'Sayfa');
-        const num = i === 0 ? '🔒' : i;
-        return '<button class="progress-dot luxury-chip" type="button" data-page="'+i+'" onclick="goToSection('+i+')" title="'+title.replace(/"/g,'&quot;')+'"><span class="chip-num">'+num+'</span><span class="chip-text">'+title+'</span></button>';
-      }).join('');
-    }
-  }
   function removeBrokenPages(){
     if (typeof SITE_SECTIONS === 'undefined') return;
     for (let i = SITE_SECTIONS.length - 1; i >= 0; i--) {
@@ -7660,7 +7235,6 @@ document.addEventListener('DOMContentLoaded', startLoveNotificationSchedule);
     }
   }
   window.addEventListener('DOMContentLoaded', function(){
-    syncNavigationLabels();
     removeBrokenPages();
     if (typeof window.updateProgressDots === 'function') window.updateProgressDots();
   });
@@ -7980,9 +7554,10 @@ document.addEventListener('DOMContentLoaded', startLoveNotificationSchedule);
 window.__INDEX_V8_NATIVE_SCROLL__ = true;
 document.documentElement.classList.add('index-v8-native-scroll');
 </script>
-<script src="./assets/smooth-mobile.js?v=2026-07-04-mobile-ultra" defer></script>
-<script src="./assets/premium-v2.js?v=2026-07-04-v2" defer></script>
+<script src="./assets/smooth-mobile.js?v=2026-07-04-v12-no-toggle" defer></script>
+<script src="./assets/premium-v2.js?v=2026-07-04-v12-no-toggle" defer></script>
 <script src="./assets/index-v6.js?v=2026-07-04-index-v8-no-panel" defer></script>
-<script src="./assets/index-v7.js?v=2026-07-04-index-v8-native-scroll" defer></script>
+<script src="./assets/index-v7.js?v=2026-07-04-v12-no-toggle" defer></script>
+<script src="./assets/site-mobile-v13.js?v=2026-07-04-v13-mobile-clean" defer></script>
 </body>
 </html>

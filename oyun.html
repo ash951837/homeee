@@ -33,6 +33,15 @@ body.u5-high-contrast{--text:#fff;--muted:#e2d8eb}.u5-high-contrast .u5-card,.u5
 @media(max-width:1100px){.u5-shell{grid-template-columns:78px 1fr}.u5-logo>div:not(.u5-logo-mark),.u5-nav button b,.u5-sidebar-foot{display:none}.u5-nav button{grid-template-columns:1fr;justify-items:center}.u5-grid{grid-template-columns:repeat(2,1fr)}.collection-grid{grid-template-columns:repeat(4,1fr)}.dorm-layout,.wardrobe-layout,.care-layout,.runway-layout,.photo-layout{grid-template-columns:1fr}.wardrobe-preview{position:relative}.academy-map{min-height:700px}}
 @media(max-width:680px){.u5-shell{display:block}.u5-sidebar{position:fixed;z-index:4;left:0;right:0;bottom:0;height:74px;padding:7px;border:0;border-top:1px solid rgba(255,255,255,.12)}.u5-logo,.u5-sidebar-foot{display:none}.u5-nav{display:flex;overflow-x:auto}.u5-nav button{flex:0 0 68px;min-height:58px;padding:5px}.u5-main{height:calc(100% - 70px)}.u5-topbar{padding:10px 12px}.u5-title p{display:none}.u5-profile .u5-currency:nth-child(n+3){display:none}.u5-content{padding:12px 12px 90px}.u5-hero{padding:20px;min-height:245px}.u5-grid,.u5-grid.three,.u5-grid.two{grid-template-columns:1fr}.u5-stat-row{grid-template-columns:repeat(2,1fr)}.academy-map{min-height:760px}.map-node{width:100px}.map-node.n1{left:3%;top:15%}.map-node.n2{right:3%;top:15%}.map-node.n3{left:2%;top:42%}.map-node.n4{right:2%;top:42%}.map-node.n5{left:5%;bottom:12%}.map-node.n6{right:5%;bottom:12%}.map-node.n7{top:3%}.map-node.n8{bottom:1%}.dorm-preview,.duck-sanctuary,.runway-stage,.photo-canvas{min-height:460px}.item-row{grid-template-columns:repeat(3,1fr)}.care-actions{grid-template-columns:repeat(2,1fr)}.collection-grid{grid-template-columns:repeat(3,1fr)}.story-card{grid-template-columns:46px 1fr}.story-card>.u5-btn{grid-column:1/-1}.dialogue-character{font-size:100px;right:1%;bottom:175px}.color-row{grid-template-columns:1fr}.wardrobe-layout{display:block}.wardrobe-preview{min-height:520px;margin-bottom:12px}}
 
+
+/* V11: Efekt modu tamamen kapalı. Canlı/parıltılı mod butonu silindi. */
+body.hk-no-effects .stage-card.alive #auraBackLayer,
+body.hk-no-effects .stage-card.alive #auraFrontLayer,
+body.hk-no-effects #auraBackLayer,
+body.hk-no-effects #auraFrontLayer{animation:none!important}
+body.hk-no-effects .stage-card::after{opacity:.025!important;mix-blend-mode:normal!important}
+body.hk-no-effects *{scroll-behavior:auto}
+
 </style>
   <style>
     :root {
@@ -538,7 +547,7 @@ body.u5-high-contrast{--text:#fff;--muted:#e2d8eb}.u5-high-contrast .u5-card,.u5
     }
     @media (prefers-reduced-motion:reduce){ *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important} }
 
-    /* ULTRA 5.0 — LIVING ACADEMY */
+    /* ULTRA 5.0 · V10 — LIVING ACADEMY */
     :root { --duck:#ffd83d; --duck-orange:#ff9b31; --cyan:#6ee7f2; }
     .version-pill{background:linear-gradient(135deg,#ffd83d,#ff72bb)!important;color:#24140a!important;box-shadow:0 0 18px rgba(255,216,61,.24)}
     .pet-hud{position:absolute;right:18px;bottom:104px;z-index:12;display:none;min-width:178px;padding:11px 12px;border:1px solid rgba(255,216,61,.28);border-radius:17px;background:rgba(13,10,18,.74);backdrop-filter:blur(17px);box-shadow:0 15px 42px rgba(0,0,0,.32)}
@@ -714,7 +723,7 @@ input[type="range"]{accent-color:var(--pro-accent)}
 .stage-controls{right:14px;bottom:14px;gap:6px}
 .stage-control{width:39px;height:39px;border:1px solid var(--pro-line);border-radius:11px;background:rgba(12,12,16,.72);box-shadow:none;font-size:15px}
 .stage-control:hover{transform:none;background:rgba(255,255,255,.09);border-color:var(--pro-line-strong)}
-#motionBtn,#fullscreenBtn{display:none}
+#fullscreenBtn{display:none}
 .challenge-hud.hidden,.pet-hud,.filter-badge{display:none!important}
 .companion-speech{font-size:10px}
 .pro-advanced{
@@ -1265,16 +1274,6 @@ body.hk-redesign.hk-calm{
   --hk-blue:#d7fbff;
 }
 body.hk-redesign.hk-calm .topbar::before{opacity:.26;}
-body.hk-redesign .hk-theme-toggle{
-  min-height:42px;
-  padding:0 12px;
-  border-radius:999px;
-  border:1px solid rgba(255,255,255,.13);
-  background:rgba(255,255,255,.06);
-  cursor:pointer;
-  font-size:11px;
-  font-weight:900;
-}
 @media(max-width:1180px){
   body.hk-redesign .workspace{grid-template-columns:minmax(320px,.85fr) minmax(480px,1.15fr);} 
   body.hk-redesign .stage-card{top:100px;}
@@ -1315,7 +1314,6 @@ body.hk-redesign .hk-theme-toggle{
     box-shadow:0 18px 55px rgba(0,0,0,.50);
     backdrop-filter:blur(22px);
   }
-  body.hk-redesign .toolbar .hk-theme-toggle{display:none;}
   body.hk-redesign .toolbar>.tool-btn,
   body.hk-redesign .toolbar>.primary-btn,
   body.hk-redesign .site-back-btn,
@@ -1388,8 +1386,9 @@ body.hk-redesign .hk-theme-toggle{
 <link rel="stylesheet" href="./pwa.css?v=2026-07-04-index-oyun-v4">
 <!-- /PWA AYARLARI -->
 
-  <link rel="stylesheet" href="./assets/smooth-mobile.css?v=2026-07-04-mobile-ultra">
-<link rel="stylesheet" href="./assets/premium-v2.css?v=2026-07-04-v9">
+  <link rel="stylesheet" href="./assets/smooth-mobile.css?v=2026-07-04-v12-no-toggle">
+<link rel="stylesheet" href="./assets/premium-v2.css?v=2026-07-04-v12-no-toggle">
+<link rel="stylesheet" href="./assets/site-mobile-v13.css?v=2026-07-04-v13-mobile-clean">
 
 
 <style id="active-state-fix-v4">
@@ -1499,6 +1498,17 @@ body .u5-nav button.active {
 @media (prefers-reduced-motion:reduce){.v9-action,.v9-score-track i{transition:none!important}}
 </style>
 
+
+
+<style id="game-v10-content-style">
+/* Game V10 Lookbook Expansion — only main costume/editor content, no mini games */
+.v10-lookbook-board{margin:0 0 14px;padding:14px;border:1px solid rgba(255,255,255,.12);border-radius:22px;background:linear-gradient(145deg,rgba(255,114,187,.08),rgba(103,239,194,.045));box-shadow:0 18px 46px rgba(0,0,0,.16)}
+.v10-lookbook-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:12px}.v10-lookbook-head h3{margin:0;font-size:14px}.v10-lookbook-head p{margin:5px 0 0;color:var(--muted);font-size:10px;line-height:1.55}.v10-pill{display:inline-flex;white-space:nowrap;padding:6px 9px;border-radius:999px;border:1px solid rgba(103,239,194,.3);background:rgba(103,239,194,.09);font-size:8px;font-weight:950;color:#96f7d9;letter-spacing:.07em}
+.v10-action-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.v10-action{min-height:56px;padding:10px;border:1px solid rgba(255,255,255,.12);border-radius:16px;background:rgba(255,255,255,.045);color:inherit;text-align:left;cursor:pointer;transition:transform .18s ease,border-color .18s ease,background .18s ease}.v10-action:hover{transform:translateY(-1px);border-color:rgba(103,239,194,.36);background:rgba(255,255,255,.075)}.v10-action b{display:block;font-size:10px}.v10-action small{display:block;margin-top:4px;color:var(--muted);font-size:8px;line-height:1.35}.v10-tag-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}.v10-tag-row span{padding:5px 8px;border-radius:999px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.09);font-size:7px;font-weight:900;color:#d7cedf}
+@media(max-width:760px){.v10-lookbook-board{padding:11px;border-radius:18px}.v10-action-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.v10-action{min-height:50px;padding:9px}.v10-action b{font-size:9px}.v10-action small{font-size:7.5px}.v10-lookbook-head h3{font-size:12px}.v10-lookbook-head p{font-size:9px}.v10-pill{padding:4px 7px;font-size:7px}}
+@media(max-width:420px){.v10-action-grid{grid-template-columns:1fr}.v10-tag-row span{font-size:6.8px}}
+</style>
+
 </head>
 <body>
 <div class="ambient"></div>
@@ -1507,8 +1517,8 @@ body .u5-nav button.active {
     <div class="brand">
       <div class="brand-mark" aria-hidden="true">✦</div>
       <div>
-        <h1>Nightfall Academy <span style="color:#ff72bb">Avatar Studio</span><span class="version-pill">ULTRA 5.0</span></h1>
-        <p>Kostüm odaklı fantastik avatar ve podyum simülasyonu</p><div class="pro-stats"><span class="pro-stat">40+ kostüm parçası</span><span class="pro-stat">Podyum görevleri</span><span class="pro-stat">Mobil akıcı mod</span></div>
+        <h1>Nightfall Academy <span style="color:#ff72bb">Avatar Studio</span><span class="version-pill">ULTRA 5.0 · V10</span></h1>
+        <p>Kostüm odaklı fantastik avatar ve podyum simülasyonu</p><div class="pro-stats"><span class="pro-stat">100+ kostüm/kombin</span><span class="pro-stat">Podyum görevleri</span><span class="pro-stat">Mobil uyum</span></div>
       </div>
     </div>
     <div class="toolbar" aria-label="Hızlı işlemler">
@@ -1604,7 +1614,6 @@ body .u5-nav button.active {
           <button class="stage-control" id="zoomInBtn" title="Yakınlaştır">＋</button>
           <button class="stage-control" id="zoomOutBtn" title="Uzaklaştır">−</button>
           <button class="stage-control" id="fitBtn" title="Görünümü sıfırla">⌾</button>
-          <button class="stage-control" id="motionBtn" title="Canlı önizleme">◌</button>
           <button class="stage-control" id="fullscreenBtn" title="Tam ekran">⛶</button>
         </div>
       </div>
@@ -1636,7 +1645,6 @@ body .u5-nav button.active {
         <label class="export-option"><input type="radio" name="exportSize" value="2800x3600"><b>4K Poster</b><small>2800 × 3600</small></label>
       </div>
       <div class="switch-row" style="margin-top:18px"><span>Şeffaf arka plan</span><label class="switch"><input type="checkbox" id="transparentExport"><span class="slider"></span></label></div>
-      <div class="switch-row"><span>Parıltı efektlerini dahil et</span><label class="switch"><input type="checkbox" id="effectsExport" checked><span class="slider"></span></label></div>
     </div>
     <div class="modal-actions"><button class="tool-btn" id="downloadSvgBtn">SVG İndir</button><button class="primary-btn" id="confirmExportBtn">PNG Oluştur</button></div>
   </div>
@@ -2091,6 +2099,11 @@ body .u5-nav button.active {
     const b = Math.max(0, Math.min(255, (n & 255) + amount));
     return `#${(b | (g << 8) | (r << 16)).toString(16).padStart(6,"0")}`;
   }
+  // V13: Sonradan gelen içerik paketleri de aynı renk yardımcılarını kullanıyor.
+  window.shade = shade;
+  window.darken = darken;
+  window.lighten = lighten;
+
 
   function loadState() {
     try {
@@ -2257,10 +2270,9 @@ body .u5-nav button.active {
         ${controlGroup("Kolye", optionGrid("necklace", options.necklace))}
       `,
       magic: `
-        <div class="section-head"><h2>Büyü Laboratuvarı</h2><p>Yeni auralar, eşyalar ve parçacıklarla karakterin gücünü görünür hâle getir.</p></div>
+        <div class="section-head"><h2>Detay Laboratuvarı</h2><p>Aura ve elde taşınan eşyalarla karakter görünümünü sade biçimde tamamla.</p></div>
         ${controlGroup("Aura", optionGrid("aura", options.aura))}
         ${controlGroup("Elde Taşınan Eşya", optionGrid("prop", options.prop))}
-        <div class="game-card"><div class="game-card-head"><div><h3>Canlı büyü katmanları</h3><p>Canlı önizlemeyi açtığında aura, kanat ve hava parçacıkları hareket eder.</p></div><span class="rarity">ULTRA 5</span></div><button class="tool-btn" style="width:100%" id="magicMotionBtn">✦ Canlı Önizlemeyi Aç</button></div>
       `,
       companion: `
         <div class="section-head"><h2>Yardımcı Stüdyosu</h2><p>Ördeğini veya fantastik yardımcını seç, ismini koy, giydir ve onunla etkileşime geç.</p></div>
@@ -2401,7 +2413,6 @@ body .u5-nav button.active {
     $("#zoomInBtn").addEventListener("click",()=>setZoom(stageZoom+.1));
     $("#zoomOutBtn").addEventListener("click",()=>setZoom(stageZoom-.1));
     $("#fitBtn").addEventListener("click",()=>setZoom(1));
-    $("#motionBtn").addEventListener("click",()=>{ motionEnabled=!motionEnabled; $("#stageCard").classList.toggle("alive",motionEnabled); $("#motionBtn").textContent=motionEnabled?"●":"◌"; showToast(motionEnabled?"Canlı önizleme açıldı.":"Canlı önizleme kapatıldı."); });
     $("#fullscreenBtn").addEventListener("click",toggleFullscreen);
     $("#closeExportBtn").addEventListener("click",closeExportModal);
     $("#exportModal").addEventListener("click",e=>{if(e.target.id==="exportModal")closeExportModal()});
@@ -2413,7 +2424,6 @@ body .u5-nav button.active {
     $("#studioChallengeBtn")?.addEventListener("click", openChallengeModal);
     $("#studioGalleryBtn")?.addEventListener("click", openGalleryModal);
     $("#helpBtn")?.addEventListener("click",()=>openModal("helpModal"));
-    $("#magicMotionBtn")?.addEventListener("click",()=>$("#motionBtn").click());
     $("#installBtn")?.addEventListener("click", installApp);
     $$('[data-close-modal]').forEach(btn=>btn.addEventListener('click',()=>closeModal(btn.dataset.closeModal)));
     ["challengeModal","galleryModal","achievementModal","helpModal"].forEach(id=>$("#"+id)?.addEventListener("click",e=>{if(e.target.id===id)closeModal(id)}));
@@ -3220,7 +3230,7 @@ body .u5-nav button.active {
     playTone(880,.11,.07);
     const [w,h] = (document.querySelector('input[name="exportSize"]:checked')?.value || "1400x1800").split("x").map(Number);
     const transparent = $("#transparentExport")?.checked;
-    const effects = $("#effectsExport")?.checked ?? true;
+    const effects = false;
     const clone = exportClone({transparent,effects});
     clone.setAttribute("width", String(w)); clone.setAttribute("height", String(h));
     const serialized = new XMLSerializer().serializeToString(clone);
@@ -3242,7 +3252,7 @@ body .u5-nav button.active {
   }
 
   function downloadSVG(){
-    const transparent=$("#transparentExport")?.checked, effects=$("#effectsExport")?.checked ?? true;
+    const transparent=$("#transparentExport")?.checked, effects=false;
     const clone=exportClone({transparent,effects}); clone.setAttribute("width","1400"); clone.setAttribute("height","1800");
     const blob=new Blob([new XMLSerializer().serializeToString(clone)],{type:"image/svg+xml;charset=utf-8"});
     const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download=`${(state.characterName||"nightfall-avatar").replace(/\s+/g,"-")}.svg`; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),1000); closeExportModal(); showToast("Düzenlenebilir SVG indirildi.");
@@ -3359,7 +3369,7 @@ body .u5-nav button.active {
   function bindGameV9ExpansionUI(){
     mountGameV9Board();
     document.addEventListener('click',e=>{const b=e.target.closest('[data-v9-action]'); if(!b)return; const action=b.dataset.v9Action;
-      if(action==='smart'){const extra=presets.filter(p=>/Aurora|Cyber|Sakura|Treni|Kristal|Ejder|Kütüphaneci|Rüya|Satranç|Gözlemevi/.test(p.name)); const p=randomFrom(extra.length?extra:presets); commit(p.patch); showToast('Deluxe kombin uygulandı: '+p.name);}
+      if(action==='smart'){const extra=presets.filter(p=>/Aurora|Cyber|Sakura|Treni|Kristal|Ejder|Kütüphaneci|Rüya|Satranç|Gözlemevi|V10|Gala|Butik|Couture|Bale/.test(p.name)); const p=randomFrom(extra.length?extra:presets); commit(p.patch); showToast('Deluxe kombin uygulandı: '+p.name);}
       if(action==='details'){commit({headwear:state.headwear==='none'?optionId('headwear'):state.headwear,wings:state.wings==='none'?optionId('wings'):state.wings,aura:state.aura==='none'?optionId('aura'):state.aura,prop:state.prop==='none'?optionId('prop'):state.prop,weather:state.weather==='none'?optionId('weather'):state.weather,frame:state.frame==='none'?optionId('frame'):state.frame,sticker:state.sticker==='none'?optionId('sticker'):state.sticker}); showToast('Boş detay katmanları dolduruldu.');}
       if(action==='balance'){const color=randomFrom(palettes.accents); commit({accentColor:color,hairSecondary:color,lighting:state.background==='neon'?'neon':state.background==='sunset'?'sunset':state.background==='underwater'?'underwater':'spotlight',photoFilter:state.photoFilter==='none'?'editorial':state.photoFilter}); profile.v9Balance=(profile.v9Balance||0)+1; saveProfile(); showToast('Renk uyumu yenilendi.');}
       if(action==='mobile'){commit({characterScale:94,characterX:0,characterY:-8,poseTilt:0,companionScale:82,companionX:38,companionY:8}); profile.v9MobileFit=(profile.v9MobileFit||0)+1; saveProfile(); showToast('Mobil sahne pozu uygulandı.');}
@@ -3367,9 +3377,96 @@ body .u5-nav button.active {
     });
   }
 
+
+  function applyGameV10Expansion(){
+    Object.assign(v9Alias.hairStyle,{silkpress:"long",bubblebraid:"braid",butterflyponytail:"ponytail",rosebob:"bob",crystalpixie:"pixie",velvetwaves:"waves",starbangs:"hime",braidside:"braid",ribbonwaves:"waves",lacebuns:"buns",mistshag:"shag",glasshime:"hime"});
+    Object.assign(v9Alias.outfitStyle,{galaqueen:"ballroom",academyblazer:"academy",laceprincess:"princess",popstreet:"street",silkrobe:"kimono",velvetarmor:"queenarmor",cloudidol:"idol",pearlmermaid:"mermaid",gardenfairy:"fairycore",noirdetective:"detective",balletroyal:"ballerina",snowmuse:"wintercoat",mirrorcouture:"opera",crystalracer:"racer"});
+    Object.assign(v9Alias.outfitPattern,{quilted:"checker",butterfly:"hearts",roselace:"lace",pearlgrid:"pearls",silkstripe:"stripes",glowdots:"stars",snowflake:"constellation",tulle:"lace"});
+    Object.assign(v9Alias.headwear,{laceveil:"halo",pearlcrown:"tiara",butterflyclips:"bow",crystalberet:"beret",ribbonhalo:"halo",snowhood:"witchhat",glasscrown:"crown"});
+    Object.assign(v9Alias.glasses,{butterfly:"cat",diamond:"square",softoval:"round",runwayvisor:"square"});
+    Object.assign(v9Alias.earrings,{ribbonDrop:"drop",snowPearl:"pearl",heartChain:"chain",glassMoon:"moonhoop"});
+    Object.assign(v9Alias.necklace,{operaPearl:"pearl",ribbonGem:"gem",crystalBow:"gem",miniMedal:"locket"});
+    Object.assign(v9Alias.horns,{glassAntler:"antlers",pearlHorns:"small",moonSpike:"curved"});
+    Object.assign(v9Alias.wings,{lacewing:"fairy",snowangel:"angel",ribbonwing:"butterfly",moonmoth:"butterfly",crystalveil:"crystal"});
+    Object.assign(v9Alias.aura,{couture:"spotlight",pearlshine:"royal",softsnow:"frost",ribbonstorm:"hearts",silkgold:"royal"});
+    Object.assign(v9Alias.prop,{bouquet:"fan",shoppingbag:"duckbag",dressform:"book",perfume:"potion",mirror:"phone",runwayticket:"book"});
+    Object.assign(v9Alias.background,{boutique:"fashionweek",palaceHall:"ballroom",cafe:"hall",studioPink:"plain",wintergarden:"forest",mirrorroom:"hall",velvetstage:"concert",silkroom:"rose"});
+    Object.assign(v9Alias.weather,{sparkleRain:"stars",silkPetals:"petals",pearlDust:"snow",ribbonFall:"petals"});
+    Object.assign(v9Alias.frame,{lookbook:"polaroid",coutureFrame:"ornate",pearlFrame:"crystal"});
+    Object.assign(v9Alias.photoFilter,{softpink:"pastel",glamour:"pastel",pearlfilm:"moonlight"});
+    palettes.skin.push("#f3c8b1","#d7a083","#b97862","#f5dac9");
+    palettes.eyes.push("#a7f3d0","#f9a8d4","#c4b5fd","#fde68a","#bae6fd");
+    palettes.hair.push("#f8e8d0","#111827","#fb7185","#a78bfa","#f59e0b","#e2e8f0");
+    palettes.clothes.push("#fff1f2","#2e1065","#0f172a","#ffe4e6","#fef9c3","#ecfeff","#3f1d38");
+    palettes.accents.push("#fb7185","#f9a8d4","#facc15","#67e8f9","#c084fc","#bef264");
+    uniqueOptionPush("hairBlend",[{id:"tips",label:"Uç Boya",icon:"⌁"},{id:"streak",label:"Tutam",icon:"▏"},{id:"rainbow",label:"Gökkuşağı",icon:"🌈"},{id:"gloss",label:"Parlak",icon:"✧"}]);
+    uniqueOptionPush("hairStyle",[
+      {id:"silkpress",label:"İpek Düz",icon:"━"},{id:"bubblebraid",label:"Balon Örgü",icon:"○"},{id:"butterflyponytail",label:"Kelebek Kuyruk",icon:"🦋"},{id:"rosebob",label:"Gül Bob",icon:"🌹"},{id:"crystalpixie",label:"Kristal Pixie",icon:"◇"},{id:"velvetwaves",label:"Kadife Dalga",icon:"≈"},{id:"starbangs",label:"Yıldız Kakül",icon:"★"},{id:"braidside",label:"Yan Örgü",icon:"⌇"},{id:"ribbonwaves",label:"Kurdele Dalga",icon:"🎀"},{id:"lacebuns",label:"Dantel Topuz",icon:"❀"},{id:"mistshag",label:"Sisli Shag",icon:"☁"},{id:"glasshime",label:"Cam Hime",icon:"▱"}
+    ]);
+    uniqueOptionPush("outfitStyle",[
+      {id:"galaqueen",label:"Gala Kraliçesi",icon:"👑"},{id:"academyblazer",label:"Akademi Blazer",icon:"🎓"},{id:"laceprincess",label:"Dantel Prenses",icon:"❀"},{id:"popstreet",label:"Pop Sokak",icon:"★"},{id:"silkrobe",label:"İpek Robe",icon:"〰"},{id:"velvetarmor",label:"Kadife Zırh",icon:"♛"},{id:"cloudidol",label:"Bulut İdol",icon:"☁"},{id:"pearlmermaid",label:"İnci Denizkızı",icon:"○"},{id:"gardenfairy",label:"Bahçe Perisi",icon:"🌿"},{id:"noirdetective",label:"Noir Dedektif",icon:"⌕"},{id:"balletroyal",label:"Kraliyet Bale",icon:"🩰"},{id:"snowmuse",label:"Kar İlhamı",icon:"❄"},{id:"mirrorcouture",label:"Ayna Couture",icon:"🪞"},{id:"crystalracer",label:"Kristal Racer",icon:"▰"}
+    ]);
+    uniqueOptionPush("outfitPattern",[
+      {id:"quilted",label:"Kapitone",icon:"▦"},{id:"butterfly",label:"Kelebek",icon:"🦋"},{id:"roselace",label:"Gül Dantel",icon:"🌹"},{id:"pearlgrid",label:"İnci Izgara",icon:"○"},{id:"silkstripe",label:"İpek Çizgi",icon:"≡"},{id:"glowdots",label:"Işık Nokta",icon:"✦"},{id:"snowflake",label:"Kar Tanesi",icon:"❄"},{id:"tulle",label:"Tül",icon:"≈"}
+    ]);
+    uniqueOptionPush("headwear",[
+      {id:"laceveil",label:"Dantel Duvak",icon:"❀"},{id:"pearlcrown",label:"İnci Taç",icon:"○"},{id:"butterflyclips",label:"Kelebek Toka",icon:"🦋"},{id:"crystalberet",label:"Kristal Bere",icon:"◇"},{id:"ribbonhalo",label:"Kurdele Hale",icon:"🎀"},{id:"snowhood",label:"Kar Kapüşon",icon:"❄"},{id:"glasscrown",label:"Cam Taç",icon:"♕"}
+    ]);
+    uniqueOptionPush("glasses",[{id:"butterfly",label:"Kelebek",icon:"🦋"},{id:"diamond",label:"Elmas",icon:"◇"},{id:"softoval",label:"Soft Oval",icon:"◯"},{id:"runwayvisor",label:"Podyum Vizör",icon:"▭"}]);
+    uniqueOptionPush("earrings",[{id:"ribbonDrop",label:"Kurdele Sarkıt",icon:"🎀"},{id:"snowPearl",label:"Kar İncisi",icon:"❄"},{id:"heartChain",label:"Kalp Zincir",icon:"♥"},{id:"glassMoon",label:"Cam Ay",icon:"☾"}]);
+    uniqueOptionPush("necklace",[{id:"operaPearl",label:"Opera İnci",icon:"○"},{id:"ribbonGem",label:"Kurdele Taş",icon:"🎀"},{id:"crystalBow",label:"Kristal Fiyonk",icon:"◇"},{id:"miniMedal",label:"Mini Madalya",icon:"🏅"}]);
+    uniqueOptionPush("horns",[{id:"glassAntler",label:"Cam Boynuz",icon:"◇"},{id:"pearlHorns",label:"İnci Boynuz",icon:"○"},{id:"moonSpike",label:"Ay Sivri",icon:"☾"}]);
+    uniqueOptionPush("wings",[{id:"lacewing",label:"Dantel Kanat",icon:"❀"},{id:"snowangel",label:"Kar Melek",icon:"❄"},{id:"ribbonwing",label:"Kurdele Kanat",icon:"🎀"},{id:"moonmoth",label:"Ay Güvesi",icon:"☾"},{id:"crystalveil",label:"Kristal Duvak",icon:"◇"}]);
+    uniqueOptionPush("aura",[{id:"couture",label:"Couture Işığı",icon:"✦"},{id:"pearlshine",label:"İnci Parıltı",icon:"○"},{id:"softsnow",label:"Yumuşak Kar",icon:"❄"},{id:"ribbonstorm",label:"Kurdele Fırtına",icon:"🎀"},{id:"silkgold",label:"İpek Altın",icon:"☀"}]);
+    uniqueOptionPush("prop",[{id:"bouquet",label:"Çiçek Buketi",icon:"💐"},{id:"shoppingbag",label:"Butik Çanta",icon:"🛍"},{id:"dressform",label:"Manken",icon:"👗"},{id:"perfume",label:"Parfüm",icon:"◇"},{id:"mirror",label:"El Aynası",icon:"🪞"},{id:"runwayticket",label:"Defile Bileti",icon:"▤"}]);
+    uniqueOptionPush("background",[{id:"boutique",label:"Moda Butiği",icon:"🛍"},{id:"palaceHall",label:"Saray Holü",icon:"🏛"},{id:"cafe",label:"Kafe Buluşması",icon:"☕"},{id:"studioPink",label:"Pembe Stüdyo",icon:"▱"},{id:"wintergarden",label:"Kış Bahçesi",icon:"❄"},{id:"mirrorroom",label:"Ayna Odası",icon:"🪞"},{id:"velvetstage",label:"Kadife Sahne",icon:"♪"},{id:"silkroom",label:"İpek Oda",icon:"〰"}]);
+    uniqueOptionPush("weather",[{id:"sparkleRain",label:"Parıltı Yağmuru",icon:"✦"},{id:"silkPetals",label:"İpek Yaprak",icon:"❀"},{id:"pearlDust",label:"İnci Tozu",icon:"○"},{id:"ribbonFall",label:"Kurdele Yağışı",icon:"🎀"}]);
+    uniqueOptionPush("frame",[{id:"lookbook",label:"Lookbook",icon:"▧"},{id:"coutureFrame",label:"Couture",icon:"♕"},{id:"pearlFrame",label:"İnci",icon:"○"}]);
+    uniqueOptionPush("photoFilter",[{id:"softpink",label:"Soft Pembe",icon:"🌸"},{id:"glamour",label:"Glamour",icon:"✦"},{id:"pearlfilm",label:"İnci Film",icon:"○"}]);
+    uniquePresetPush([
+      {name:"V10 Gala Queen",desc:"İnci, gala elbisesi ve saray ışığı",color:"#f9a8d4",patch:{hairStyle:"silkpress",hairColor:"#111827",hairSecondary:"#f9a8d4",hairBlend:"gloss",eyeColor:"#fde68a",outfitStyle:"galaqueen",outfitPattern:"pearlgrid",clothesColor:"#3f1d38",accentColor:"#f9a8d4",headwear:"pearlcrown",necklace:"operaPearl",earrings:"snowPearl",wings:"snowangel",aura:"pearlshine",prop:"bouquet",weather:"pearlDust",background:"palaceHall",lighting:"spotlight",frame:"pearlFrame",photoFilter:"pearlfilm"}},
+      {name:"V10 Pembe Butik",desc:"Butik vitrini, pop sokak ve alışveriş çantası",color:"#fb7185",patch:{hairStyle:"ribbonwaves",hairColor:"#fb7185",hairSecondary:"#67e8f9",hairBlend:"split",eyeColor:"#67e8f9",outfitStyle:"popstreet",outfitPattern:"butterfly",clothesColor:"#ffe4e6",accentColor:"#fb7185",headwear:"butterflyclips",glasses:"butterfly",aura:"ribbonstorm",prop:"shoppingbag",weather:"ribbonFall",background:"boutique",lighting:"pinkroom",sticker:"ribbons",photoFilter:"softpink"}},
+      {name:"V10 Dantel Prenses",desc:"Dantel, duvak ve romantik fotoğraf kapağı",color:"#f0abfc",patch:{hairStyle:"lacebuns",hairColor:"#f8e8d0",hairSecondary:"#f0abfc",hairBlend:"ombre",eyeColor:"#c4b5fd",outfitStyle:"laceprincess",outfitPattern:"roselace",clothesColor:"#fff1f2",accentColor:"#c084fc",headwear:"laceveil",wings:"lacewing",aura:"couture",prop:"mirror",weather:"silkPetals",background:"mirrorroom",lighting:"softbox",frame:"coutureFrame",photoFilter:"glamour"}},
+      {name:"V10 Kar Balesi",desc:"Kar, bale ve temiz kış sahnesi",color:"#bae6fd",patch:{hairStyle:"glasshime",hairColor:"#e2e8f0",hairSecondary:"#bae6fd",hairBlend:"tips",eyeColor:"#bae6fd",outfitStyle:"balletroyal",outfitPattern:"snowflake",clothesColor:"#ecfeff",accentColor:"#67e8f9",headwear:"snowhood",wings:"snowangel",aura:"softsnow",prop:"perfume",weather:"pearlDust",background:"wintergarden",lighting:"moon",photoFilter:"pearlfilm"}},
+      {name:"V10 Noir Dedektif",desc:"Koyu blazer, monokrom sahne ve defile bileti",color:"#94a3b8",patch:{hairStyle:"mistshag",hairColor:"#111827",hairSecondary:"#94a3b8",hairBlend:"streak",eyeColor:"#cbd5e1",outfitStyle:"noirdetective",outfitPattern:"quilted",clothesColor:"#0f172a",accentColor:"#94a3b8",glasses:"softoval",necklace:"miniMedal",aura:"couture",prop:"runwayticket",weather:"sparkleRain",background:"cafe",lighting:"candle",photoFilter:"noir"}},
+      {name:"V10 Kristal Racer",desc:"Yarışçı siluet, cam taç ve neon sahne",color:"#67e8f9",patch:{hairStyle:"crystalpixie",hairColor:"#111827",hairSecondary:"#67e8f9",hairBlend:"streak",eyeColor:"#67e8f9",outfitStyle:"crystalracer",outfitPattern:"glowdots",clothesColor:"#0f172a",accentColor:"#67e8f9",headwear:"glasscrown",glasses:"runwayvisor",wings:"crystalveil",aura:"electric",prop:"mirror",weather:"sparkleRain",background:"velvetstage",lighting:"neon",frame:"lookbook"}},
+      {name:"V10 Garden Fairy",desc:"Bahçe perisi, buket ve soft yeşil uyum",color:"#bef264",patch:{hairStyle:"butterflyponytail",hairColor:"#f8e8d0",hairSecondary:"#bef264",hairBlend:"ombre",eyeColor:"#a7f3d0",outfitStyle:"gardenfairy",outfitPattern:"butterfly",clothesColor:"#ecfccb",accentColor:"#bef264",headwear:"butterflyclips",wings:"ribbonwing",aura:"nature",prop:"bouquet",weather:"silkPetals",background:"wintergarden",lighting:"goldhour",photoFilter:"softpink"}},
+      {name:"V10 Mirror Couture",desc:"Ayna odası, opera formu ve couture ışığı",color:"#c084fc",patch:{hairStyle:"velvetwaves",hairColor:"#2e1065",hairSecondary:"#c084fc",hairBlend:"ombre",eyeColor:"#f9a8d4",outfitStyle:"mirrorcouture",outfitPattern:"tulle",clothesColor:"#2e1065",accentColor:"#c084fc",headwear:"crystalberet",earrings:"glassMoon",necklace:"crystalBow",aura:"couture",prop:"dressform",weather:"sparkleRain",background:"mirrorroom",lighting:"stage",frame:"coutureFrame",photoFilter:"glamour"}},
+      {name:"V10 Silk Robe",desc:"İpek oda, yumuşak robe ve sıcak altın detay",color:"#facc15",patch:{hairStyle:"braidside",hairColor:"#111827",hairSecondary:"#facc15",hairBlend:"tips",eyeColor:"#fde68a",outfitStyle:"silkrobe",outfitPattern:"silkstripe",clothesColor:"#fef9c3",accentColor:"#facc15",headwear:"ribbonhalo",aura:"silkgold",prop:"perfume",weather:"silkPetals",background:"silkroom",lighting:"warm",photoFilter:"warmfilm"}},
+      {name:"V10 Cloud Idol",desc:"Bulut idol, yumuşak pembe sahne ve müzik havası",color:"#f472b6",patch:{hairStyle:"bubblebraid",hairColor:"#f8e8d0",hairSecondary:"#f472b6",hairBlend:"rainbow",eyeColor:"#f9a8d4",outfitStyle:"cloudidol",outfitPattern:"glowdots",clothesColor:"#fff1f2",accentColor:"#f472b6",headwear:"ribbonhalo",wings:"ribbonwing",aura:"hearts",prop:"microphone",weather:"ribbonFall",background:"studioPink",lighting:"pinkroom",sticker:"music",photoFilter:"kawaii"}}
+    ]);
+    uniqueChallengePush([
+      {id:"v10-gala-pearl",name:"İnci Gala",icon:"○",color:"#f9a8d4",desc:"Gala, inci, saray ve parlak çerçeveyle güçlü bir look oluştur.",checks:[s=>["galaqueen","ballroom","royal"].includes(s.outfitStyle),s=>["pearlgrid","pearls"].includes(s.outfitPattern),s=>["pearlcrown","tiara","crown"].includes(s.headwear),s=>["palaceHall","ballroom"].includes(s.background),s=>["pearlshine","royal"].includes(s.aura)]},
+      {id:"v10-boutique-pop",name:"Pembe Butik",icon:"🛍",color:"#fb7185",desc:"Pop sokak, butik sahnesi, kurdele ve yumuşak pembe filtre kullan.",checks:[s=>["popstreet","street","harajuku"].includes(s.outfitStyle),s=>["boutique","studioPink","fashionweek"].includes(s.background),s=>["ribbonstorm","hearts"].includes(s.aura),s=>["shoppingbag","duckbag"].includes(s.prop),s=>["softpink","kawaii","candy"].includes(s.photoFilter)]},
+      {id:"v10-winter-ballet",name:"Kar Balesi",icon:"❄",color:"#bae6fd",desc:"Bale, kış, kar ve yumuşak mavi paleti bir araya getir.",checks:[s=>["balletroyal","ballerina","wintercoat"].includes(s.outfitStyle),s=>["snowflake","constellation"].includes(s.outfitPattern),s=>["wintergarden","clouds","forest"].includes(s.background),s=>["softsnow","frost"].includes(s.aura),s=>["pearlDust","snow"].includes(s.weather)]},
+      {id:"v10-mirror-couture",name:"Ayna Couture",icon:"🪞",color:"#c084fc",desc:"Ayna, couture ışığı, dramatik aksesuar ve sahne filtresi kur.",checks:[s=>["mirrorcouture","opera","galaqueen"].includes(s.outfitStyle),s=>["mirrorroom","velvetstage","hall"].includes(s.background),s=>["dressform","mirror","microphone"].includes(s.prop),s=>["couture","spotlight"].includes(s.aura),s=>["coutureFrame","ornate"].includes(s.frame)]}
+    ]);
+    uniqueAchievementPush([
+      {id:"v10-lookbook-master",icon:"🛍",name:"Lookbook Ustası",desc:"V10 hazır kombinlerinden birini uygula."},
+      {id:"v10-couture-layer",icon:"🧵",name:"Couture Katman",desc:"V10 kıyafet, desen ve aksesuar katmanını birlikte kullan."},
+      {id:"v10-pearl-gala",icon:"○",name:"İnci Gala",desc:"V10 İnci Gala görevini yüksek puanla tamamla."}
+    ]);
+  }
+  function mountGameV10Board(){
+    const studio=$('[data-section-panel="studio"]'); if(!studio||$('#v10LookbookBoard'))return;
+    studio.insertAdjacentHTML('afterbegin',`<div class="v10-lookbook-board" id="v10LookbookBoard"><div class="v10-lookbook-head"><div><h3>V11 Efekt Modu Kapalı Paketi</h3><p>Mini game yok; sadece ana avatar oyununa yeni kombin, kıyafet, aksesuar ve sahne içeriği ekler.</p></div><span class="v10-pill">V10 LOOKBOOK</span></div><div class="v10-action-grid"><button class="v10-action" data-v10-action="look"><b>Yeni Kombin Uygula</b><small>V10 lookbooktan rastgele tam stil verir.</small></button><button class="v10-action" data-v10-action="couture"><b>Couture Detay</b><small>Kıyafet, desen, başlık ve aksesuarı doldurur.</small></button><button class="v10-action" data-v10-action="soft"><b>Soft Renk Paketi</b><small>Mobilde temiz görünen pastel palet kurar.</small></button><button class="v10-action" data-v10-action="stage"><b>Sahne Kapak</b><small>Yeni sahne, filtre ve çerçeve seçer.</small></button></div><div class="v10-tag-row"><span>+10 hazır kombin</span><span>+14 kıyafet</span><span>+12 saç</span><span>+sahne/fotoğraf</span></div></div>`);
+  }
+  function bindGameV10UI(){
+    mountGameV10Board();
+    document.addEventListener('click',e=>{const b=e.target.closest('[data-v10-action]'); if(!b)return; const action=b.dataset.v10Action;
+      if(action==='look'){const list=presets.filter(p=>/^V10 /.test(p.name)); const p=randomFrom(list.length?list:presets); commit(p.patch); unlockAchievement('v10-lookbook-master'); showToast('V10 kombin uygulandı: '+p.name);}
+      if(action==='couture'){commit({outfitStyle:randomFrom(['galaqueen','laceprincess','mirrorcouture','balletroyal','cloudidol','gardenfairy']),outfitPattern:randomFrom(['pearlgrid','roselace','butterfly','snowflake','tulle']),headwear:randomFrom(['pearlcrown','laceveil','butterflyclips','glasscrown']),necklace:randomFrom(['operaPearl','crystalBow','ribbonGem']),earrings:randomFrom(['snowPearl','ribbonDrop','glassMoon']),aura:randomFrom(['couture','pearlshine','ribbonstorm','softsnow'])}); unlockAchievement('v10-couture-layer'); showToast('Couture detayları eklendi.');}
+      if(action==='soft'){const c=randomFrom(['#fb7185','#f9a8d4','#c084fc','#67e8f9','#bef264']); commit({clothesColor:'#fff1f2',accentColor:c,hairSecondary:c,lighting:'softbox',photoFilter:'softpink',weather:'sparkleRain'}); showToast('Soft renk paketi uygulandı.');}
+      if(action==='stage'){commit({background:randomFrom(['boutique','palaceHall','mirrorroom','wintergarden','velvetstage','studioPink']),frame:randomFrom(['lookbook','coutureFrame','pearlFrame']),photoFilter:randomFrom(['softpink','glamour','pearlfilm']),lighting:randomFrom(['spotlight','pinkroom','softbox','moon'])}); showToast('Yeni sahne kapağı hazır.');}
+      checkAchievements();
+    });
+  }
+
   applyGameV9Expansion();
+  applyGameV10Expansion();
   buildUI();
   bindGameV9ExpansionUI();
+  bindGameV10UI();
   bindUltra4UI();
   renderAvatar();
   syncControls();
@@ -3437,7 +3534,7 @@ body .u5-nav button.active {
     ]}
   ];
   const mapLocations=[
-    {page:"story",pos:"n1",icon:"📖",name:"Hikâye Salonu",sub:"8 bölümlük macera"},{page:"wardrobe",pos:"n2",icon:"👗",name:"Moda Stüdyosu",sub:"Katmanlı gardırop"},{page:"dorm",pos:"n3",icon:"🛏️",name:"Yurt Odası",sub:"Dekorasyon"},{page:"care",pos:"n4",icon:"🦆",name:"Yardımcı Merkezi",sub:"Ördek bakımı"},{page:"runway",pos:"n5",icon:"👠",name:"Ay Podyumu",sub:"Jüri değerlendirmesi"},{page:"collection",pos:"n6",icon:"💎",name:"Koleksiyon",sub:"Nadir eşyalar"},{page:"photo",pos:"n7",icon:"📸",name:"Fotoğraf Stüdyosu",sub:"Kapak ve sahne"},{page:"studio",pos:"n8",icon:"✦",name:"Avatar Editörü",sub:"Ana stüdyoya dön"}
+    {page:"story",pos:"n1",icon:"📖",name:"Hikâye Salonu",sub:"12 bölümlük macera"},{page:"wardrobe",pos:"n2",icon:"👗",name:"Moda Stüdyosu",sub:"Katmanlı gardırop"},{page:"dorm",pos:"n3",icon:"🛏️",name:"Yurt Odası",sub:"Dekorasyon"},{page:"care",pos:"n4",icon:"🦆",name:"Yardımcı Merkezi",sub:"Ördek bakımı"},{page:"runway",pos:"n5",icon:"👠",name:"Ay Podyumu",sub:"Jüri değerlendirmesi"},{page:"collection",pos:"n6",icon:"💎",name:"Koleksiyon",sub:"Nadir eşyalar"},{page:"photo",pos:"n7",icon:"📸",name:"Fotoğraf Stüdyosu",sub:"Kapak ve sahne"},{page:"studio",pos:"n8",icon:"✦",name:"Avatar Editörü",sub:"Ana stüdyoya dön"}
   ];
   const collectionItems=[
     ["uniform-midnight","Akademi Üniforması","👗","common"],["hair-moonwave","Ay Dalgası Saç","💇‍♀️","common"],["duck-yellow","Pofuduk","🦆","common"],["room-basic","Temel Yurt Seti","🛏️","common"],["pose-confident","Kendinden Emin Poz","💃","common"],["frame-academy","Akademi Çerçevesi","🖼️","common"],
@@ -3496,6 +3593,34 @@ body .u5-nav button.active {
     photoPresets.atelier={name:"Moda Atölyesi",bg:"linear-gradient(145deg,#2b1f33,#5b3b72,#f7d6e6)",filter:"contrast(1.05)"};
   })();
 
+  ;(()=>{
+    const add=(arr,key,items)=>{const seen=new Set(arr.map(x=>Array.isArray(x)?x[0]:x[key]));items.forEach(x=>{const id=Array.isArray(x)?x[0]:x[key];if(!seen.has(id)){arr.push(x);seen.add(id);}})};
+    worldDefaults.version=10;
+    add(storyChapters,'id',[
+      {id:"v10-lookbook",no:11,title:"Lookbook Odası",icon:"🛍️",desc:"Yeni sezon kombin kataloğunu aç ve V10 parçalarını hikâyeye bağla.",reward:["lookbook-couture","180 Ay Parası"],unlock:"lookbook-couture",requires:"v9-observatory",scenes:[{speaker:"Luna Vale",avatar:"🛍️",text:"Lookbook odası açıldı. Burada her kombin küçük bir hikâye gibi düzenlenir; fazla kalabalık değil, doğru parça doğru yerde.",choices:[{t:"Katalogdaki ilk görünümü seç.",a:"luna"},{t:"Kendi kombinimi kuracağım.",a:"rowan"}]},{speaker:"Profesör Vera",avatar:"🧵",text:"Bugünün kuralı: ana parça, destek parça, vurgu rengi. Üç kararın uyumluysa sahne zaten kendini taşır.",choices:[{t:"Gardıropta yeni parçaları dene.",action:"wardrobe"},{t:"Podyuma hazırla.",action:"runway"}]},{speaker:"Anlatıcı",avatar:"✨",text:"V10 Lookbook rafı koleksiyonuna eklendi.",choices:[{t:"Bölümü tamamla.",finish:true}]}]},
+      {id:"v10-couture-night",no:12,title:"Couture Gecesi",icon:"🪞",desc:"Ayna odasında son prova; yeni kıyafetleri podyuma taşı.",reward:["mirror-couture-set","3 Kristal"],unlock:"mirror-couture-set",requires:"v10-lookbook",scenes:[{speaker:"Rowan Ash",avatar:"🪞",text:"Aynalar cesur tasarımları saklamaz. Hazırsan sahneye çıkmadan önce son detayını seç.",choices:[{t:"Couture detay ekle.",a:"vera"},{t:"Fotoğraf kapağı çek.",action:"photo"}]},{speaker:"Sunucu",avatar:"🎤",text:"Tema: Ayna Couture. Doku, çerçeve ve ışık dengesine bakılacak.",choices:[{t:"Podyuma git.",action:"runway"}]},{speaker:"Jüri",avatar:"🏆",text:"Yeni sezon dosyan tamamlandı. V10 kıyafet havuzu artık senin stil arşivinin parçası.",choices:[{t:"Bölümü tamamla.",finish:true}]}]}
+    ]);
+    add(collectionItems,null,[["lookbook-couture","V10 Lookbook","🛍️","legendary"],["mirror-couture-set","Ayna Couture Seti","🪞","legendary"],["top-pearlcorset","İnci Korsaj","○","epic"],["bottom-silktrain","İpek Kuyruk","〰","epic"],["jacket-mirrorcape","Ayna Pelerini","🪞","legendary"],["sleeve-butterfly","Kelebek Kol","🦋","rare"],["shoes-runway","Podyum Topuklu","👠","epic"],["bag-boutique","Butik Çanta","🛍️","rare"],["texture-pearlmesh","İnci Tül","○","epic"],["photo-lookbook","Lookbook Kapak","▧","rare"],["frame-couture","Couture Çerçeve","♕","legendary"],["duck-pearl","İnci Ördek","○🦆","epic"]]);
+    add(wardrobeOptions.top,null,[["pearlCorset","İnci Korsaj","○"],["laceBodice","Dantel Beden","❀"],["mirrorTop","Ayna Üst","🪞"],["boutiqueTee","Butik Tişört","🛍"],["cloudCorset","Bulut Korsaj","☁"],["balletWrap","Bale Sarma","🩰"]]);
+    add(wardrobeOptions.bottom,null,[["silkTrain","İpek Kuyruk","〰"],["pearlSkirt","İnci Etek","○"],["mirrorSkirt","Ayna Etek","🪞"],["butterflySkirt","Kelebek Etek","🦋"],["snowTutu","Kar Tütü","❄"],["couturePants","Couture Pantolon","♕"]]);
+    add(wardrobeOptions.jacket,null,[["mirrorCape","Ayna Pelerini","🪞"],["pearlBolero","İnci Bolero","○"],["lookbookCoat","Lookbook Ceket","▧"],["snowMantle","Kar Mantle","❄"],["ribbonCape","Kurdele Pelerin","🎀"]]);
+    add(wardrobeOptions.sleeves,null,[["butterflySleeve","Kelebek Kol","🦋"],["pearlGloves","İnci Eldiven","○"],["mirrorGloves","Ayna Eldiven","🪞"],["silkSleeve","İpek Kol","〰"],["snowGloves","Kar Eldiven","❄"]]);
+    add(wardrobeOptions.shoes,null,[["runwayHeels","Podyum Topuklu","👠"],["pearlHeels","İnci Topuklu","○"],["mirrorBoots","Ayna Çizme","🪞"],["ribbonSneakers","Kurdele Sneaker","🎀"],["snowBallet","Kar Babet","❄"]]);
+    add(wardrobeOptions.bag,null,[["boutiqueBag","Butik Çanta","🛍"],["pearlClutch","İnci Clutch","○"],["mirrorPurse","Ayna Çanta","🪞"],["ribbonPurse","Kurdele Çanta","🎀"],["snowPouch","Kar Kese","❄"]]);
+    add(wardrobeOptions.texture,null,[["pearlmesh","İnci Tül","○"],["softtulle","Soft Tül","≈"],["mirrorfoil","Ayna Folyo","🪞"],["silkgloss","İpek Parlak","〰"],["snowknit","Kar Örgü","❄"]]);
+    add(runwayThemes,'id',[
+      {id:"v10-pearl-gala",icon:"○",name:"İnci Galası",desc:"İnci, duvak, couture ve saray parıltısı.",tags:["pearl","inci","gala","couture","palace","pearlCorset","pearlSkirt","pearlmesh"]},
+      {id:"v10-boutique",icon:"🛍",name:"Butik Editörü",desc:"Butik çantası, pembe stüdyo ve lookbook kapağı.",tags:["boutique","pink","lookbook","butik","ribbon","boutiqueBag"]},
+      {id:"v10-mirror",icon:"🪞",name:"Ayna Couture",desc:"Ayna pelerini, parlak folyo ve dramatik sahne.",tags:["mirror","ayna","couture","mirrorCape","mirrorfoil","mirrorroom"]},
+      {id:"v10-ballet",icon:"🩰",name:"Kar Balesi",desc:"Tütü, kar örgü ve yumuşak beyaz-mavi görünüm.",tags:["snow","ballet","tutu","snowTutu","snowknit","winter"]}
+    ]);
+    photoPresets.lookbook={name:"Lookbook Kapak",bg:"linear-gradient(145deg,#fff1f2,#f9a8d4,#7c3aed)",filter:"contrast(1.08) saturate(1.12)"};
+    photoPresets.pearl={name:"İnci Gala",bg:"radial-gradient(circle at 45% 25%,#fff 0 8%,transparent 9%),linear-gradient(145deg,#3f1d38,#f9a8d4)",filter:"brightness(1.05) saturate(1.08)"};
+    photoPresets.mirror={name:"Ayna Couture",bg:"linear-gradient(135deg,#111827,#475569,#e2e8f0)",filter:"contrast(1.15) saturate(1.02)"};
+    photoPresets.boutique={name:"Butik Soft",bg:"linear-gradient(145deg,#ffe4e6,#fb7185,#67e8f9)",filter:"saturate(1.16) brightness(1.03)"};
+    photoPresets.snowballet={name:"Kar Balesi",bg:"linear-gradient(145deg,#ecfeff,#bae6fd,#c4b5fd)",filter:"brightness(1.06) contrast(1.05)"};
+  })();
+
 
   function loadWorld(){try{return deepMerge(structuredClone(worldDefaults),JSON.parse(storage.getItem(STORAGE)||"{}"))}catch{return structuredClone(worldDefaults)}}
   function deepMerge(base,extra){for(const [k,v] of Object.entries(extra||{})){if(v&&typeof v==="object"&&!Array.isArray(v)&&base[k]&&typeof base[k]==="object"&&!Array.isArray(base[k]))deepMerge(base[k],v);else base[k]=v}return base}
@@ -3521,9 +3646,9 @@ body .u5-nav button.active {
   function navClick(e){const b=e.target.closest("[data-page]");if(b)showPage(b.dataset.page)}
   function showPage(page){if(page==="studio"){closeWorld();return}world.activePage=page;saveWorld();const meta={map:["Akademi Haritası","Bütün alanlar tek bir yaşayan dünyada."],story:["Hikâye Modu","Seçimlerin dostluklarını ve ödüllerini değiştirir."],wardrobe:["Katmanlı Gardırop","Üst, alt, ceket, kol, ayakkabı ve çantayı ayrı düzenle."],dorm:["Yurt Odası","Kendi odanı ve ördeğinin köşesini tasarla."],care:["Ördek Bakım Merkezi","Pofuduk'un ihtiyaçlarını karşıla ve bağınızı güçlendir."],runway:["Ay Podyumu","Görünümünü tema, uyum ve özgünlük açısından değerlendir."],collection:["Koleksiyon Kitabı","Hikâye ve podyumdan kazandığın eşyaları keşfet."],photo:["Profesyonel Fotoğraf Stüdyosu","Sahne, kompozisyon ve başlık ayarlarıyla kapak hazırla."],settings:["Oyun Ayarları","Görünüm, erişilebilirlik ve kayıt seçenekleri."]}[page]||["Nightfall Academy",""];$("#u5PageTitle").textContent=meta[0];$("#u5PageSub").textContent=meta[1];$$("#u5Nav [data-page]").forEach(b=>b.classList.toggle("active",b.dataset.page===page));const render={map:renderMap,story:renderStory,wardrobe:renderWardrobe,dorm:renderDorm,care:renderCare,runway:renderRunway,collection:renderCollection,photo:renderPhoto,settings:renderSettings}[page]||renderMap;$("#u5Content").innerHTML=render();syncActivePressed($("#u5Content"));updateHeader()}
   function updateHeader(){if(!$("#u5Coins"))return;$("#u5Coins").textContent=`🌙 ${Math.floor(world.moonCoins)}`;$("#u5Crystals").textContent=`💎 ${Math.floor(world.crystals)}`;$("#u5Fame").textContent=`★ ${Math.floor(world.fame)}`}
-  function renderMap(){const done=world.storyDone.length;return `<section class="u5-hero"><span class="u5-kicker">YAŞAYAN AKADEMİ</span><h3>Kendi hikâyeni, stilini ve dünyanı oluştur.</h3><p>Nightfall artık yalnızca bir avatar editörü değil. Akademiyi keşfet, sekiz bölümlük hikâyeyi tamamla, yurt odanı dekore et, ördeğinle bağ kur ve podyumda ün kazan.</p><div class="u5-actions"><button class="u5-btn primary" data-go="story">Hikâyeye Devam Et</button><button class="u5-btn" data-go="wardrobe">Görünümü Geliştir</button></div><div class="u5-stat-row"><div class="u5-stat"><b>${done}/8</b><small>HİKÂYE</small></div><div class="u5-stat"><b>${world.unlocked.length}/${collectionItems.length}</b><small>KOLEKSİYON</small></div><div class="u5-stat"><b>${world.runway.best}</b><small>EN İYİ PUAN</small></div><div class="u5-stat"><b>${duckMood().label}</b><small>POFUDUK</small></div></div></section><div class="u5-section-head"><div><h3>Akademi Alanları</h3><p>Bir bölüme dokunarak doğrudan git.</p></div></div><div class="academy-map"><div class="academy-castle">🏰</div><div class="map-road"></div>${mapLocations.map(l=>`<button class="map-node ${l.pos}" data-go="${l.page}"><span>${l.icon}</span><b>${l.name}</b><small>${l.sub}</small></button>`).join("")}</div>`}
+  function renderMap(){const done=world.storyDone.length;return `<section class="u5-hero"><span class="u5-kicker">YAŞAYAN AKADEMİ</span><h3>Kendi hikâyeni, stilini ve dünyanı oluştur.</h3><p>Nightfall artık yalnızca bir avatar editörü değil. Akademiyi keşfet, genişletilmiş hikâyeyi tamamla, yurt odanı dekore et, ördeğinle bağ kur ve podyumda ün kazan.</p><div class="u5-actions"><button class="u5-btn primary" data-go="story">Hikâyeye Devam Et</button><button class="u5-btn" data-go="wardrobe">Görünümü Geliştir</button></div><div class="u5-stat-row"><div class="u5-stat"><b>${done}/${storyChapters.length}</b><small>HİKÂYE</small></div><div class="u5-stat"><b>${world.unlocked.length}/${collectionItems.length}</b><small>KOLEKSİYON</small></div><div class="u5-stat"><b>${world.runway.best}</b><small>EN İYİ PUAN</small></div><div class="u5-stat"><b>${duckMood().label}</b><small>POFUDUK</small></div></div></section><div class="u5-section-head"><div><h3>Akademi Alanları</h3><p>Bir bölüme dokunarak doğrudan git.</p></div></div><div class="academy-map"><div class="academy-castle">🏰</div><div class="map-road"></div>${mapLocations.map(l=>`<button class="map-node ${l.pos}" data-go="${l.page}"><span>${l.icon}</span><b>${l.name}</b><small>${l.sub}</small></button>`).join("")}</div>`}
   function isChapterUnlocked(ch){return !ch.requires||world.storyDone.includes(ch.requires)}
-  function renderStory(){if(currentStory)return renderDialogue();return `<div class="u5-section-head" style="margin-top:0"><div><h3>Birinci Sezon: Geceye İlk Adım</h3><p>Her bölüm kalıcı ödüller ve farklı dostluk puanları kazandırır.</p></div><span class="u5-badge">${world.storyDone.length}/8 TAMAMLANDI</span></div><div class="u5-grid two">${storyChapters.map(ch=>{const done=world.storyDone.includes(ch.id),unlocked=isChapterUnlocked(ch);return `<article class="u5-card story-card ${done?"done":""} ${!unlocked?"locked":""}"><div class="story-number">${done?"✓":ch.no}</div><div><h4>${ch.icon} ${ch.title}</h4><p>${ch.desc}</p><div class="story-reward">Ödül: ${ch.reward.join(" · ")}</div></div><button class="u5-btn ${done?"":"primary"}" data-story="${ch.id}" ${!unlocked?"disabled":""}>${done?"Tekrar Oyna":"Başlat"}</button></article>`}).join("")}</div><div class="u5-section-head"><div><h3>Karakter Bağları</h3><p>Hikâye seçimlerin ilişkilerini değiştirir.</p></div></div><div class="u5-grid three">${[["luna","Luna Vale","🌙"],["vera","Profesör Vera","👠"],["rowan","Rowan Ash","⚡"]].map(([id,n,i])=>`<div class="u5-card"><div class="u5-card-icon">${i}</div><h4>${n}</h4><p>${affinityText(world.affinity[id])}</p><div class="u5-progress"><i style="width:${Math.min(100,world.affinity[id]*8)}%"></i></div><span class="u5-badge">BAĞ ${world.affinity[id]}</span></div>`).join("")}</div>`}
+  function renderStory(){if(currentStory)return renderDialogue();return `<div class="u5-section-head" style="margin-top:0"><div><h3>Birinci Sezon: Geceye İlk Adım + V10 Lookbook</h3><p>Her bölüm kalıcı ödüller ve farklı dostluk puanları kazandırır.</p></div><span class="u5-badge">${world.storyDone.length}/${storyChapters.length} TAMAMLANDI</span></div><div class="u5-grid two">${storyChapters.map(ch=>{const done=world.storyDone.includes(ch.id),unlocked=isChapterUnlocked(ch);return `<article class="u5-card story-card ${done?"done":""} ${!unlocked?"locked":""}"><div class="story-number">${done?"✓":ch.no}</div><div><h4>${ch.icon} ${ch.title}</h4><p>${ch.desc}</p><div class="story-reward">Ödül: ${ch.reward.join(" · ")}</div></div><button class="u5-btn ${done?"":"primary"}" data-story="${ch.id}" ${!unlocked?"disabled":""}>${done?"Tekrar Oyna":"Başlat"}</button></article>`}).join("")}</div><div class="u5-section-head"><div><h3>Karakter Bağları</h3><p>Hikâye seçimlerin ilişkilerini değiştirir.</p></div></div><div class="u5-grid three">${[["luna","Luna Vale","🌙"],["vera","Profesör Vera","👠"],["rowan","Rowan Ash","⚡"]].map(([id,n,i])=>`<div class="u5-card"><div class="u5-card-icon">${i}</div><h4>${n}</h4><p>${affinityText(world.affinity[id])}</p><div class="u5-progress"><i style="width:${Math.min(100,world.affinity[id]*8)}%"></i></div><span class="u5-badge">BAĞ ${world.affinity[id]}</span></div>`).join("")}</div>`}
   function affinityText(n){return n>=8?"Sarsılmaz bir bağ kurdunuz.":n>=5?"Sana güvenmeye başladı.":n>=2?"Aranızda sıcak bir yakınlık var.":"Henüz birbirinizi tanıyorsunuz."}
   function renderDialogue(){const scene=currentStory.scenes[storyStep];return `<div class="dialogue-stage" style="--dialogue-bg:${storyBg(currentStory.id)}"><div class="dialogue-character">${scene.avatar}</div><div class="dialogue-box"><div class="dialogue-name">${scene.speaker.toUpperCase()} · BÖLÜM ${currentStory.no}</div><div class="dialogue-text">${scene.text}</div><div class="choice-list">${scene.choices.map((c,i)=>`<button data-choice="${i}">${c.t}</button>`).join("")}</div></div></div><div class="u5-actions"><button class="u5-btn" data-story-exit>← Bölüm Listesine Dön</button></div>`}
   function storyBg(id){return {arrival:"linear-gradient(145deg,#23355d,#4c2b69)","first-look":"linear-gradient(145deg,#5b244c,#291b49)","duck-bond":"linear-gradient(145deg,#17606d,#2f7658)",rival:"linear-gradient(145deg,#611d36,#242042)","secret-library":"linear-gradient(145deg,#2f2459,#102c3d)","room-night":"linear-gradient(145deg,#613d63,#2d2647)","moon-gala":"linear-gradient(145deg,#7e3c68,#37205e)",finale:"linear-gradient(145deg,#1b4872,#6a367e)"}[id]}
@@ -3710,7 +3835,7 @@ body .u5-nav button.active {
     head.append(copy,focus); editorPanel.insertBefore(head,nav);
   }
   function simplifyLabels(){
-    const map={'Vücut':'Vücut','Yüz':'Yüz','Göz':'Gözler','Saç':'Saç','Kıyafet':'Stil','Aksesuar':'Takı','Büyü':'Efekt','Yardımcı':'Dost','Sahne':'Sahne','Stüdyo':'Ayar'};
+    const map={'Vücut':'Vücut','Yüz':'Yüz','Göz':'Gözler','Saç':'Saç','Kıyafet':'Stil','Aksesuar':'Takı','Büyü':'Detay','Yardımcı':'Dost','Sahne':'Sahne','Stüdyo':'Ayar'};
     document.querySelectorAll('.category-btn').forEach(btn=>{
       const node=[...btn.childNodes].find(n=>n.nodeType===Node.TEXT_NODE&&n.textContent.trim());
       if(node&&map[node.textContent.trim()]) node.textContent=map[node.textContent.trim()];
@@ -3737,7 +3862,7 @@ body .u5-nav button.active {
   const ready = (fn)=>document.readyState==='loading'?document.addEventListener('DOMContentLoaded',fn):fn();
   function enhance(){
     document.body.classList.add('hk-redesign');
-    try{ if(localStorage.getItem('hikayemiz_theme_mode')==='calm') document.body.classList.add('hk-calm'); }catch(e){}
+    document.body.classList.add('hk-calm','hk-no-effects');
     const brandTitle = document.querySelector('.brand h1');
     if(brandTitle){
       brandTitle.innerHTML = '<span class="hk-title-main">Hikayemiz</span>';
@@ -3748,23 +3873,6 @@ body .u5-nav button.active {
     if(stats){
       stats.innerHTML = '<span class="pro-stat">Mobil uyumlu</span><span class="pro-stat">Kayıt sistemi</span><span class="pro-stat">Avatar düzenleme</span>';
     }
-    const toolbar = document.querySelector('.toolbar');
-    if(toolbar && !toolbar.querySelector('.hk-theme-toggle')){
-      const theme = document.createElement('button');
-      theme.className = 'hk-theme-toggle';
-      theme.type = 'button';
-      theme.textContent = document.body.classList.contains('hk-calm') ? '🌙 Sakin' : '💖 Canlı';
-      theme.title = 'Tasarım modunu değiştir';
-      theme.addEventListener('click',()=>{
-        document.body.classList.toggle('hk-calm');
-        const calm = document.body.classList.contains('hk-calm');
-        theme.textContent = calm ? '🌙 Sakin' : '💖 Canlı';
-        try{localStorage.setItem('hikayemiz_theme_mode', calm ? 'calm' : 'vivid')}catch(e){}
-        const toast = document.getElementById('toast');
-        if(toast){toast.textContent = calm ? 'Sakin tema açıldı.' : 'Canlı tema açıldı.'; toast.classList.add('show'); setTimeout(()=>toast.classList.remove('show'),1600);}
-      });
-      toolbar.appendChild(theme);
-    }
     const labels = {
       undoBtn:'↶', redoBtn:'↷', randomBtn:'🎲 Rastgele', challengeBtn:'🏆 Görev', galleryBtn:'▦ Galeri',
       resetBtn:'↺ Sıfırla', downloadBtn:'Kaydet', downloadBtnBottom:'Profesyonel Dışa Aktar', copyBtn:'Kopyala', pasteBtn:'Yapıştır'
@@ -3773,11 +3881,11 @@ body .u5-nav button.active {
     const back = document.querySelector('.site-back-btn');
     if(back){ back.textContent='←'; back.title='Ana sayfaya dön'; back.setAttribute('aria-label','Ana sayfaya dön'); }
     const stage = document.getElementById('stageCard');
-    if(stage){ stage.classList.add('alive'); }
+    if(stage){ stage.classList.remove('alive'); }
     const editorHead = document.querySelector('.pro-editor-head b');
     if(editorHead) editorHead.textContent = 'Tasarım Paneli';
     const editorSub = document.querySelector('.pro-editor-head small');
-    if(editorSub) editorSub.textContent = 'Renk, stil, efekt ve sahneyi hızlıca düzenle.';
+    if(editorSub) editorSub.textContent = 'Renk, stil ve sahneyi hızlıca düzenle.';
     const saveState = document.getElementById('saveState');
     if(saveState) saveState.textContent = '● Hazır';
     document.documentElement.style.setProperty('--avatar-zoom', getComputedStyle(document.documentElement).getPropertyValue('--avatar-zoom') || '1');
@@ -3792,7 +3900,7 @@ body .u5-nav button.active {
 (function() {
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
-      navigator.serviceWorker.register('./service-worker.js?v=2026-07-04-index-oyun-v4').catch(function(err) {
+      navigator.serviceWorker.register('./service-worker.js?v=2026-07-04-v13-mobile-clean').catch(function(err) {
         console.warn('Service worker kayıt hatası:', err);
       });
     });
@@ -3801,7 +3909,8 @@ body .u5-nav button.active {
 </script>
 
 
-<script src="./assets/smooth-mobile.js?v=2026-07-04-mobile-ultra" defer></script>
-<script src="./assets/premium-v2.js?v=2026-07-04-v9" defer></script>
+<script src="./assets/smooth-mobile.js?v=2026-07-04-v12-no-toggle" defer></script>
+<script src="./assets/premium-v2.js?v=2026-07-04-v12-no-toggle" defer></script>
+<script src="./assets/site-mobile-v13.js?v=2026-07-04-v13-mobile-clean" defer></script>
 </body>
 </html>

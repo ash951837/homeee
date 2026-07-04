@@ -1,4 +1,4 @@
-/* Sumeyye Premium V2 — UX/performance helpers */
+/* Sumeyye Premium V12 — UX helpers, toggle removed */
 (function(){
   'use strict';
   const d=document,w=window;
@@ -43,28 +43,20 @@
     if(isGame){
       dock.innerHTML='<a href="./index.html"><b>⌂</b><span>Ana</span></a><button type="button" data-neo="random"><b>🎲</b><span>Rastgele</span></button><button type="button" data-neo="world" class="hot"><b>🏰</b><span>Akademi</span></button><button type="button" data-neo="save"><b>↗</b><span>Kaydet</span></button>';
     }else{
-      dock.innerHTML='<button type="button" data-neo="home"><b>✦</b><span>Baş</span></button><button type="button" data-neo="menu"><b>☰</b><span>Menü</span></button><a class="hot" href="./oyun.html"><b>🎮</b><span>Oyun</span></a><button type="button" data-neo="perf"><b>⚡</b><span>Akıcı</span></button>';
+      dock.innerHTML='<button type="button" data-neo="home"><b>✦</b><span>Baş</span></button><button type="button" data-neo="menu"><b>☰</b><span>Menü</span></button><a class="hot" href="./oyun.html"><b>🎮</b><span>Oyun</span></a>';
     }
     dock.addEventListener('click',e=>{
       const btn=e.target.closest('[data-neo]'); if(!btn) return;
       const a=btn.dataset.neo;
       if(a==='home'){ e.preventDefault(); if(w.showSection) w.showSection(0); w.scrollTo({top:0,behavior:'smooth'}); showToast('Başa dönüldü.'); }
       if(a==='menu'){ e.preventDefault(); $('#sideMenuToggle')?.click(); }
-      if(a==='perf'){ e.preventDefault(); $('.perf-pill')?.click(); showToast(d.body.classList.contains('perf-lite')?'Akıcı mod açık.':'Tam efekt modu açık.'); }
-      if(a==='random'){ e.preventDefault(); $('#randomBtn')?.click(); showToast('Yeni karakter enerjisi hazır.'); }
+if(a==='random'){ e.preventDefault(); $('#randomBtn')?.click(); showToast('Yeni karakter enerjisi hazır.'); }
       if(a==='world'){ e.preventDefault(); ($('#worldBtn') || $('#challengeBtn'))?.click(); showToast('Ana oyun açılıyor.'); }
       if(a==='save'){ e.preventDefault(); $('#downloadBtn')?.click(); }
     });
     d.body.appendChild(dock);
   }
-  function makeQuickCard(){
-    if(location.pathname.toLowerCase().includes('oyun')) return;
-    if($('.premium-quick-card')) return;
-    const card=d.createElement('aside');card.className='premium-quick-card';
-    card.innerHTML='<strong>✨ Premium sürüm</strong><span>Mobilde hafif animasyon, hızlı görseller ve tek dokunuşla oyun geçişi hazır.</span>';
-    d.body.appendChild(card);
-    setTimeout(()=>card.remove(),9000);
-  }
+  function makeQuickCard(){ /* V13: tanıtım kartı kaldırıldı; sade arayüz korunur. */ }
   function enhanceFab(){
     const fab=$('.game-page-fab');
     if(fab && !fab.querySelector('small')){
@@ -89,7 +81,7 @@
   }
   ready(()=>{
     d.body.classList.add('neo-v2');
-    ensureProgress(); enhanceImages(); makeIndexDock(); makeQuickCard(); enhanceFab(); installSkip(); reduceScrollJank();
+    ensureProgress(); enhanceImages(); makeIndexDock(); enhanceFab(); installSkip(); reduceScrollJank();
     w.SumeyyePremiumToast=showToast;
   });
 })();

@@ -55,12 +55,12 @@ Kontroller:
 - ZIP bütünlük testi yapıldı.
 
 
-INDEX V7 — REKLAM PANEL YOK + PC SCROLL + KOMPAKT AKICI MOD
+INDEX V7/V12 — REKLAM PANEL YOK + NORMAL SCROLL + TAM/AKICI MOD YOK
 - Index içindeki görünen reklam/sponsor tarzı paneller ve “0 reklam” istatistik kartı kaldırıldı.
 - Geçici premium bilgi kartı kaldırıldı; site daha sade açılır.
 - PC’de mouse tekerleği ve klavye oklarıyla bölüm bölüm kaymalı geçiş eklendi.
 - Mobilde alttaki dock ve oyun butonu küçültüldü; ekranı daha az kaplar.
-- Akıcı Mod butonu PC’de küçük chip, mobilde küçük ikon olarak çalışır.
+- Tam/Akıcı mod butonu sonraki sürümde kaldırıldı; ekranda yer kaplamaz.
 - Blog/Hikaye Akışı mini oyun vurgusu kaldırıldı, sade keşif kartına çevrildi.
 - Service worker cache v7’ye yükseltildi.
 
@@ -75,3 +75,53 @@ INDEX V7 — REKLAM PANEL YOK + PC SCROLL + KOMPAKT AKICI MOD
 - Yaşayan Akademi veri yapısına 2 yeni hikaye bölümü, 12 koleksiyon eşyası, yeni gardırop seçenekleri, yeni podyum temaları ve fotoğraf presetleri eklendi.
 - Mobil/PC uyumu için oyun paneli, kategori butonları, kart gridleri ve sahne davranışı optimize edildi.
 - Service worker cache sürümü V9 yapıldı.
+
+
+V10 KOMBIN VE KIYAFET GENISLETME
+- Mini game eklenmedi; ana avatar/gardırop oyunu büyütüldü.
+- 10 yeni hazır V10 kombin eklendi.
+- 14 yeni ana kıyafet stili, 12 saç modeli, yeni desenler, baş aksesuarları, takılar, kanatlar, auralar, objeler, arka planlar, filtreler ve çerçeveler eklendi.
+- Yaşayan Akademi tarafına 2 yeni hikaye bölümü, 12 koleksiyon eşyası, 30+ gardırop parçası, 4 podyum teması ve 5 fotoğraf preset’i eklendi.
+- Hikaye sayaçları dinamik hale getirildi.
+- Mobil/PC uyum bozulmadan V10 Lookbook paneli eklendi.
+- Service worker cache sürümü V10 yapıldı.
+
+
+V11 EFEKT MODU KAPALI / TEMIZ SURUM
+- Oyun içindeki Canlı/Sakin efekt modu butonu tamamen kaldırıldı.
+- Canlı önizleme / motion butonu silindi.
+- Büyü bölümündeki canlı efekt açma kartı kaldırıldı.
+- Dışa aktarma penceresindeki “Parıltı efektlerini dahil et” seçeneği kaldırıldı.
+- Avatar export işlemi artık efekt katmanlarını varsayılan olarak dahil etmiyor.
+- Stage otomatik alive/canlı animasyon sınıfıyla başlamıyor.
+- Varsayılan görünüm sade ve düşük hareketli moda sabitlendi.
+- Mobil ve PC uyumu korunarak oyun akışı sadeleştirildi.
+- Service worker cache sürümü V11 yapıldı.
+
+
+V12 - TAM / AKICI MOD TEMİZLİĞİ
+- Üstte görünen Tam/Akıcı geçiş butonu kaldırıldı.
+- Bu butonun oluşturduğu efekt geçişi kapatıldı.
+- Mobil alt menüdeki Akıcı seçeneği kaldırıldı.
+- Service worker cache sürümü V12 yapıldı.
+
+
+=== V13 MOBIL TEMIZ DUZEN ===
+- Index ve oyun sayfalarına ortak sade mobil/PC uyum katmanı eklendi.
+- Alt menü, oyun butonu ve küçük yardımcı butonlar mobilde küçültüldü.
+- Oyun toolbarı telefonda yatay kaydırmalı ve kompakt hale getirildi.
+- Normal yukarı-aşağı scroll davranışı korunacak şekilde overflow ayarları güçlendirildi.
+- Reklam/promo/tanıtım kartı ve effect/perf toggle kalıntıları temizlendi.
+- Mobilde ağır animasyon ve gölge yükü azaltıldı.
+- Klavye açılınca alttaki sabit butonların ekranı kaplaması engellendi.
+- Service worker cache sürümü V13 yapıldı.
+- Tarayıcı testinde yakalanan renk yardımcı fonksiyonu hatası düzeltildi: darken/lighten artık sonraki içerik paketleriyle uyumlu.
+
+
+V14 - Sayfalar Kartı Kaldırıldı
+- index.html içindeki pageStatusBtn / luxury-page-card kartı kaldırıldı.
+- pageDrawer / Sayfalar çekmecesi kaldırıldı.
+- togglePageDrawer ve drawer'a bağlı JS temizlendi.
+- İlgili CSS kalıntıları temizlendi.
+- Mobil/PC normal scroll ve sade kullanım korundu.
+- Cache sürümü V14 yapıldı.
