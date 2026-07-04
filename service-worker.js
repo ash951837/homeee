@@ -1,9 +1,9 @@
-const CACHE_NAME = 'hikayemiz-costume-pro-v5-deluxe-wardrobe';
+const CACHE_NAME = 'hikayemiz-game-v9-deluxe';
 const CORE_ASSETS = [
   './', './index.html', './oyun.html', './manifest.webmanifest', './manifest.json', './pwa.css',
   './icons/favicon.svg', './icons/icon-192.png', './icons/icon-512.png', './icons/apple-touch-icon.png',
-  './assets/smooth-mobile.css', './assets/smooth-mobile.js', './assets/premium-v2.css', './assets/premium-v2.js',
-  './assets/', './assets/'
+  './assets/smooth-mobile.css', './assets/smooth-mobile.js', './assets/premium-v2.css', './assets/premium-v2.js', './assets/index-v6.css', './assets/index-v6.js', './assets/index-v7.css', './assets/index-v7.js',
+  './assets/media/photo-01-d36c0449ff95.webp'
 ];
 self.addEventListener('install', event => {
   self.skipWaiting();

@@ -1,48 +1,77 @@
-SUMEYYE SITE — COSTUME PRO V3
+SUMEYYE SITE INDEX V8 - TEMIZ NORMAL SCROLL
 
-Ana değişiklikler:
-- oyun.html içindeki ayrı mini oyun katmanları kaldırıldı.
-- Oyun artık tek ana deneyime odaklandı: avatar, kostüm, görev, podyum, galeri, fotoğraf ve yaşayan akademi.
-- Kullanılmayan harici mini oyun dosyaları paketten çıkarıldı.
-- Mobilde boş oyun döngüleri ve gereksiz butonlar temizlendi.
+- Ozel Panel tamamen kaldirildi.
+- PC'de mouse wheel ile bolum atlatma kaldirildi.
+- Normal yukari/asagi scroll tekrar aktif edildi.
+- Scroll snap ve wheel preventDefault davranisi temizlendi.
+- Mobil ve PC icin sade/akici kullanim korundu.
+- Reklam/promo panelleri gizli kalmaya devam eder.
+- Mini game eklenmedi; mini game bolumleri sade navigasyondan gizli kalir.
+- Service worker cache surumu V8 yapildi.
 
-Kostüm geliştirmeleri:
-- Yeni ana kostümler eklendi: idol, kimono, ninja, korsan, deniz kızı, peri, dedektif, astronot, prenses, bilim insanı.
-- Yeni desenler eklendi: kalp, ay, dantel, alev, devre.
-- Yeni baş aksesuarları eklendi: taç, çiçek tacı, bere, vizör, denizci.
-- Yeni kanatlar eklendi: ejder, anka, hologram.
-- Yeni aura, aksesuar, prop ve arka plan seçenekleri eklendi.
-- Hazır kostüm presetleri artırıldı.
+Kontrol: JS/JSON/HTML referanslari ve ZIP butunlugu test edildi.
 
-Oyun güçlendirme:
-- Stil görevleri, podyum, galeri ve başarımlar ana akışta daha öne çıkarıldı.
-- Yeni temalı görevler eklendi: Sahne İdolü, Gölge Ninja, Okyanus Couture ve Uzay Laboratuvarı.
-- Yeni Kostüm Ustası başarımı eklendi.
-- Günlük hediye, kayıt yuvaları ve karakter koleksiyonu korunup daha temiz hale getirildi.
-- Mobil dock artık doğrudan ana akademi/oyun akışını açıyor.
-- CSS ve JS tarafında mobil kırılmalar düzeltildi.
+--- Onceki notlar ---
+Sümeyye Site - Index V6 Sade Premium Güncelleme
 
-Kontrol:
-- HTML içi JavaScript sözdizimi kontrol edildi.
-- Harici JS dosyaları kontrol edildi.
-- Manifest JSON dosyaları kontrol edildi.
+Bu sürümde oyun.html değiştirilmedi; istenen çalışma index.html tarafına uygulandı.
+
+Yapılanlar:
+- index.html için yeni sade premium kullanım katmanı eklendi.
+- Yeni dosyalar:
+  - assets/index-v6.css
+  - assets/index-v6.js
+- Ana siteye "Özel Panel" eklendi.
+- Panel içine hızlı erişim kartları, bölüm arama, sade rota ve günlük not havuzu eklendi.
+- Mini game eklenmedi.
+- Mevcut index içindeki oyun tarzı bölümler sade gezinti akışından gizlendi:
+  - Puzzle
+  - Hafıza Oyunu
+  - Kalp Yakala
+  - Ördek Uçur
+  - Yazı Tura
+- Site veri yapısı büyütüldü:
+  - hızlı kart verileri
+  - günlük not verileri
+  - bölüm meta verileri
+  - sade gezinme rotası
+  - destek / plan / anı filtreleri
+- Mobil uyum güçlendirildi:
+  - tek kolon kart akışı
+  - büyük dokunmatik butonlar
+  - daha hafif gölgeler
+  - sade arama alanı
+- PC uyum güçlendirildi:
+  - geniş ekran panel düzeni
+  - dengeli kart grid sistemi
+  - yan menüyle uyumlu içerik alanı
+- Service worker cache sürümü yenilendi.
+
+Kontroller:
+- index-v6.js node --check kontrolünden geçti.
+- Tüm JS dosyaları sözdizimi kontrolünden geçti.
+- manifest.json, manifest.webmanifest ve vercel.json JSON kontrolünden geçti.
+- index.html ve oyun.html içindeki yerel href/src dosya referansları kontrol edildi.
+- ZIP bütünlük testi yapıldı.
 
 
-V4 AKTIF BUTON DÜZELTMESI
-- Oyun içindeki seçili butonlar artık altın/pembe çerçeve ve tik işaretiyle net görünüyor.
-- Gardırop, ördek kıyafeti, oda dekoru, podyum teması ve fotoğraf preset seçimleri anında aktif görünüme geçiyor.
-- Mobilde seçim sonrası panel konumu korunuyor; butona basınca liste en başa zıplamıyor.
-- Erişilebilirlik için aria-pressed değerleri eklendi.
-- Service worker cache sürümü yenilendi; telefon eski oyun.html dosyasını tutmasın diye güncellendi.
+INDEX V7 — REKLAM PANEL YOK + PC SCROLL + KOMPAKT AKICI MOD
+- Index içindeki görünen reklam/sponsor tarzı paneller ve “0 reklam” istatistik kartı kaldırıldı.
+- Geçici premium bilgi kartı kaldırıldı; site daha sade açılır.
+- PC’de mouse tekerleği ve klavye oklarıyla bölüm bölüm kaymalı geçiş eklendi.
+- Mobilde alttaki dock ve oyun butonu küçültüldü; ekranı daha az kaplar.
+- Akıcı Mod butonu PC’de küçük chip, mobilde küçük ikon olarak çalışır.
+- Blog/Hikaye Akışı mini oyun vurgusu kaldırıldı, sade keşif kartına çevrildi.
+- Service worker cache v7’ye yükseltildi.
 
 
-V5 DELUXE WARDROBE GUNCELLEMESI
-- Mini oyun eklenmedi; mevcut ana oyun/kostum sistemi buyutuldu.
-- Ana avatar oyununa 8 yeni tam kostum stili eklendi: Harajuku Pop, Ay Balerini, Kis Sarayi, Saat Kulesi, Gece Motorcu, Neon Yarisci, Opera Diva, Kralice Zirhi.
-- 5 yeni sac stili eklendi: Hime Kesim, Wolf Cut, Uzay Topuzu, Kivircik Atkuyrugu, Katli Kesim.
-- 5 yeni kiyafet deseni eklendi: Kurdele, Inci, Pul, Dama, Takimyildiz.
-- Gardiroba 40+ yeni parca/doku cizimi eklendi: kapusonlu, kimono, denizci, smokin, pileli etek, kargo, tutu, platform, babet, postal, el cantasi, yildiz canta, iksir canta, gitar kilifi, denim, payet, hologram, orgu vb.
-- Yeni presetler eklendi: Harajuku Pop Star, Kis Sarayi Kralicesi, Saat Kulesi Mucidi, Neon Yaris Kralicesi, Opera Gece Divasi.
-- Yeni gorevler eklendi: Harajuku Pop Sovu, Kis Sarayi Balosu, Saat Kulesi Podyumu.
-- Kamera/prop ciziminde hata yaratabilecek degisken problemi duzeltildi.
-- Service worker cache surumu V5 olarak yenilendi.
+=== V9 OYUN DELUXE GENİŞLETME ===
+- Mini game eklenmedi; oyun ana avatar/kostüm/gardırop/podyum sistemi olarak büyütüldü.
+- oyun.html veri yapısı genişletildi: yeni saç, kıyafet, aksesuar, aura, yardımcı, sahne, filtre ve sticker seçenekleri eklendi.
+- 10 yeni hazır kombin, 8 yeni stil görevi, yeni başarım hedefleri eklendi.
+- Galeri kapasitesi 12 yerine 30 karaktere çıkarıldı.
+- Kayıt yuvası 3 yerine 6 yuvaya çıkarıldı.
+- Stüdyo içine Deluxe Kostüm Atölyesi eklendi: Akıllı Kombin, Detay Doldur, Renk Uyumla, Mobil Poz araçları.
+- Yaşayan Akademi veri yapısına 2 yeni hikaye bölümü, 12 koleksiyon eşyası, yeni gardırop seçenekleri, yeni podyum temaları ve fotoğraf presetleri eklendi.
+- Mobil/PC uyumu için oyun paneli, kategori butonları, kart gridleri ve sahne davranışı optimize edildi.
+- Service worker cache sürümü V9 yapıldı.

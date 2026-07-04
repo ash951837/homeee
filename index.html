@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="description" content="Sümeyye için hazırlanmış reklamsız, mobil uyumlu ve romantik özel sürpriz sitesi.">
+<meta name="description" content="Sümeyye için hazırlanmış sade, mobil uyumlu ve romantik özel sürpriz sitesi.">
 <meta name="theme-color" content="#0B1026">
 <meta name="color-scheme" content="dark">
 <title>Sümeyye'ye Özel Bir Sürpriz 💫</title>
@@ -3289,6 +3289,8 @@ body:not(.site-unlocked) .side-page-list,body:not(.site-unlocked) .side-menu-bac
 
   <link rel="stylesheet" href="./assets/smooth-mobile.css?v=2026-07-04-mobile-ultra">
 <link rel="stylesheet" href="./assets/premium-v2.css?v=2026-07-04-v2">
+<link rel="stylesheet" href="./assets/index-v6.css?v=2026-07-04-index-v8-no-panel">
+<link rel="stylesheet" href="./assets/index-v7.css?v=2026-07-04-index-v8-native-scroll">
 </head>
 <body>
 <div id="main" tabindex="-1"></div>
@@ -4929,7 +4931,6 @@ body:not(.site-unlocked) .side-page-list,body:not(.site-unlocked) .side-menu-bac
       <p class="blog-hero-text">Aşağıdaki kartlara dokunarak en romantik, en eğlenceli ve en özel bölümlere hızlıca geçebilirsin. Telefon ekranında kaydırmalı blog gibi çalışır.</p>
       <div class="blog-stat-row">
         <div class="blog-stat"><strong id="blogTotalPages">50+</strong><span>özel sayfa</span></div>
-        <div class="blog-stat"><strong>0</strong><span>reklam</span></div>
         <div class="blog-stat"><strong>100%</strong><span>mobil his</span></div>
       </div>
     </div>
@@ -7126,7 +7127,7 @@ function initAiClone(){
 const BLOG_FEATURED_CARDS = [
   { icon:'🌙', title:'Yıldızlı başlangıç', text:'Sürprizin romantik açılışına dön.', id:'starrySection' },
   { icon:'🖼️', title:'Anılarımız', text:'Fotoğrafları daha sinematik kartlarla aç.', id:'gallerySection' },
-  { icon:'🎮', title:'Mini oyunlar', text:'Hafıza, puzzle ve kalp yakalama bölümlerine hızlı geç.', id:'memorySection' },
+  { icon:'✨', title:'Sade keşif', text:'En güzel bölümleri oyun kalabalığı olmadan hızlıca keşfet.', id:'pageBlogSection' },
   { icon:'💌', title:'Mektup ve söz', text:'Mektup, söz ve gelecek notlarını tek dokunuşla bul.', id:'loveLetterSection' },
   { icon:'👑', title:'Kraliçe bölümü', text:'Saray, galaksi ve sertifika gibi premium sayfalar.', id:'palaceSection' },
   { icon:'💬', title:'Sanal Sefa', text:'Moral, şiir ve tatlı mesajlar için sohbet alanı.', id:'aiCloneSection' },
@@ -7965,7 +7966,7 @@ document.addEventListener('DOMContentLoaded', startLoveNotificationSchedule);
 (function() {
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
-      navigator.serviceWorker.register('./service-worker.js?v=2026-07-04-index-oyun-v4').catch(function(err) {
+      navigator.serviceWorker.register('./service-worker.js?v=2026-07-04-index-v8').catch(function(err) {
         console.warn('Service worker kayıt hatası:', err);
       });
     });
@@ -7974,7 +7975,14 @@ document.addEventListener('DOMContentLoaded', startLoveNotificationSchedule);
 </script>
 
 
+
+<script>
+window.__INDEX_V8_NATIVE_SCROLL__ = true;
+document.documentElement.classList.add('index-v8-native-scroll');
+</script>
 <script src="./assets/smooth-mobile.js?v=2026-07-04-mobile-ultra" defer></script>
 <script src="./assets/premium-v2.js?v=2026-07-04-v2" defer></script>
+<script src="./assets/index-v6.js?v=2026-07-04-index-v8-no-panel" defer></script>
+<script src="./assets/index-v7.js?v=2026-07-04-index-v8-native-scroll" defer></script>
 </body>
 </html>

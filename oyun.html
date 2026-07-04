@@ -1389,7 +1389,7 @@ body.hk-redesign .hk-theme-toggle{
 <!-- /PWA AYARLARI -->
 
   <link rel="stylesheet" href="./assets/smooth-mobile.css?v=2026-07-04-mobile-ultra">
-<link rel="stylesheet" href="./assets/premium-v2.css?v=2026-07-04-v2">
+<link rel="stylesheet" href="./assets/premium-v2.css?v=2026-07-04-v9">
 
 
 <style id="active-state-fix-v4">
@@ -1484,6 +1484,19 @@ body .u5-nav button.active {
   body .theme-card.active,
   body .preset-card.active { transform: none; }
 }
+</style>
+
+
+<style id="game-v9-expansion-style">
+/* Game V9 Deluxe Expansion — no mini games, only deeper costume/editor systems */
+:root{--v9-card:rgba(255,255,255,.045);--v9-line:rgba(255,255,255,.12);--v9-glow:rgba(255,216,92,.18)}
+.v9-expansion-board{margin:0 0 14px;padding:14px;border:1px solid var(--v9-line);border-radius:22px;background:linear-gradient(145deg,rgba(255,216,92,.075),rgba(155,108,255,.055));box-shadow:0 18px 46px rgba(0,0,0,.18)}
+.v9-board-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:12px}.v9-board-head h3{margin:0;font-size:14px}.v9-board-head p{margin:5px 0 0;color:var(--muted);font-size:10px;line-height:1.55}.v9-pill{display:inline-flex;align-items:center;gap:5px;white-space:nowrap;padding:6px 9px;border-radius:999px;border:1px solid rgba(255,216,92,.28);background:rgba(255,216,92,.1);font-size:8px;font-weight:950;color:#ffe89a;letter-spacing:.06em}
+.v9-action-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.v9-action{min-height:56px;padding:10px;border:1px solid var(--v9-line);border-radius:16px;background:var(--v9-card);color:inherit;text-align:left;cursor:pointer;transition:transform .18s ease,border-color .18s ease,background .18s ease}.v9-action:hover{transform:translateY(-1px);border-color:rgba(255,216,92,.35);background:rgba(255,255,255,.075)}.v9-action b{display:block;font-size:10px}.v9-action small{display:block;margin-top:4px;color:var(--muted);font-size:8px;line-height:1.35}.v9-score-row{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;margin-top:12px}.v9-score-track{height:8px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden}.v9-score-track i{display:block;height:100%;width:var(--v9-score,0%);border-radius:inherit;background:linear-gradient(90deg,#ff72bb,#ffd85c,#67efc2);transition:width .28s ease}.v9-score-value{font-size:11px;font-weight:950;color:#ffe89a}.option-grid{grid-template-columns:repeat(auto-fit,minmax(96px,1fr))}.preset-grid{grid-template-columns:repeat(auto-fit,minmax(155px,1fr))}.save-slots{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}.gallery-grid{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}.stage-card,.editor-panel,.control-group{contain:layout paint style}.option,.preset-card,.tool-btn,.primary-btn{touch-action:manipulation}.category-nav{scrollbar-width:thin}.category-btn{min-width:max-content}
+@media (min-width:960px){.app{align-items:start}.editor-panel{max-height:calc(100vh - 24px);overflow:auto}.stage-card{position:sticky;top:12px}.control-panels{padding-bottom:24px}.v9-expansion-board{position:relative}}
+@media (max-width:760px){.v9-expansion-board{padding:11px;border-radius:18px;margin-bottom:10px}.v9-board-head{gap:8px}.v9-board-head h3{font-size:12px}.v9-board-head p{font-size:9px}.v9-pill{padding:4px 7px;font-size:7px}.v9-action-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.v9-action{min-height:50px;padding:9px}.v9-action b{font-size:9px}.v9-action small{font-size:7.5px}.option-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.option{min-height:50px;padding:8px}.preset-grid{grid-template-columns:1fr}.control-group{padding:12px}.editor-panel{padding-bottom:76px}.toolbar{gap:6px}.tool-btn,.primary-btn{min-height:38px}.stage-tools{transform:scale(.92);transform-origin:right top}}
+@media (max-width:420px){.v9-action-grid{grid-template-columns:1fr}.option-grid{grid-template-columns:1fr 1fr}.v9-score-row{grid-template-columns:1fr}.v9-score-value{text-align:right}.category-btn{font-size:9px;padding:9px 10px}.stage-tools{transform:scale(.84)}}
+@media (prefers-reduced-motion:reduce){.v9-action,.v9-score-track i{transition:none!important}}
 </style>
 
 </head>
@@ -2044,6 +2057,32 @@ body .u5-nav button.active {
   const darken = (hex, amount=25) => shade(hex, -amount);
   const lighten = (hex, amount=25) => shade(hex, amount);
 
+  const v9Alias={
+    hairStyle:{ribbonbraid:"braid",jellyfish:"long",butterflycut:"layered",royalbun:"buns",wetwaves:"waves",crescentbob:"bob",phoenixhair:"mohawk",microbraids:"braid",softmullet:"wolfcut",cloudcut:"curlypony"},
+    outfitStyle:{royalrobe:"royal",fairyqueen:"fairycore",cybermaid:"cyber",lunauniform:"academy",desertnomad:"pirate",crystalmaid:"princess",aurora:"celestial",raincoat:"street",gardener:"witch",chessqueen:"queenarmor",sakura:"kimono",dragonrider:"armor",dreampajama:"ballroom",starlibrarian:"scientist"},
+    glasses:{halfmoon:"round",heartglasses:"cat",monocle:"round",starvisor:"square",rimless:"round"},
+    earrings:{chain:"drop",pearl:"stud",star:"drop",moonhoop:"hoop",crystaldrop:"drop"},
+    horns:{crystal:"small",haloHorns:"curved",branch:"antlers",onyx:"curved"},
+    necklace:{locket:"gem",pearl:"moon",ribbon:"choker",starPendant:"gem",keyCharm:"moon"},
+    faceMarks:{sparkle:"stars",jewel:"moonmark",blushheart:"freckles",tattoo:"runes",teardrop:"stars"},
+    earStyle:{moonelf:"elf",softcat:"cat",shadowbat:"bat",fairy:"elf"},
+    eyeshadow:{chrome:"neon",rose:"soft",royal:"glitter",aqua:"smoke",sunset:"wing"},
+    outfitPattern:{embroidered:"lace",diamonds:"checker",clouds:"moon",floral:"ribbons",runes:"constellation",watercolor:"scales",gradient:"stars",bows:"ribbons"},
+    headwear:{bonnet:"flowercrown",starCrown:"crown",moonPin:"tiara",ribbonHat:"bow",crystalHood:"witchhat",pilotCap:"beret",veil:"halo",gardenHat:"flowercrown",sleepMask:"visor"},
+    wings:{moth:"butterfly",aurora:"hologram",glass:"crystal",raven:"shadow",leaf:"fairy",starfall:"angel",mechanic:"hologram",seraph:"angel"},
+    aura:{aurora:"galaxy",rose:"hearts",rune:"magic",dream:"galaxy",water:"frost",gold:"royal",stardust:"spotlight"},
+    companion:{panda:"bunny",hamster:"bunny",seahorse:"dragon",robotduck:"duck",mushroom:"ghost",crystalpup:"fox",penguin:"duckling"},
+    companionAccessory:{cape:"scarf",starhat:"witchhat",pearl:"crown",flower:"bow",goggles:"glasses"},
+    prop:{paintbrush:"wand",teacup:"potion",violin:"microphone",parasol:"umbrella",rose:"fan",map:"book",magicneedle:"wand",laptop:"phone",heartballoon:"lantern"},
+    weather:{aurora:"stars",mist:"rain",fireflies:"petals",confetti:"stars",moonDust:"snow"},
+    frame:{storybook:"ornate",softGlow:"neon",fashionCover:"polaroid",moonGate:"crystal"},
+    lighting:{candle:"warm",aurora:"neon",softbox:"spotlight",pinkroom:"dream",goldhour:"sunset",stage:"spotlight"},
+    background:{atelier:"plain",greenhouse:"forest",cafeteria:"hall",train:"rooftop",observatory:"space",sakuraPark:"rose",rainStreet:"neon",dreamRoom:"clouds"},
+    sticker:{ribbons:"hearts",sparkles:"stars",fashion:"music",flowers:"bubbles",letters:"stars"},
+    photoFilter:{editorial:"pastel",dreamy:"moonlight",warmfilm:"vintage",kawaii:"candy",clean:"none"}
+  };
+  function vKey(key,value){return (v9Alias[key]&&v9Alias[key][value])||value;}
+
   function shade(hex, amount) {
     const c = hex.replace("#", "");
     const n = parseInt(c.length === 3 ? c.split("").map(x => x+x).join("") : c, 16);
@@ -2152,7 +2191,7 @@ body .u5-nav button.active {
 
 
   function saveSlotsHTML() {
-    return `<div class="save-slots">${[1,2,3].map(i=>{
+    return `<div class="save-slots">${[1,2,3,4,5,6].map(i=>{
       let saved=null; try{saved=JSON.parse(safeStorage.getItem(`nightfall-slot-${i}`))}catch{}
       const stamp=saved?.savedAt ? new Date(saved.savedAt).toLocaleString("tr-TR",{dateStyle:"short",timeStyle:"short"}) : "Boş yuva";
       return `<div class="save-slot"><div class="save-slot-top"><b>Yuva ${i}</b><span style="color:${saved?.accentColor||"#655b70"}">◆</span></div><small>${saved ? `${esc(saved.characterName||"İsimsiz")} • ${stamp}` : stamp}</small><div class="slot-actions"><button class="slot-btn" data-slot-save="${i}">Kaydet</button><button class="slot-btn" data-slot-load="${i}" ${saved?"":"disabled"}>Yükle</button><button class="slot-btn" data-slot-delete="${i}" ${saved?"":"disabled"}>Sil</button></div></div>`;
@@ -2202,7 +2241,7 @@ body .u5-nav button.active {
         ${controlGroup("Baş Aksesuarı", optionGrid("headwear", options.headwear))}
       `,
       outfit: `
-        <div class="section-head"><h2>Kıyafet Tasarım Evi</h2><p>24+ stil, 9 desen ve renk katmanlarıyla ana oyunun en güçlü bölümü.</p></div>
+        <div class="section-head"><h2>Kıyafet Tasarım Evi</h2><p>40+ stil, 20+ desen ve genişletilmiş aksesuar katmanlarıyla ana oyunun en güçlü bölümü.</p></div>
         <div class="game-card costume-focus"><div class="game-card-head"><div><h3>Kostüm Modu Güçlendirildi</h3><p>Mini oyunlar kaldırıldı; oyun artık tamamen karakter, görev, podyum ve kostüm üretimine odaklanıyor.</p></div><span class="rarity">ANA OYUN</span></div></div>
         ${controlGroup("Stil", optionGrid("outfitStyle", options.outfitStyle))}
         ${controlGroup("Ana Renk", swatches("clothesColor", palettes.clothes) + customColor("clothesColor","Özel kumaş rengi"))}
@@ -2252,7 +2291,7 @@ body .u5-nav button.active {
         <div class="section-head"><h2>Oyun & Stüdyo</h2><p>Görevlerini, koleksiyonunu ve profesyonel araçlarını yönet.</p></div>
         <div class="game-card" id="studioProfileCard"></div>
         <div class="game-card"><div class="game-card-head"><div><h3>Stil Görevleri</h3><p>Temaya göre giydir, canlı puanı yükselt ve yıldız kazan.</p></div><span class="rarity">OYUN</span></div><button class="primary-btn" style="width:100%" id="studioChallengeBtn">🏆 Görevleri Aç</button></div>
-        <div class="game-card"><div class="game-card-head"><div><h3>Karakter Koleksiyonu</h3><p>Mevcut görünümü galeriye ekle veya eski karakterlerini geri yükle.</p></div><span class="rarity">12 YUVA</span></div><button class="tool-btn" style="width:100%" id="studioGalleryBtn">▦ Galeriyi Aç</button></div>
+        <div class="game-card"><div class="game-card-head"><div><h3>Karakter Koleksiyonu</h3><p>Mevcut görünümü galeriye ekle veya eski karakterlerini geri yükle.</p></div><span class="rarity">30 YUVA</span></div><button class="tool-btn" style="width:100%" id="studioGalleryBtn">▦ Galeriyi Aç</button></div>
         <div class="game-card daily-card" id="dailyGiftCard"><div class="game-card-head"><div><h3>Günlük Sürpriz Kutu</h3><p>Her gün bir kez XP, ördek parası ve sürpriz görünüm kazan.</p></div><span class="rarity">GÜNLÜK</span></div><button class="primary-btn" style="width:100%" id="dailyGiftBtn">🎁 Hediyeyi Aç</button></div>
         <div class="fine-card"><h3>Tasarım Dosyası</h3><p style="color:var(--muted);font-size:10px;line-height:1.5">Karakterini JSON dosyası olarak yedekle veya başka cihazdan içe aktar.</p><div class="data-tools"><button class="tool-btn" id="exportJsonBtn">↓ JSON Kaydet</button><button class="tool-btn" id="importJsonBtn">↑ JSON Yükle</button></div><input class="hidden-file" type="file" id="importJsonFile" accept="application/json,.json"></div>
         <div class="fine-card"><h3>Hızlı Kayıt Yuvaları</h3><p style="color:var(--muted);font-size:11px;line-height:1.55;margin:0 0 13px">Üç çalışma taslağını cihazında saklayabilirsin.</p><div id="saveSlots">${saveSlotsHTML()}</div></div>
@@ -2403,7 +2442,7 @@ body .u5-nav button.active {
     $$(`[data-color-key]`).forEach(input => { input.value = state[input.dataset.colorKey]; });
     if ($("#characterName") && $("#characterName") !== document.activeElement) $("#characterName").value = state.characterName || "Nyx";
     if ($("#companionName") && $("#companionName") !== document.activeElement) $("#companionName").value = state.companionName || "Pofuduk";
-    updateIdentity(); updatePetHUD(); updateHistoryButtons(); updateQualityScore();
+    updateIdentity(); updatePetHUD(); updateHistoryButtons(); updateQualityScore(); updateV9BoardScore?.();
   }
 
   function randomFrom(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
@@ -2477,7 +2516,7 @@ body .u5-nav button.active {
       fashionweek: `<rect width="700" height="900" fill="#2b102b"/><path d="M250 0H450L570 900H130Z" fill="#ffd166" opacity=".22"/><path d="M0 700Q350 625 700 700V900H0Z" fill="#130a19"/><g fill="#ff4ca0" opacity=".45"><circle cx="120" cy="740" r="9"/><circle cx="575" cy="730" r="11"/><circle cx="350" cy="690" r="7"/></g>`,
       seaside: `<rect width="700" height="900" fill="#121b3c"/><circle cx="565" cy="170" r="72" fill="#ffeaa2" opacity=".8"/><path d="M0 520H700V900H0Z" fill="#28557b"/><path d="M0 620Q80 585 160 620T320 620T480 620T700 615V900H0Z" fill="#12352f"/><path d="M0 560Q90 535 180 560T360 560T540 560T700 555" fill="none" stroke="#9be7ff" stroke-width="7" opacity=".5"/>`
     };
-    return map[id] || map.moon;
+    return map[vKey("background", id)] || map.moon;
   }
 
   function decorSVG() {
@@ -2519,7 +2558,7 @@ body .u5-nav button.active {
 
   function hairSVG() {
     const c = state.hairBlend === "solid" ? state.hairColor : "url(#hairGradient)", d = darken(state.hairColor, 45), l = lighten(state.hairColor, 34);
-    const style = state.hairStyle;
+    const style = vKey("hairStyle", state.hairStyle);
     const back = {
       waves: `<path d="M215 235 C190 150 260 72 350 74 C450 65 524 160 489 255 C520 340 505 520 450 590 C423 535 405 490 390 430 C465 345 448 180 350 155 C252 180 235 345 310 430 C292 500 273 548 235 590 C190 500 180 340 215 235Z" fill="${c}" stroke="${d}" stroke-width="7"/>`,
       bob: `<path d="M216 210 C233 112 302 82 350 82 C425 82 486 139 487 228 L470 430 C430 462 390 472 350 470 C305 475 254 457 226 426Z" fill="${c}" stroke="${d}" stroke-width="7"/>`,
@@ -2558,7 +2597,7 @@ body .u5-nav button.active {
       curlypony:`<path d="M230 208Q350 112 470 208Q420 214 350 188Q280 214 230 208Z" fill="${lighten(c,8)}"/><circle cx="520" cy="350" r="22" fill="${lighten(c,12)}" opacity=".62"/>`,
       layered:`<path d="M228 206Q350 112 472 206Q435 226 402 206Q350 252 298 206Q265 226 228 206Z" fill="${lighten(c,8)}"/>`
     }[style];
-    return {back: `<g transform="translate(0 ${state.headY})">${back}</g>`, front: `<g transform="translate(0 ${state.headY})">${front}</g>`};
+    return {back: `<g transform="translate(0 ${state.headY})">${back||""}</g>`, front: `<g transform="translate(0 ${state.headY})">${front||""}</g>`};
   }
 
   function eyeShape(style, side, xOverride) {
@@ -2687,7 +2726,7 @@ body .u5-nav button.active {
       glitter:`<g fill="${lighten(c,28)}" opacity=".8"><path d="M245-20l5 12 12 5-12 5-5 12-5-12-12-5 12-5zM329-24l4 9 9 4-9 4-4 9-4-9-9-4 9-4zM455-20l5 12 12 5-12 5-5 12-5-12-12-5 12-5zM371-24l4 9 9 4-9 4-4 9-4-9-9-4 9-4z"/></g>`,
       smoke:`<g fill="${darken(c,22)}" opacity=".25"><path d="M235 4Q282-52 344-9Q296-19 249 23Z"/><path d="M465 4Q418-52 356-9Q404-19 451 23Z"/></g>`
     };
-    return `<g transform="translate(0 ${y})">${map[state.eyeshadow]||""}</g>`;
+    return `<g transform="translate(0 ${y})">${map[vKey("eyeshadow", state.eyeshadow)]||""}</g>`;
   }
 
   function outfitPatternSVG() {
@@ -2708,7 +2747,7 @@ body .u5-nav button.active {
       checker:`<g opacity=".26"><rect x="190" y="650" width="64" height="64" fill="${a}"/><rect x="318" y="650" width="64" height="64" fill="${a}"/><rect x="446" y="650" width="64" height="64" fill="${a}"/><rect x="254" y="714" width="64" height="64" fill="${lighten(a,24)}"/><rect x="382" y="714" width="64" height="64" fill="${lighten(a,24)}"/><rect x="190" y="778" width="64" height="64" fill="${a}"/><rect x="318" y="778" width="64" height="64" fill="${a}"/><rect x="446" y="778" width="64" height="64" fill="${a}"/></g>`,
       constellation:`<g fill="none" stroke="${lighten(a,32)}" stroke-width="5" opacity=".62"><path d="M238 662L310 718L386 665L458 740L404 815L318 785L248 842"/><g fill="${lighten(a,42)}" stroke="none"><circle cx="238" cy="662" r="7"/><circle cx="310" cy="718" r="7"/><circle cx="386" cy="665" r="7"/><circle cx="458" cy="740" r="7"/><circle cx="404" cy="815" r="7"/><circle cx="318" cy="785" r="7"/><circle cx="248" cy="842" r="7"/></g></g>`
     };
-    return `<g transform="translate(0 ${state.headY})">${map[state.outfitPattern]||""}</g>`;
+    return `<g transform="translate(0 ${state.headY})">${map[vKey("outfitPattern", state.outfitPattern)]||""}</g>`;
   }
 
   function outfitSVG() {
@@ -2747,7 +2786,7 @@ body .u5-nav button.active {
       opera: `${base}<path d="M195 535Q350 615 505 535L585 900H115Z" fill="${darken(c,8)}" stroke="${a}" stroke-width="7"/><path d="M210 560Q350 690 490 560Q438 650 350 700Q262 650 210 560Z" fill="${lighten(a,20)}" opacity=".62"/><path d="M160 740Q350 650 540 740" fill="none" stroke="#fff1f6" stroke-width="16" opacity=".45"/>`,
       queenarmor: `${base}<path d="M205 535L292 500L350 548L408 500L495 535L560 900H140Z" fill="${lighten(c,5)}" stroke="${a}" stroke-width="8"/><path d="M260 610L350 560L440 610L410 760H290Z" fill="${darken(c,16)}" stroke="${lighten(a,20)}" stroke-width="7"/><path d="M220 800Q350 735 480 800" fill="none" stroke="${a}" stroke-width="16" opacity=".5"/>`
     };
-    return `<g transform="translate(0 ${state.headY})">${map[state.outfitStyle]||map.academy}</g>`;
+    return `<g transform="translate(0 ${state.headY})">${map[vKey("outfitStyle", state.outfitStyle)]||map.academy}</g>`;
   }
 
   function accessorySVG() {
@@ -2758,25 +2797,25 @@ body .u5-nav button.active {
       round: `<g fill="none" stroke="${a}" stroke-width="7"><circle cx="292" cy="274" r="45"/><circle cx="408" cy="274" r="45"/><path d="M337 272Q350 263 363 272M247 266L223 255M453 266L477 255"/></g>`,
       cat: `<g fill="none" stroke="${a}" stroke-width="7"><path d="M245 284L251 233L337 251L331 303Q288 326 245 284Z"/><path d="M455 284L449 233L363 251L369 303Q412 326 455 284Z"/><path d="M337 265Q350 256 363 265"/></g>`,
       square: `<g fill="none" stroke="${a}" stroke-width="7"><rect x="246" y="237" width="89" height="72" rx="12"/><rect x="365" y="237" width="89" height="72" rx="12"/><path d="M335 267H365M246 257L221 247M454 257L479 247"/></g>`
-    }[state.glasses];
+    }[vKey("glasses", state.glasses)];
     const horns = {
       none: "",
       small: `<path d="M260 157Q224 107 249 80Q286 117 293 164Z" fill="${a}" stroke="${darken(a,48)}" stroke-width="6"/><path d="M440 157Q476 107 451 80Q414 117 407 164Z" fill="${a}" stroke="${darken(a,48)}" stroke-width="6"/>`,
       curved: `<path d="M275 160Q202 110 229 54Q248 110 312 125Q301 153 275 160Z" fill="${a}" stroke="${darken(a,48)}" stroke-width="6"/><path d="M425 160Q498 110 471 54Q452 110 388 125Q399 153 425 160Z" fill="${a}" stroke="${darken(a,48)}" stroke-width="6"/>`,
       antlers: `<g fill="none" stroke="${darken(a,12)}" stroke-width="12" stroke-linecap="round"><path d="M277 168Q232 100 235 48M250 91L212 75M243 67L265 30"/><path d="M423 168Q468 100 465 48M450 91L488 75M457 67L435 30"/></g>`
-    }[state.horns];
+    }[vKey("horns", state.horns)];
     const earrings = {
       none: "",
       stud: `<circle cx="236" cy="306" r="8" fill="${a}"/><circle cx="464" cy="306" r="8" fill="${a}"/>`,
       hoop: `<circle cx="231" cy="329" r="25" fill="none" stroke="${a}" stroke-width="7"/><circle cx="469" cy="329" r="25" fill="none" stroke="${a}" stroke-width="7"/>`,
       drop: `<path d="M236 304V338M464 304V338" stroke="${a}" stroke-width="5"/><path d="M236 336l-13 22 13 13 13-13zM464 336l-13 22 13 13 13-13z" fill="${a}"/>`
-    }[state.earrings];
+    }[vKey("earrings", state.earrings)];
     const necklace = {
       none: "",
       choker: `<path d="M303 509Q350 530 397 509" fill="none" stroke="${a}" stroke-width="13"/><circle cx="350" cy="525" r="10" fill="${lighten(a,25)}"/>`,
       moon: `<path d="M304 508Q350 558 396 508" fill="none" stroke="#d7c9df" stroke-width="5"/><path d="M350 546A19 19 0 1 0 369 566A16 16 0 1 1 350 546Z" fill="${a}"/>`,
       gem: `<path d="M303 508Q350 556 397 508" fill="none" stroke="#d7c9df" stroke-width="5"/><path d="M350 548l18 21-18 27-18-27z" fill="${a}" stroke="${lighten(a,35)}" stroke-width="4"/>`
-    }[state.necklace];
+    }[vKey("necklace", state.necklace)];
     return {
       glasses: `<g transform="translate(0 ${y})">${glasses}</g>`,
       horns: `<g transform="translate(0 ${y})">${horns}</g>`,
@@ -2800,7 +2839,7 @@ body .u5-nav button.active {
       phoenix:`<g fill="${a}" opacity=".62" stroke="${lighten(a,35)}" stroke-width="5"><path d="M292 560Q190 395 84 460Q150 520 108 596Q198 560 178 684Q245 600 304 630Z"/><path d="M408 560Q510 395 616 460Q550 520 592 596Q502 560 522 684Q455 600 396 630Z"/></g>`,
       hologram:`<g fill="none" stroke="${lighten(a,30)}" stroke-width="6" opacity=".62"><path d="M292 565L118 430L168 635L304 625Z"/><path d="M408 565L582 430L532 635L396 625Z"/><path d="M140 482L286 592M560 482L414 592" stroke-dasharray="12 12"/></g>`
     };
-    return map[state.wings]||"";
+    return map[vKey("wings", state.wings)]||"";
   }
 
   function headwearSVG(){
@@ -2818,7 +2857,7 @@ body .u5-nav button.active {
       visor:`<g transform="translate(0 ${y})"><path d="M250 238H450Q438 285 350 286Q262 285 250 238Z" fill="${darken(a,35)}" stroke="${a}" stroke-width="8" opacity=".88"/><path d="M273 253H427" stroke="${lighten(a,38)}" stroke-width="5" opacity=".8"/></g>`,
       sailor:`<g transform="translate(0 ${y})"><path d="M270 150Q350 92 430 150L414 185Q350 160 286 185Z" fill="${lighten(a,18)}" stroke="${darken(a,40)}" stroke-width="7"/><path d="M250 166Q350 197 450 166" fill="none" stroke="${a}" stroke-width="13"/><path d="M350 105l12 28 28 12-28 12-12 28-12-28-28-12 28-12z" fill="#fff8c8"/></g>`
     };
-    return map[state.headwear]||"";
+    return map[vKey("headwear", state.headwear)]||"";
   }
 
   function auraSVG(front=false){
@@ -2837,11 +2876,11 @@ body .u5-nav button.active {
       royal:`<g fill="none" stroke="${a}" opacity=".42"><circle cx="350" cy="470" r="265" stroke-width="8"/><path d="M350 130l16 38 38 16-38 16-16 38-16-38-38-16 38-16z" fill="${a}"/><path d="M150 365Q350 250 550 365" stroke-width="6" stroke-dasharray="18 18"/></g>`,
       toxic:`<g fill="none" stroke="${a}" stroke-width="8" opacity=".38"><circle cx="350" cy="470" r="250"/><circle cx="350" cy="470" r="80"/><path d="M350 390V290M350 550V650M270 470H170M430 470H530"/></g>`
     };
-    if(!front)return back[state.aura]||"";
-    if(state.aura==="magic")return `<g fill="${lighten(a,30)}"><circle cx="122" cy="270" r="6"/><circle cx="582" cy="390" r="8"/><circle cx="160" cy="710" r="5"/><circle cx="548" cy="706" r="6"/></g>`;
-    if(state.aura==="electric")return `<path d="M505 170l-22 48 25-7-18 43" fill="none" stroke="${a}" stroke-width="6"/>`;
-    if(state.aura==="hearts")return `<g fill="${lighten(a,25)}"><path d="M100 310c-22-25-51 10 0 43c51-33 22-68 0-43z"/><path d="M598 650c-25-28-58 12 0 49c58-37 25-77 0-49z"/></g>`;
-    if(state.aura==="duckglow")return `<g font-size="42"><text x="75" y="540">🦆</text><text x="570" y="270">✦</text></g>`;
+    if(!front)return back[vKey("aura", state.aura)]||"";
+    if(vKey("aura", state.aura)==="magic")return `<g fill="${lighten(a,30)}"><circle cx="122" cy="270" r="6"/><circle cx="582" cy="390" r="8"/><circle cx="160" cy="710" r="5"/><circle cx="548" cy="706" r="6"/></g>`;
+    if(vKey("aura", state.aura)==="electric")return `<path d="M505 170l-22 48 25-7-18 43" fill="none" stroke="${a}" stroke-width="6"/>`;
+    if(vKey("aura", state.aura)==="hearts")return `<g fill="${lighten(a,25)}"><path d="M100 310c-22-25-51 10 0 43c51-33 22-68 0-43z"/><path d="M598 650c-25-28-58 12 0 49c58-37 25-77 0-49z"/></g>`;
+    if(vKey("aura", state.aura)==="duckglow")return `<g font-size="42"><text x="75" y="540">🦆</text><text x="570" y="270">✦</text></g>`;
     return "";
   }
 
@@ -2883,7 +2922,7 @@ body .u5-nav button.active {
     };
     const scale=(state.companionScale||100)/100;
     const tx=500+(state.companionX||0), ty=585+(state.companionY||0);
-    return `<g id="interactiveCompanion" transform="translate(${tx} ${ty}) scale(${scale})" role="button" aria-label="${esc(state.companionName||"Yardımcı")}">${bodies[state.companion]||""}<g>${companionAccessorySVG(state.companionAccessory||"none",a)}</g></g>`;
+    return `<g id="interactiveCompanion" transform="translate(${tx} ${ty}) scale(${scale})" role="button" aria-label="${esc(state.companionName||"Yardımcı")}">${bodies[vKey("companion", state.companion)]||""}<g>${companionAccessorySVG(vKey("companionAccessory", state.companionAccessory||"none"),a)}</g></g>`;
   }
 
   function propSVG(){
@@ -2903,19 +2942,19 @@ body .u5-nav button.active {
       sword:`<g transform="translate(515 560) rotate(16)"><path d="M0 0L18 120L0 222L-18 120Z" fill="${lighten(a,32)}" stroke="${a}" stroke-width="6"/><path d="M-40 214H40" stroke="#ffd166" stroke-width="12" stroke-linecap="round"/><path d="M0 220V282" stroke="#5b3b25" stroke-width="14" stroke-linecap="round"/></g>`,
       camera:`<g transform="translate(488 665)"><rect x="0" y="0" width="96" height="68" rx="16" fill="${darken(c,20)}" stroke="${a}" stroke-width="6"/><circle cx="48" cy="34" r="20" fill="#111" stroke="${lighten(a,30)}" stroke-width="6"/><rect x="16" y="-14" width="30" height="18" rx="6" fill="${a}"/></g>`
     };
-    return map[state.prop]||"";
+    return map[vKey("prop", state.prop)]||"";
   }
 
   function weatherSVG(front=false){
-    const a=state.accentColor;
-    if(state.weather==="none")return "";
-    if(state.weather==="rain") return `<g stroke="#a9d8f4" stroke-width="4" opacity="${front?.55:.28}">${Array.from({length:front?12:16},(_,i)=>{const x=(i*67+(front?23:5))%700,y=(i*113+(front?90:10))%850;return `<path d="M${x} ${y}l-25 58"/>`}).join("")}</g>`;
-    if(state.weather==="snow") return `<g fill="#fff" opacity="${front?.78:.42}">${Array.from({length:front?14:20},(_,i)=>{const x=(i*83+(front?35:7))%700,y=(i*127+(front?80:15))%860,r=3+(i%4);return `<circle cx="${x}" cy="${y}" r="${r}"/>`}).join("")}</g>`;
-    if(state.weather==="embers") return `<g fill="${lighten(a,28)}" opacity="${front?.8:.38}">${Array.from({length:front?13:18},(_,i)=>{const x=(i*91+19)%700,y=850-((i*119+(front?33:0))%760);return `<path d="M${x} ${y}q10-18 0-35q-10 17 0 35z"/>`}).join("")}</g>`;
-    if(state.weather==="bats")return `<g fill="#09070d" opacity="${front?.72:.35}">${Array.from({length:front?7:10},(_,i)=>{const x=(i*109+30)%700,y=(i*97+70)%600;return `<path d="M${x} ${y}q18-18 36 0q18-18 36 0q-18-7-36 19q-18-26-36-19z"/>`}).join("")}</g>`;
-    if(state.weather==="petals")return `<g fill="${lighten(a,25)}" opacity="${front?.8:.42}">${Array.from({length:front?13:19},(_,i)=>{const x=(i*77+25)%700,y=(i*123+35)%850;return `<ellipse cx="${x}" cy="${y}" rx="5" ry="12" transform="rotate(${i*29} ${x} ${y})"/>`}).join("")}</g>`;
-    if(state.weather==="stars")return `<g fill="#fff3a3" opacity="${front?.82:.4}">${Array.from({length:front?12:18},(_,i)=>{const x=(i*89+18)%700,y=(i*137+27)%840,r=4+i%5;return `<path d="M${x} ${y-r}l${r*.3} ${r*.7} ${r*.7} ${r*.3}-${r*.7} ${r*.3}-${r*.3} ${r*.7}-${r*.3}-${r*.7}-${r*.7}-${r*.3} ${r*.7}-${r*.3}z"/>`}).join("")}</g>`;
-    if(state.weather==="bubbles")return `<g fill="none" stroke="#dffaff" stroke-width="3" opacity="${front?.68:.32}">${Array.from({length:front?12:19},(_,i)=>{const x=(i*97+20)%700,y=(i*109+50)%850,r=8+i%17;return `<circle cx="${x}" cy="${y}" r="${r}"/>`}).join("")}</g>`;
+    const a=state.accentColor, weather=vKey("weather", state.weather);
+    if(weather==="none")return "";
+    if(weather==="rain") return `<g stroke="#a9d8f4" stroke-width="4" opacity="${front?.55:.28}">${Array.from({length:front?12:16},(_,i)=>{const x=(i*67+(front?23:5))%700,y=(i*113+(front?90:10))%850;return `<path d="M${x} ${y}l-25 58"/>`}).join("")}</g>`;
+    if(weather==="snow") return `<g fill="#fff" opacity="${front?.78:.42}">${Array.from({length:front?14:20},(_,i)=>{const x=(i*83+(front?35:7))%700,y=(i*127+(front?80:15))%860,r=3+(i%4);return `<circle cx="${x}" cy="${y}" r="${r}"/>`}).join("")}</g>`;
+    if(weather==="embers") return `<g fill="${lighten(a,28)}" opacity="${front?.8:.38}">${Array.from({length:front?13:18},(_,i)=>{const x=(i*91+19)%700,y=850-((i*119+(front?33:0))%760);return `<path d="M${x} ${y}q10-18 0-35q-10 17 0 35z"/>`}).join("")}</g>`;
+    if(weather==="bats")return `<g fill="#09070d" opacity="${front?.72:.35}">${Array.from({length:front?7:10},(_,i)=>{const x=(i*109+30)%700,y=(i*97+70)%600;return `<path d="M${x} ${y}q18-18 36 0q18-18 36 0q-18-7-36 19q-18-26-36-19z"/>`}).join("")}</g>`;
+    if(weather==="petals")return `<g fill="${lighten(a,25)}" opacity="${front?.8:.42}">${Array.from({length:front?13:19},(_,i)=>{const x=(i*77+25)%700,y=(i*123+35)%850;return `<ellipse cx="${x}" cy="${y}" rx="5" ry="12" transform="rotate(${i*29} ${x} ${y})"/>`}).join("")}</g>`;
+    if(weather==="stars")return `<g fill="#fff3a3" opacity="${front?.82:.4}">${Array.from({length:front?12:18},(_,i)=>{const x=(i*89+18)%700,y=(i*137+27)%840,r=4+i%5;return `<path d="M${x} ${y-r}l${r*.3} ${r*.7} ${r*.7} ${r*.3}-${r*.7} ${r*.3}-${r*.3} ${r*.7}-${r*.3}-${r*.7}-${r*.7}-${r*.3} ${r*.7}-${r*.3}z"/>`}).join("")}</g>`;
+    if(weather==="bubbles")return `<g fill="none" stroke="#dffaff" stroke-width="3" opacity="${front?.68:.32}">${Array.from({length:front?12:19},(_,i)=>{const x=(i*97+20)%700,y=(i*109+50)%850,r=8+i%17;return `<circle cx="${x}" cy="${y}" r="${r}"/>`}).join("")}</g>`;
     return `<g fill="#f1e9ff" opacity="${front?.68:.32}">${Array.from({length:front?10:15},(_,i)=>{const x=(i*73+25)%700,y=(i*131+55)%850;return `<path d="M${x} ${y}q18-15 30 2q-11 18-30-2z"/>`}).join("")}</g>`;
   }
 
@@ -2940,7 +2979,7 @@ body .u5-nav button.active {
       noir:`<rect width="700" height="900" fill="#8ca0b5" opacity=".38" style="mix-blend-mode:saturation"/><rect width="700" height="900" fill="#111" opacity=".10"/>`,
       candy:`<linearGradient id="candyFilter" x2="1" y2="1"><stop stop-color="#ff4ca0" stop-opacity=".11"/><stop offset="1" stop-color="#56d8dc" stop-opacity=".12"/></linearGradient><rect width="700" height="900" fill="url(#candyFilter)" style="mix-blend-mode:screen"/>`,
       moonlight:`<radialGradient id="moonFilter" cx="35%" cy="25%"><stop stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#6d59d9" stop-opacity=".14"/></radialGradient><rect width="700" height="900" fill="url(#moonFilter)" style="mix-blend-mode:screen"/>`
-    };return map[state.photoFilter]||"";
+    };return map[vKey("photoFilter", state.photoFilter)]||"";
   }
 
   function frameSVG(){
@@ -2951,12 +2990,12 @@ body .u5-nav button.active {
       neon:`<g fill="none"><rect x="18" y="18" width="664" height="864" rx="30" stroke="${a}" stroke-width="10"/><rect x="34" y="34" width="632" height="832" rx="22" stroke="${lighten(a,35)}" stroke-width="3" opacity=".75"/></g>`,
       polaroid:`<path d="M20 20H680V880H20Z M55 55V740H645V55Z" fill="#f7f2f4" fill-rule="evenodd"/><text x="350" y="824" text-anchor="middle" font-family="cursive" font-size="34" fill="#382d3d">${esc(state.characterName||"Nightfall")}</text>`,
       crystal:`<g fill="none" stroke="${a}" stroke-width="7" opacity=".8"><path d="M25 25H675V875H25Z"/><path d="M25 25l72 95-72 80 74 96-74 88 72 92-72 102 72 92-72 105M675 25l-72 95 72 80-74 96 74 88-72 92 72 102-72 92 72 105"/></g>`
-    })[state.frame]||"";
+    })[vKey("frame", state.frame)]||"";
   }
 
   function lightingSVG(){
     const map={neutral:"",moon:`<rect width="700" height="900" fill="#8f80ff" opacity=".08"/>`,warm:`<rect width="700" height="900" fill="#ffb66d" opacity=".11"/>`,neon:`<linearGradient id="lightFx" x1="0" x2="1"><stop stop-color="#ff4ca0" stop-opacity=".13"/><stop offset=".5" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#56d8dc" stop-opacity=".15"/></linearGradient><rect width="700" height="900" fill="url(#lightFx)"/>`,dream:`<radialGradient id="dreamFx"><stop stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#bc91ff" stop-opacity=".06"/></radialGradient><rect width="700" height="900" fill="url(#dreamFx)"/>`,sunset:`<linearGradient id="sunFx" x2="1"><stop stop-color="#ffad67" stop-opacity=".17"/><stop offset="1" stop-color="#ff5e91" stop-opacity=".11"/></linearGradient><rect width="700" height="900" fill="url(#sunFx)"/>`,underwater:`<rect width="700" height="900" fill="#31b8d0" opacity=".11"/><path d="M0 90Q175 45 350 90T700 90" fill="none" stroke="#dffaff" stroke-width="14" opacity=".16"/>`,spotlight:`<radialGradient id="spotFx" cx="50%" cy="20%" r="65%"><stop stop-color="#fff" stop-opacity=".23"/><stop offset=".65" stop-color="#fff" stop-opacity=".03"/><stop offset="1" stop-color="#000" stop-opacity=".18"/></radialGradient><rect width="700" height="900" fill="url(#spotFx)"/>`};
-    return map[state.lighting]||"";
+    return map[vKey("lighting", state.lighting)]||"";
   }
 
   function applyPose(){
@@ -3003,7 +3042,7 @@ body .u5-nav button.active {
   function playerLevel(){return Math.floor((profile.xp||0)/100)+1}
   function levelProgress(){return (profile.xp||0)%100}
   function updateProfileChip(){if($("#profileChip"))$("#profileChip").innerHTML=`✦ Seviye <b>${playerLevel()}</b> · ${profile.stars||0}★`;}
-  function renderStudioProfile(){const el=$("#studioProfileCard");if(!el)return;el.innerHTML=`<div class="game-card-head"><div><h3>Gece Tasarımcısı · Seviye ${playerLevel()}</h3><p>Yeni katmanlar kullan, görev tamamla ve koleksiyonunu büyüt.</p></div><span class="rarity">${profile.stars||0} ★</span></div><div class="xp-track"><i style="width:${levelProgress()}%"></i></div><div class="game-stats"><div class="game-stat"><b>${profile.xp||0}</b><small>TOPLAM XP</small></div><div class="game-stat"><b>${Object.keys(profile.completed||{}).length}</b><small>GÖREV</small></div><div class="game-stat"><b>${getGallery().length}</b><small>KARAKTER</small></div><div class="game-stat"><b>${profile.duckCoins||0}</b><small>ÖRDEK PARA</small></div></div>`;updateProfileChip();}
+  function renderStudioProfile(){const el=$("#studioProfileCard");if(!el)return;el.innerHTML=`<div class="game-card-head"><div><h3>Gece Tasarımcısı · Seviye ${playerLevel()}</h3><p>Yeni V9 katmanları kullan, görev tamamla ve koleksiyonunu büyüt.</p></div><span class="rarity">${profile.stars||0} ★</span></div><div class="xp-track"><i style="width:${levelProgress()}%"></i></div><div class="game-stats"><div class="game-stat"><b>${profile.xp||0}</b><small>TOPLAM XP</small></div><div class="game-stat"><b>${Object.keys(profile.completed||{}).length}</b><small>GÖREV</small></div><div class="game-stat"><b>${getGallery().length}</b><small>KARAKTER</small></div><div class="game-stat"><b>${profile.duckCoins||0}</b><small>ÖRDEK PARA</small></div></div>`;updateProfileChip();}
   function openModal(id){$("#"+id)?.classList.add("open");}
   function closeModal(id){$("#"+id)?.classList.remove("open");}
   function getActiveChallenge(){return challenges.find(c=>c.id===activeChallengeId)}
@@ -3016,15 +3055,15 @@ body .u5-nav button.active {
   function submitChallenge(){const ch=getActiveChallenge();if(!ch){showToast("Önce bir görev seç.");return}const score=challengeScore(ch),stars=score>=80?3:score>=60?2:score>=40?1:0;if(!stars){showToast(`Puanın ${score}%. En az %40 gerekli.`);return}const old=profile.completed?.[ch.id]||0;profile.completed={...(profile.completed||{}),[ch.id]:Math.max(old,stars)};profile.stars=(profile.stars||0)+Math.max(0,stars-old);profile.xp=(profile.xp||0)+stars*35;saveProfile();checkAchievements();renderChallengeGrid();showToast(`${ch.name}: ${stars} yıldız kazandın!`);}
 
   function getGallery(){try{return JSON.parse(safeStorage.getItem("nightfall-gallery-v3")||"[]")}catch{return []}}
-  function setGallery(items){safeStorage.setItem("nightfall-gallery-v3",JSON.stringify(items.slice(0,12)));renderStudioProfile();}
+  function setGallery(items){safeStorage.setItem("nightfall-gallery-v3",JSON.stringify(items.slice(0,30)));renderStudioProfile();}
   function renderGallery(){const items=getGallery(),el=$("#galleryGrid");if(!el)return;el.innerHTML=items.length?items.map((item,i)=>`<article class="gallery-card"><div class="gallery-preview" style="--gallery-bg:linear-gradient(145deg,${darken(item.state.accentColor,60)},${darken(item.state.clothesColor,20)});--gallery-skin:${item.state.skin};--gallery-hair:${item.state.hairColor};--gallery-cloth:${item.state.clothesColor};--gallery-accent:${item.state.accentColor}"></div><div class="gallery-info"><b>${esc(item.state.characterName||"İsimsiz")}</b><small>${new Date(item.savedAt).toLocaleString("tr-TR",{dateStyle:"short",timeStyle:"short"})}</small></div><div class="gallery-actions"><button class="slot-btn" data-gallery-load="${i}">Yükle</button><button class="slot-btn" data-gallery-delete="${i}">Sil</button></div></article>`).join(""):`<div class="empty-state"><div style="font-size:40px;margin-bottom:10px">▦</div>Galerin boş. İlk karakterini koleksiyona ekle.</div>`;}
   function openGalleryModal(){renderGallery();openModal("galleryModal");}
-  function saveToGallery(){const items=getGallery();items.unshift({state:structuredClone(state),savedAt:Date.now()});setGallery(items);renderGallery();gainXP(12);checkAchievements();showToast("Karakter galeriye eklendi.");}
+  function saveToGallery(){const items=getGallery();items.unshift({state:structuredClone(state),savedAt:Date.now()});setGallery(items);renderGallery();gainXP(12);if(["royalrobe","fairyqueen","cybermaid","lunauniform","desertnomad","crystalmaid","aurora","raincoat","gardener","chessqueen","sakura","dragonrider","dreampajama","starlibrarian"].includes(state.outfitStyle))unlockAchievement("v9-preset-master");checkAchievements();showToast("Karakter galeriye eklendi.");}
   function loadGalleryItem(i){const item=getGallery()[i];if(!item)return;state={...defaults,...item.state};pushHistory();renderAll(false);closeModal("galleryModal");showToast("Galeri karakteri düzenlemeye açıldı.");}
   function deleteGalleryItem(i){const items=getGallery();items.splice(i,1);setGallery(items);renderGallery();showToast("Karakter galeriden silindi.");}
 
   function unlockAchievement(id){if(profile.achievements.includes(id))return;profile.achievements=[...profile.achievements,id];profile.xp+=25;saveProfile();const a=achievementDefs.find(x=>x.id===id);showToast(`Başarım açıldı: ${a?.name||id} ✦`);}
-  function checkAchievements(){if((profile.edits||0)>0)unlockAchievement("first-edit");if((profile.randoms||0)>=10)unlockAchievement("random-10");if(getGallery().length>=5)unlockAchievement("collector");if(Object.values(profile.completed||{}).some(x=>x>=3))unlockAchievement("challenge-ace");if(Object.keys(profile.completed||{}).length>=challenges.length)unlockAchievement("all-challenges");if(state.wings!=="none"&&state.aura!=="none"&&state.companion!=="none"&&state.prop!=="none")unlockAchievement("fantasy-max");if(["duck","moonduck","duckling"].includes(state.companion)&&(state.companionFriendship||0)>=50)unlockAchievement("duck-friend");if(state.companion!=="none"&&state.companionAccessory!=="none"&&state.companionColor!=="#ffd83d")unlockAchievement("pet-stylist");if((profile.dailyGifts||0)>0)unlockAchievement("daily-gift");if(["idol","kimono","ninja","pirate","mermaid","fairycore","detective","astronaut","princess","scientist","harajuku","ballerina","wintercoat","steampunk","biker","racer","opera","queenarmor"].includes(state.outfitStyle))unlockAchievement("costume-master");const keys=["hairBlend","eyeshadow","outfitPattern","earStyle","horns","glasses","earrings","necklace","wings","aura","headwear","companion","companionAccessory","prop","weather","frame","sticker","photoFilter","pupilStyle","lashes"];const score=Math.min(100,42+keys.filter(k=>!["none","solid","human","round"].includes(state[k])).length*3.5);if(score>=100)unlockAchievement("layer-master");}
+  function checkAchievements(){if((profile.edits||0)>0)unlockAchievement("first-edit");if((profile.randoms||0)>=10)unlockAchievement("random-10");if(getGallery().length>=5)unlockAchievement("collector");if(Object.values(profile.completed||{}).some(x=>x>=3))unlockAchievement("challenge-ace");if(Object.keys(profile.completed||{}).length>=challenges.length)unlockAchievement("all-challenges");if(state.wings!=="none"&&state.aura!=="none"&&state.companion!=="none"&&state.prop!=="none")unlockAchievement("fantasy-max");if(["duck","moonduck","duckling"].includes(state.companion)&&(state.companionFriendship||0)>=50)unlockAchievement("duck-friend");if(state.companion!=="none"&&state.companionAccessory!=="none"&&state.companionColor!=="#ffd83d")unlockAchievement("pet-stylist");if((profile.dailyGifts||0)>0)unlockAchievement("daily-gift");if(["idol","kimono","ninja","pirate","mermaid","fairycore","detective","astronaut","princess","scientist","harajuku","ballerina","wintercoat","steampunk","biker","racer","opera","queenarmor","royalrobe","fairyqueen","cybermaid","lunauniform","desertnomad","crystalmaid","aurora","raincoat","gardener","chessqueen","sakura","dragonrider","dreampajama","starlibrarian"].includes(state.outfitStyle))unlockAchievement("costume-master");if(["royalrobe","fairyqueen","cybermaid","lunauniform","desertnomad","crystalmaid","aurora","raincoat","gardener","chessqueen","sakura","dragonrider","dreampajama","starlibrarian"].includes(state.outfitStyle))unlockAchievement("v9-costume-legend");if(["starCrown","moonPin","ribbonHat","crystalHood","pilotCap","veil","gardenHat","sleepMask"].includes(state.headwear)&&["moth","aurora","glass","raven","leaf","starfall","mechanic","seraph"].includes(state.wings)&&["paintbrush","teacup","violin","parasol","rose","map","magicneedle","laptop","heartballoon"].includes(state.prop))unlockAchievement("v9-accessory-max");if(getGallery().length>=20)unlockAchievement("v9-gallery-20");if(profile.v9Balance>0)unlockAchievement("v9-balance");if(profile.v9MobileFit>0)unlockAchievement("v9-mobile-fit");if(Object.keys(profile.completed||{}).some(id=>id.startsWith("v9-")||["aurora-queen","cyber-editorial","sakura-dream","train-mystery","dragon-rider","library-star","dream-room","chess-royalty"].includes(id)))unlockAchievement("v9-challenge-star");const keys=["hairBlend","eyeshadow","outfitPattern","earStyle","horns","glasses","earrings","necklace","wings","aura","headwear","companion","companionAccessory","prop","weather","frame","sticker","photoFilter","pupilStyle","lashes"];const score=Math.min(100,42+keys.filter(k=>!["none","solid","human","round"].includes(state[k])).length*3.5);if(score>=100)unlockAchievement("layer-master");}
   function renderAchievements(){const el=$("#achievementGrid");if(el)el.innerHTML=achievementDefs.map(a=>`<div class="achievement ${profile.achievements.includes(a.id)?"unlocked":""}"><div class="achievement-icon">${profile.achievements.includes(a.id)?a.icon:"?"}</div><div><b>${a.name}</b><small>${a.desc}</small></div></div>`).join("");const d=$("#profileDashboard");if(d)d.innerHTML=`<div class="game-card-head"><div><h3>Gece Tasarımcısı · Seviye ${playerLevel()}</h3><p>${profile.xp||0} XP topladın. Sonraki seviyeye ${100-levelProgress()} XP kaldı.</p></div><span class="rarity">${profile.stars||0} YILDIZ</span></div><div class="xp-track"><i style="width:${levelProgress()}%"></i></div><div class="game-stats"><div class="game-stat"><b>${profile.achievements.length}</b><small>BAŞARIM</small></div><div class="game-stat"><b>${Object.keys(profile.completed||{}).length}</b><small>GÖREV</small></div><div class="game-stat"><b>${profile.exports||0}</b><small>FOTOĞRAF</small></div></div>`;}
   function openAchievementModal(){checkAchievements();renderAchievements();openModal("achievementModal");}
   function handleUltraAction(e){const ch=e.target.closest("[data-challenge-select]");if(ch){selectChallenge(ch.dataset.challengeSelect);return}const load=e.target.closest("[data-gallery-load]");if(load){loadGalleryItem(Number(load.dataset.galleryLoad));return}const del=e.target.closest("[data-gallery-delete]");if(del){deleteGalleryItem(Number(del.dataset.galleryDelete));return}if(soundEnabled&&e.target.closest("button"))playTone(420,.035,.025);}
@@ -3140,7 +3179,7 @@ body .u5-nav button.active {
   function openExportModal(){ $("#exportModal").classList.add("open"); }
   function closeExportModal(){ $("#exportModal").classList.remove("open"); }
 
-  function saveSlot(i){ safeStorage.setItem(`nightfall-slot-${i}`,JSON.stringify({...state,savedAt:Date.now()})); $("#saveSlots").innerHTML=saveSlotsHTML(); showToast(`Karakter Yuva ${i}'e kaydedildi.`); }
+  function saveSlot(i){ safeStorage.setItem(`nightfall-slot-${i}`,JSON.stringify({...state,savedAt:Date.now()})); if(i>=4)unlockAchievement("v9-six-slot"); $("#saveSlots").innerHTML=saveSlotsHTML(); showToast(`Karakter Yuva ${i}'e kaydedildi.`); }
   function loadSlot(i){ try{const saved=JSON.parse(safeStorage.getItem(`nightfall-slot-${i}`)); if(!saved)return; state={...defaults,...saved}; pushHistory(); renderAll(false); showToast(`Yuva ${i} yüklendi.`);}catch{showToast("Kayıt yüklenemedi.");} }
   function deleteSlot(i){ safeStorage.removeItem(`nightfall-slot-${i}`); $("#saveSlots").innerHTML=saveSlotsHTML(); showToast(`Yuva ${i} temizlendi.`); }
 
@@ -3232,7 +3271,105 @@ body .u5-nav button.active {
     getProfile: () => ({...profile})
   };
 
+
+  function uniqueOptionPush(key, items){
+    options[key]=options[key]||[];
+    const seen=new Set(options[key].map(x=>x.id));
+    items.forEach(item=>{if(!seen.has(item.id)){options[key].push(item);seen.add(item.id);}});
+  }
+  function uniquePresetPush(items){
+    const seen=new Set(presets.map(x=>x.name));
+    items.forEach(item=>{if(!seen.has(item.name)){presets.push(item);seen.add(item.name);}});
+  }
+  function uniqueChallengePush(items){
+    const seen=new Set(challenges.map(x=>x.id));
+    items.forEach(item=>{if(!seen.has(item.id)){challenges.push(item);seen.add(item.id);}});
+  }
+  function uniqueAchievementPush(items){
+    const seen=new Set(achievementDefs.map(x=>x.id));
+    items.forEach(item=>{if(!seen.has(item.id)){achievementDefs.push(item);seen.add(item.id);}});
+  }
+  function applyGameV9Expansion(){
+    palettes.skin.push("#f1c7a6","#c68968","#8f5f4f","#ead7bd");
+    palettes.eyes.push("#9df5ff","#f6d365","#ff9bd2","#9effa8","#b6a7ff");
+    palettes.hair.push("#f6e6b8","#93c5fd","#f0abfc","#ef4444","#10b981","#f97316");
+    palettes.clothes.push("#fef3c7","#ecfeff","#312e81","#4c1d95","#064e3b","#7f1d1d");
+    palettes.accents.push("#facc15","#fb7185","#c084fc","#22d3ee","#a3e635","#f472b6");
+    uniqueOptionPush("hairStyle",[
+      {id:"ribbonbraid",label:"Kurdele Örgü",icon:"🎀"},{id:"jellyfish",label:"Jellyfish Cut",icon:"≈"},{id:"butterflycut",label:"Kelebek Kesim",icon:"🦋"},{id:"royalbun",label:"Kraliyet Topuzu",icon:"♛"},{id:"wetwaves",label:"Islak Dalga",icon:"〰"},{id:"crescentbob",label:"Hilal Bob",icon:"☾"},{id:"phoenixhair",label:"Anka Saçı",icon:"🔥"},{id:"microbraids",label:"Mini Örgüler",icon:"⌇"},{id:"softmullet",label:"Soft Mullet",icon:"✂"},{id:"cloudcut",label:"Bulut Kat",icon:"☁"}
+    ]);
+    uniqueOptionPush("outfitStyle",[
+      {id:"royalrobe",label:"Kraliyet Cübbesi",icon:"🪄"},{id:"fairyqueen",label:"Peri Kraliçesi",icon:"🦋"},{id:"cybermaid",label:"Cyber Maid",icon:"▣"},{id:"lunauniform",label:"Luna Üniforma",icon:"🌙"},{id:"desertnomad",label:"Çöl Gezgin",icon:"◇"},{id:"crystalmaid",label:"Kristal Maid",icon:"💎"},{id:"aurora",label:"Aurora Elbise",icon:"🌈"},{id:"raincoat",label:"Yağmur Şıklığı",icon:"☂"},{id:"gardener",label:"Gece Bahçıvan",icon:"🌿"},{id:"chessqueen",label:"Satranç Kraliçesi",icon:"♟"},{id:"sakura",label:"Sakura Kimono",icon:"🌸"},{id:"dragonrider",label:"Ejder Süvarisi",icon:"🐉"},{id:"dreampajama",label:"Rüya Pijama",icon:"☁"},{id:"starlibrarian",label:"Yıldız Kütüphaneci",icon:"📚"}
+    ]);
+    uniqueOptionPush("glasses",[{id:"halfmoon",label:"Yarım Ay",icon:"☾"},{id:"heartglasses",label:"Kalp Gözlük",icon:"♡"},{id:"monocle",label:"Monokl",icon:"◉"},{id:"starvisor",label:"Yıldız Vizör",icon:"★"},{id:"rimless",label:"Çerçevesiz",icon:"∞"}]);
+    uniqueOptionPush("earrings",[{id:"chain",label:"Zincir",icon:"⌁"},{id:"pearl",label:"İnci",icon:"○"},{id:"star",label:"Yıldız",icon:"✦"},{id:"moonhoop",label:"Ay Halka",icon:"☾"},{id:"crystaldrop",label:"Kristal Damla",icon:"💎"}]);
+    uniqueOptionPush("horns",[{id:"crystal",label:"Kristal",icon:"◇"},{id:"haloHorns",label:"Hale Boynuz",icon:"◯"},{id:"branch",label:"Dal",icon:"♧"},{id:"onyx",label:"Oniks",icon:"◆"}]);
+    uniqueOptionPush("necklace",[{id:"locket",label:"Madalyon",icon:"▱"},{id:"pearl",label:"İnci Dizi",icon:"○"},{id:"ribbon",label:"Kurdele",icon:"🎀"},{id:"starPendant",label:"Yıldız Kolye",icon:"★"},{id:"keyCharm",label:"Anahtar",icon:"🗝"}]);
+    uniqueOptionPush("faceMarks",[{id:"sparkle",label:"Parıltı",icon:"✧"},{id:"jewel",label:"Alın Taşı",icon:"◆"},{id:"blushheart",label:"Kalp Allık",icon:"♥"},{id:"tattoo",label:"Ay Dövmesi",icon:"☾"},{id:"teardrop",label:"Damla",icon:"◖"}]);
+    uniqueOptionPush("earStyle",[{id:"moonelf",label:"Ay Elf",icon:"☾"},{id:"softcat",label:"Yumuşak Kedi",icon:"⌃"},{id:"shadowbat",label:"Gölge Yarasa",icon:"◆"},{id:"fairy",label:"Peri",icon:"❧"}]);
+    uniqueOptionPush("eyeshadow",[{id:"chrome",label:"Krom",icon:"▣"},{id:"rose",label:"Gül",icon:"🌹"},{id:"royal",label:"Kraliyet",icon:"♛"},{id:"aqua",label:"Aqua",icon:"≈"},{id:"sunset",label:"Günbatımı",icon:"◒"}]);
+    uniqueOptionPush("hairBlend",[{id:"tips",label:"Uç Boya",icon:"◒"},{id:"streak",label:"Tutam",icon:"▏"},{id:"rainbow",label:"Gökkuşağı",icon:"🌈"},{id:"hidden",label:"Gizli Renk",icon:"◐"}]);
+    uniqueOptionPush("outfitPattern",[{id:"embroidered",label:"Nakış",icon:"✿"},{id:"diamonds",label:"Baklava",icon:"◇"},{id:"clouds",label:"Bulut",icon:"☁"},{id:"floral",label:"Çiçek",icon:"❀"},{id:"runes",label:"Rün",icon:"⌘"},{id:"watercolor",label:"Suluboya",icon:"≈"},{id:"gradient",label:"Geçiş",icon:"◐"},{id:"bows",label:"Fiyonk",icon:"🎀"}]);
+    uniqueOptionPush("headwear",[{id:"bonnet",label:"Bonnet",icon:"◒"},{id:"starCrown",label:"Yıldız Tacı",icon:"★"},{id:"moonPin",label:"Ay Tokası",icon:"☾"},{id:"ribbonHat",label:"Kurdele Şapka",icon:"🎀"},{id:"crystalHood",label:"Kristal Kapüşon",icon:"◇"},{id:"pilotCap",label:"Pilot Şapka",icon:"▰"},{id:"veil",label:"Tül",icon:"≈"},{id:"gardenHat",label:"Bahçe Şapka",icon:"🌿"},{id:"sleepMask",label:"Rüya Maskesi",icon:"☁"}]);
+    uniqueOptionPush("wings",[{id:"moth",label:"Güve",icon:"🦋"},{id:"aurora",label:"Aurora",icon:"🌈"},{id:"glass",label:"Cam",icon:"◇"},{id:"raven",label:"Kuzgun",icon:"♠"},{id:"leaf",label:"Yaprak",icon:"🌿"},{id:"starfall",label:"Yıldız",icon:"★"},{id:"mechanic",label:"Mekanik",icon:"⚙"},{id:"seraph",label:"Seraf",icon:"羽"}]);
+    uniqueOptionPush("aura",[{id:"aurora",label:"Aurora",icon:"🌈"},{id:"rose",label:"Gül Aura",icon:"🌹"},{id:"rune",label:"Rün Çemberi",icon:"⌘"},{id:"dream",label:"Rüya Tozu",icon:"☁"},{id:"water",label:"Su Enerji",icon:"≈"},{id:"gold",label:"Altın Işık",icon:"✦"},{id:"stardust",label:"Yıldız Tozu",icon:"★"}]);
+    uniqueOptionPush("companion",[{id:"panda",label:"Ay Pandası",icon:"🐼"},{id:"hamster",label:"Cep Hamster",icon:"🐹"},{id:"seahorse",label:"Deniz Atı",icon:"♒"},{id:"robotduck",label:"Robot Ördek",icon:"🤖"},{id:"mushroom",label:"Mantar Dost",icon:"🍄"},{id:"crystalpup",label:"Kristal Köpek",icon:"🐶"},{id:"penguin",label:"Mini Penguen",icon:"🐧"}]);
+    uniqueOptionPush("companionAccessory",[{id:"cape",label:"Mini Pelerin",icon:"◢"},{id:"starhat",label:"Yıldız Şapka",icon:"★"},{id:"pearl",label:"İnci",icon:"○"},{id:"flower",label:"Çiçek",icon:"❀"},{id:"goggles",label:"Gözlük",icon:"∞"}]);
+    uniqueOptionPush("companionMood",[{id:"proud",label:"Gururlu",icon:"♛"},{id:"shy",label:"Utangaç",icon:"♡"},{id:"focused",label:"Odaklı",icon:"◇"}]);
+    uniqueOptionPush("prop",[{id:"paintbrush",label:"Fırça",icon:"🖌"},{id:"teacup",label:"Çay Fincanı",icon:"☕"},{id:"violin",label:"Keman",icon:"♪"},{id:"parasol",label:"Parasol",icon:"☂"},{id:"rose",label:"Gül",icon:"🌹"},{id:"map",label:"Harita",icon:"🗺"},{id:"magicneedle",label:"Sihirli İğne",icon:"✧"},{id:"laptop",label:"Mini Laptop",icon:"▣"},{id:"heartballoon",label:"Kalp Balon",icon:"♥"}]);
+    uniqueOptionPush("weather",[{id:"aurora",label:"Aurora",icon:"🌈"},{id:"mist",label:"Sis",icon:"≈"},{id:"fireflies",label:"Ateş Böceği",icon:"✦"},{id:"confetti",label:"Konfeti",icon:"🎊"},{id:"moonDust",label:"Ay Tozu",icon:"☾"}]);
+    uniqueOptionPush("frame",[{id:"storybook",label:"Hikâye Kitabı",icon:"📖"},{id:"softGlow",label:"Soft Glow",icon:"◯"},{id:"fashionCover",label:"Moda Kapak",icon:"▱"},{id:"moonGate",label:"Ay Kapısı",icon:"☾"}]);
+    uniqueOptionPush("lighting",[{id:"candle",label:"Mum",icon:"🕯"},{id:"aurora",label:"Aurora",icon:"🌈"},{id:"softbox",label:"Softbox",icon:"◯"},{id:"pinkroom",label:"Pembe Oda",icon:"♡"},{id:"goldhour",label:"Altın Saat",icon:"☀"}]);
+    uniqueOptionPush("background",[{id:"atelier",label:"Moda Atölyesi",icon:"🧵"},{id:"greenhouse",label:"Cam Sera",icon:"🌿"},{id:"cafeteria",label:"Ay Kafe",icon:"☕"},{id:"train",label:"Gece Treni",icon:"🚂"},{id:"observatory",label:"Gözlemevi",icon:"🔭"},{id:"sakuraPark",label:"Sakura Park",icon:"🌸"},{id:"rainStreet",label:"Yağmur Sokak",icon:"☂"},{id:"dreamRoom",label:"Rüya Odası",icon:"☁"}]);
+    uniqueOptionPush("sticker",[{id:"ribbons",label:"Kurdeleler",icon:"🎀"},{id:"sparkles",label:"Parıltı",icon:"✧"},{id:"fashion",label:"Moda Yazısı",icon:"VOGUE"},{id:"flowers",label:"Çiçek",icon:"❀"},{id:"letters",label:"Mektuplar",icon:"✉"}]);
+    uniqueOptionPush("photoFilter",[{id:"editorial",label:"Editorial",icon:"▱"},{id:"dreamy",label:"Dreamy",icon:"☁"},{id:"warmfilm",label:"Warm Film",icon:"◒"},{id:"kawaii",label:"Kawaii",icon:"♡"},{id:"clean",label:"Temiz",icon:"◯"}]);
+    uniquePresetPush([
+      {name:"Aurora Peri Kraliçesi",desc:"Aurora kanat, peri elbise ve yumuşak rüya ışığı",color:"#a7f3d0",patch:{hairStyle:"butterflycut",hairColor:"#93c5fd",hairSecondary:"#f0abfc",hairBlend:"rainbow",outfitStyle:"fairyqueen",outfitPattern:"floral",clothesColor:"#ecfeff",accentColor:"#a3e635",headwear:"gardenHat",wings:"aurora",aura:"aurora",prop:"rose",weather:"fireflies",background:"greenhouse",lighting:"aurora",photoFilter:"dreamy"}},
+      {name:"Cyber Maid Editorial",desc:"Neon maid, vizör ve dergi kapağı enerjisi",color:"#22d3ee",patch:{hairStyle:"crescentbob",hairColor:"#111827",hairSecondary:"#22d3ee",hairBlend:"streak",outfitStyle:"cybermaid",outfitPattern:"circuit",clothesColor:"#312e81",accentColor:"#22d3ee",headwear:"starvisor",glasses:"starvisor",wings:"mechanic",aura:"electric",prop:"laptop",background:"rainStreet",lighting:"neon",frame:"fashionCover",photoFilter:"editorial"}},
+      {name:"Sakura Kimono Rüyası",desc:"Sakura, tül ve romantik ay parkı",color:"#fb7185",patch:{hairStyle:"ribbonbraid",hairColor:"#17131e",hairSecondary:"#fb7185",hairBlend:"tips",outfitStyle:"sakura",outfitPattern:"floral",clothesColor:"#f8edeb",accentColor:"#fb7185",headwear:"moonPin",wings:"none",aura:"rose",prop:"parasol",weather:"petals",background:"sakuraPark",lighting:"pinkroom",sticker:"flowers"}},
+      {name:"Gece Treni Dedektifi",desc:"Yağmur, harita ve sakin gizem havası",color:"#93c5fd",patch:{hairStyle:"softmullet",hairColor:"#392540",hairSecondary:"#93c5fd",hairBlend:"hidden",outfitStyle:"raincoat",outfitPattern:"diamonds",clothesColor:"#1d3557",accentColor:"#93c5fd",glasses:"halfmoon",headwear:"pilotCap",aura:"rune",prop:"map",weather:"mist",background:"train",lighting:"candle",frame:"storybook"}},
+      {name:"Kristal Maid Sarayı",desc:"Kristal detay, inci doku ve soft glow sahne",color:"#c084fc",patch:{hairStyle:"royalbun",hairColor:"#f6e6b8",hairSecondary:"#c084fc",hairBlend:"ombre",outfitStyle:"crystalmaid",outfitPattern:"pearls",clothesColor:"#fef3c7",accentColor:"#c084fc",headwear:"starCrown",wings:"glass",aura:"gold",prop:"teacup",weather:"moonDust",background:"atelier",lighting:"softbox",frame:"softGlow"}},
+      {name:"Ejder Süvarisi",desc:"Zırh, anka saç ve güçlü kırmızı sahne",color:"#ef4444",patch:{hairStyle:"phoenixhair",hairColor:"#17131e",hairSecondary:"#ef4444",hairBlend:"tips",outfitStyle:"dragonrider",outfitPattern:"runes",clothesColor:"#7f1d1d",accentColor:"#ef4444",horns:"onyx",wings:"dragon",aura:"flame",companion:"seahorse",prop:"sword",weather:"embers",background:"crystalcave",lighting:"warm"}},
+      {name:"Yıldız Kütüphaneci",desc:"Bilim, kitap ve büyülü yıldız tozu",color:"#facc15",patch:{hairStyle:"microbraids",hairColor:"#71445a",hairSecondary:"#facc15",hairBlend:"streak",outfitStyle:"starlibrarian",outfitPattern:"embroidered",clothesColor:"#4c1d95",accentColor:"#facc15",glasses:"monocle",necklace:"keyCharm",aura:"stardust",prop:"book",background:"library",lighting:"candle",sticker:"letters"}},
+      {name:"Rüya Odası Pijaması",desc:"Tatlı ama detaylı yumuşak ev stili",color:"#f472b6",patch:{hairStyle:"cloudcut",hairColor:"#f0abfc",hairSecondary:"#93c5fd",hairBlend:"ombre",outfitStyle:"dreampajama",outfitPattern:"clouds",clothesColor:"#ecfeff",accentColor:"#f472b6",headwear:"sleepMask",wings:"starfall",aura:"dream",companion:"panda",prop:"heartballoon",weather:"confetti",background:"dreamRoom",lighting:"dream",photoFilter:"kawaii"}},
+      {name:"Satranç Kraliçesi",desc:"Keskin siyah-beyaz kontrast ve podyum hakimiyeti",color:"#f8fafc",patch:{hairStyle:"hime",hairColor:"#17131e",hairSecondary:"#f8fafc",hairBlend:"split",outfitStyle:"chessqueen",outfitPattern:"checker",clothesColor:"#111827",accentColor:"#f8fafc",headwear:"crown",glasses:"rimless",wings:"raven",aura:"royal",prop:"scepter",background:"hall",lighting:"spotlight",frame:"crystal"}},
+      {name:"Gözlemevi Aurora",desc:"Uzay üssü, aurora ve yıldız koleksiyonu",color:"#22d3ee",patch:{hairStyle:"jellyfish",hairColor:"#93c5fd",hairSecondary:"#a3e635",hairBlend:"rainbow",outfitStyle:"aurora",outfitPattern:"constellation",clothesColor:"#064e3b",accentColor:"#22d3ee",headwear:"veil",wings:"hologram",aura:"galaxy",prop:"wand",weather:"aurora",background:"observatory",lighting:"aurora"}}
+    ]);
+    uniqueChallengePush([
+      {id:"aurora-queen",name:"Aurora Kraliçesi",icon:"🌈",color:"#a7f3d0",desc:"Aurora, peri ve doğa hissini tek görünümde dengele.",checks:[s=>["fairyqueen","aurora","celestial"].includes(s.outfitStyle),s=>["aurora","galaxy"].includes(s.aura),s=>["aurora","fairy","butterfly"].includes(s.wings),s=>["greenhouse","forest","clouds"].includes(s.background),s=>["floral","ribbons","stars"].includes(s.outfitPattern)]},
+      {id:"cyber-editorial",name:"Cyber Editorial",icon:"▣",color:"#22d3ee",desc:"Teknolojik ama moda kapağına yakışan keskin bir görünüm oluştur.",checks:[s=>["cybermaid","cyber","racer"].includes(s.outfitStyle),s=>["starvisor","visor","headphones"].includes(s.headwear),s=>["circuit","diamonds","checker"].includes(s.outfitPattern),s=>["neon","rainStreet"].includes(s.background),s=>["electric","aurora"].includes(s.aura)]},
+      {id:"sakura-dream",name:"Sakura Rüyası",icon:"🌸",color:"#fb7185",desc:"Romantik çiçek, pembe ton ve yumuşak sahne ışığı kullan.",checks:[s=>["sakura","kimono","fairyqueen"].includes(s.outfitStyle),s=>["floral","ribbons","lace"].includes(s.outfitPattern),s=>["petals","fireflies"].includes(s.weather),s=>["sakuraPark","rose","greenhouse"].includes(s.background),s=>["rose","hearts","magic"].includes(s.aura)]},
+      {id:"train-mystery",name:"Gece Treni Gizemi",icon:"🚂",color:"#93c5fd",desc:"Yağmur, harita ve gizemli aksesuarlarla dedektif havası oluştur.",checks:[s=>["raincoat","detective","street"].includes(s.outfitStyle),s=>["map","book","camera"].includes(s.prop),s=>["mist","rain"].includes(s.weather),s=>["train","rainStreet","rooftop"].includes(s.background),s=>["halfmoon","round","monocle"].includes(s.glasses)]},
+      {id:"dragon-rider",name:"Ejder Süvarisi",icon:"🐉",color:"#ef4444",desc:"Zırh, alev ve ejder gücüyle güçlü bir sahne hazırla.",checks:[s=>["dragonrider","armor","queenarmor"].includes(s.outfitStyle),s=>["dragon","bat","phoenix"].includes(s.wings),s=>["flame","gold"].includes(s.aura),s=>["sword","scepter"].includes(s.prop),s=>["embers","stars"].includes(s.weather)]},
+      {id:"library-star",name:"Yıldız Kütüphaneci",icon:"📚",color:"#facc15",desc:"Bilim, kitap ve yıldız desenlerini zarifçe birleştir.",checks:[s=>["starlibrarian","scientist","academy"].includes(s.outfitStyle),s=>["book","magicneedle","wand"].includes(s.prop),s=>["constellation","embroidered","runes"].includes(s.outfitPattern),s=>["library","observatory"].includes(s.background),s=>["stardust","magic","galaxy"].includes(s.aura)]},
+      {id:"dream-room",name:"Rüya Odası",icon:"☁",color:"#f472b6",desc:"Bulut, yumuşak filtre ve tatlı yardımcı kombinini tamamla.",checks:[s=>["dreampajama","ballroom","princess"].includes(s.outfitStyle),s=>["clouds","hearts","bows"].includes(s.outfitPattern),s=>["dreamRoom","clouds","candy"].includes(s.background),s=>["dream","hearts"].includes(s.aura),s=>["panda","bunny","hamster"].includes(s.companion)]},
+      {id:"chess-royalty",name:"Satranç Kraliçesi",icon:"♟",color:"#f8fafc",desc:"Siyah-beyaz kraliyet kontrastını güçlü aksesuarlarla kur.",checks:[s=>["chessqueen","queenarmor","royal"].includes(s.outfitStyle),s=>["checker","diamonds"].includes(s.outfitPattern),s=>["crown","starCrown","tiara"].includes(s.headwear),s=>["royal","gold"].includes(s.aura),s=>["hall","fashionweek"].includes(s.background)]}
+    ]);
+    uniqueAchievementPush([
+      {id:"v9-costume-legend",icon:"👗",name:"Deluxe Kostümcü",desc:"V9 özel kıyafetlerinden birini kullan."},{id:"v9-accessory-max",icon:"💎",name:"Aksesuar Mimarı",desc:"Yeni V9 aksesuarlarından en az üç katman kullan."},{id:"v9-preset-master",icon:"🌟",name:"Lookbook Ustası",desc:"Yeni hazır kombinlerden biriyle galeriye kayıt al."},{id:"v9-gallery-20",icon:"▦",name:"Büyük Galeri",desc:"Galeride 20 karaktere ulaş."},{id:"v9-six-slot",icon:"💾",name:"Altı Yuva",desc:"Yeni geniş kayıt yuvası sistemiyle tasarım sakla."},{id:"v9-mobile-fit",icon:"📱",name:"Mobil Sahne",desc:"Mobil uyumlu poz/ölçek yardımcısını kullan."},{id:"v9-balance",icon:"⚖",name:"Uyum Dokunuşu",desc:"Akıllı renk uyumu aracını kullan."},{id:"v9-challenge-star",icon:"🏆",name:"Yeni Sezon",desc:"V9 görevlerinden birini yıldızla tamamla."}
+    ]);
+  }
+  function v9LayerScore(){const keys=["hairStyle","outfitStyle","outfitPattern","headwear","wings","aura","prop","weather","frame","sticker","photoFilter","companion","glasses","earrings","necklace"];return Math.min(100,Math.round(35+keys.filter(k=>!["none","solid","human","round","academy","moon"].includes(state[k])).length*4.4));}
+  function mountGameV9Board(){
+    const studio=$('[data-section-panel="studio"]'); if(!studio||$('#v9ExpansionBoard'))return;
+    studio.insertAdjacentHTML('afterbegin',`<div class="v9-expansion-board" id="v9ExpansionBoard"><div class="v9-board-head"><div><h3>Deluxe Kostüm Atölyesi</h3><p>Mini game yok; bu panel ana oyunun kıyafet, uyum, poz ve koleksiyon sistemini büyütür.</p></div><span class="v9-pill">V9 DELUXE</span></div><div class="v9-action-grid"><button class="v9-action" data-v9-action="smart"><b>Akıllı Kombin</b><small>Yeni lookbooktan güçlü stil seçer.</small></button><button class="v9-action" data-v9-action="details"><b>Detay Doldur</b><small>Boş katmanları aksesuarla zenginleştirir.</small></button><button class="v9-action" data-v9-action="balance"><b>Renk Uyumla</b><small>Ana renkleri sahneye göre dengeler.</small></button><button class="v9-action" data-v9-action="mobile"><b>Mobil Poz</b><small>Telefon ekranında daha temiz görünüm verir.</small></button></div><div class="v9-score-row"><div class="v9-score-track"><i id="v9ScoreBar"></i></div><b class="v9-score-value" id="v9ScoreText">0%</b></div></div>`);
+    updateV9BoardScore();
+  }
+  function updateV9BoardScore(){const n=v9LayerScore(),bar=$('#v9ScoreBar'),txt=$('#v9ScoreText'); if(bar)bar.style.setProperty('--v9-score',n+'%'); if(txt)txt.textContent=n+'% detay';}
+  function bindGameV9ExpansionUI(){
+    mountGameV9Board();
+    document.addEventListener('click',e=>{const b=e.target.closest('[data-v9-action]'); if(!b)return; const action=b.dataset.v9Action;
+      if(action==='smart'){const extra=presets.filter(p=>/Aurora|Cyber|Sakura|Treni|Kristal|Ejder|Kütüphaneci|Rüya|Satranç|Gözlemevi/.test(p.name)); const p=randomFrom(extra.length?extra:presets); commit(p.patch); showToast('Deluxe kombin uygulandı: '+p.name);}
+      if(action==='details'){commit({headwear:state.headwear==='none'?optionId('headwear'):state.headwear,wings:state.wings==='none'?optionId('wings'):state.wings,aura:state.aura==='none'?optionId('aura'):state.aura,prop:state.prop==='none'?optionId('prop'):state.prop,weather:state.weather==='none'?optionId('weather'):state.weather,frame:state.frame==='none'?optionId('frame'):state.frame,sticker:state.sticker==='none'?optionId('sticker'):state.sticker}); showToast('Boş detay katmanları dolduruldu.');}
+      if(action==='balance'){const color=randomFrom(palettes.accents); commit({accentColor:color,hairSecondary:color,lighting:state.background==='neon'?'neon':state.background==='sunset'?'sunset':state.background==='underwater'?'underwater':'spotlight',photoFilter:state.photoFilter==='none'?'editorial':state.photoFilter}); profile.v9Balance=(profile.v9Balance||0)+1; saveProfile(); showToast('Renk uyumu yenilendi.');}
+      if(action==='mobile'){commit({characterScale:94,characterX:0,characterY:-8,poseTilt:0,companionScale:82,companionX:38,companionY:8}); profile.v9MobileFit=(profile.v9MobileFit||0)+1; saveProfile(); showToast('Mobil sahne pozu uygulandı.');}
+      checkAchievements(); updateV9BoardScore();
+    });
+  }
+
+  applyGameV9Expansion();
   buildUI();
+  bindGameV9ExpansionUI();
   bindUltra4UI();
   renderAvatar();
   syncControls();
@@ -3332,6 +3469,33 @@ body .u5-nav button.active {
     {id:"opera",icon:"♪",name:"Opera Gecesi",desc:"Smokin, el çantası ve dramatik salon şıklığı.",tags:["tuxedo","clutch","satin","royal","gala"]}
   ];
   const photoPresets={moon:{name:"Ay Sarayı",bg:"radial-gradient(circle at 60% 25%,#fff4ad 0 8%,transparent 9%),linear-gradient(145deg,#17234e,#6d438a)",filter:"contrast(1.05) saturate(1.1)"},gala:{name:"Gala Sahnesi",bg:"radial-gradient(circle at 50% 20%,#ffe9a1,transparent 25%),linear-gradient(145deg,#7e285a,#241638)",filter:"saturate(1.18)"},forest:{name:"Gece Ormanı",bg:"radial-gradient(circle at 30% 25%,#79e7bd,transparent 17%),linear-gradient(145deg,#173f3c,#172037)",filter:"contrast(1.05)"},magazine:{name:"Dergi Kapağı",bg:"linear-gradient(145deg,#ff8ac0,#8d6dff)",filter:"contrast(1.1) saturate(1.12)"},duck:{name:"Ördek Göleti",bg:"linear-gradient(180deg,#8bdcf0 0 55%,#4bb6c8 56% 72%,#32794c 73%)",filter:"saturate(1.2)"},studio:{name:"Beyaz Stüdyo",bg:"radial-gradient(circle,#fff,#b8adc3)",filter:"contrast(1.07)"}};
+
+  ;(()=>{
+    const add=(arr,key,items)=>{const seen=new Set(arr.map(x=>Array.isArray(x)?x[0]:x[key]));items.forEach(x=>{const id=Array.isArray(x)?x[0]:x[key];if(!seen.has(id)){arr.push(x);seen.add(id);}})};
+    add(storyChapters,'id',[
+      {id:"v9-atelier",no:9,title:"Deluxe Atölye",icon:"🧵",desc:"Yeni sezon kumaşlarını keşfet ve ana karakter stilini büyüt.",reward:["top-aurora","150 Ay Parası"],unlock:"top-aurora",requires:"finale",scenes:[{speaker:"Profesör Vera",avatar:"🧵",text:"Atölyeye hoş geldin. Bu ders oyun değil; gerçek tasarım laboratuvarı. Katman, renk ve siluet kararlarını büyüteceğiz.",choices:[{t:"Yeni kumaşları incele.",a:"vera"},{t:"Cesur bir kombin kuracağım.",a:"rowan"}]},{speaker:"Luna Vale",avatar:"🌈",text:"Aurora ipliği yalnızca uyumlu kombinlerde parlar. Gardıroptaki yeni parçaları dene.",choices:[{t:"Moda stüdyosuna geç.",action:"wardrobe"},{t:"Biraz daha dinle.",a:"luna"}]},{speaker:"Anlatıcı",avatar:"✨",text:"Deluxe Atölye açıldı. Yeni sezon parçaları koleksiyonuna eklendi.",choices:[{t:"Bölümü tamamla.",finish:true}]}]},
+      {id:"v9-observatory",no:10,title:"Gözlemevi Defilesi",icon:"🔭",desc:"Yıldız haritasından ilham alan final dışı özel defile.",reward:["frame-observatory","2 Kristal"],unlock:"frame-observatory",requires:"v9-atelier",scenes:[{speaker:"Rowan Ash",avatar:"🌌",text:"Yıldızların altında herkes parlar. Ama sadece iyi tasarımcılar ışığı yönetir.",choices:[{t:"Podyuma hazırlan.",action:"runway"},{t:"Fotoğraf stüdyosunda prova yap.",action:"photo"}]},{speaker:"Sunucu",avatar:"🎤",text:"Tema: Gözlemevi. Hologram, ay tozu ve net siluet önemli.",choices:[{t:"Gösteriye çık.",a:"rowan"}]},{speaker:"Jüri",avatar:"🏆",text:"Yeni sezon stilin kayıtlara geçti.",choices:[{t:"Bölümü tamamla.",finish:true}]}]}
+    ]);
+    add(collectionItems,null,[["top-aurora","Aurora Üst","🌈","legendary"],["bottom-cloud","Bulut Etek","☁️","epic"],["jacket-rain","Yağmur Ceketi","☂️","rare"],["shoes-star","Yıldız Ayakkabı","⭐","epic"],["bag-teacup","Çay Çantası","☕","rare"],["texture-watercolor","Suluboya Kumaş","🎨","epic"],["frame-observatory","Gözlemevi Çerçevesi","🔭","legendary"],["duck-robot","Robot Ördek","🤖","epic"],["room-atelier","Moda Atölyesi Seti","🧵","legendary"],["poster-aurora","Aurora Posteri","🌈","rare"],["hair-ribbonbraid","Kurdele Örgü","🎀","epic"],["wings-aurora","Aurora Kanat","🪽","legendary"]]);
+    wardrobeOptions.top.push(["auroraTop","Aurora Üst","🌈"],["gardenVest","Bahçe Yelek","🌿"],["rainBlouse","Yağmur Bluz","☂"],["starShirt","Yıldız Gömlek","★"],["dreamTop","Rüya Üst","☁"]);
+    wardrobeOptions.bottom.push(["cloudSkirt","Bulut Etek","☁"],["ribbonPants","Kurdele Pantolon","🎀"],["starTrain","Yıldız Kuyruk","★"],["rainSkirt","Yağmur Etek","☂"]);
+    wardrobeOptions.jacket.push(["atelierCoat","Atölye Ceketi","🧵"],["rainCape","Yağmur Pelerin","☂"],["auroraCape","Aurora Pelerin","🌈"]);
+    wardrobeOptions.sleeves.push(["bellSleeve","Çan Kol","◒"],["starGloves","Yıldız Eldiven","★"],["cloudSleeve","Bulut Kol","☁"]);
+    wardrobeOptions.shoes.push(["starheels","Yıldız Topuklu","⭐"],["rainboots","Yağmur Çizmesi","☂"],["cloudslippers","Bulut Terlik","☁"]);
+    wardrobeOptions.bag.push(["teacupBag","Çay Çantası","☕"],["atelierBox","Atölye Kutusu","🧵"],["starSatchel","Yıldız Postacı","★"]);
+    wardrobeOptions.texture.push(["watercolor","Suluboya","🎨"],["aurora","Aurora","🌈"],["organza","Organze","≈"],["quilt","Kapitone","▦"]);
+    add(runwayThemes,'id',[
+      {id:"sakura",icon:"🌸",name:"Sakura Park",desc:"Çiçek, pembe ve yumuşak hareket hissi.",tags:["sakura","pink","floral","kimono","petals"]},
+      {id:"atelier",icon:"🧵",name:"Deluxe Atölye",desc:"Kumaş, doku ve tasarım bütünlüğü.",tags:["atelier","texture","starlace","watercolor","sequin"]},
+      {id:"observatory",icon:"🔭",name:"Gözlemevi",desc:"Yıldız, hologram ve ay ışığı dengesi.",tags:["space","star","hologram","moon","aurora"]},
+      {id:"rain",icon:"☂",name:"Yağmur Sokak",desc:"Parlak zemin, trençkot ve mavi tonlar.",tags:["rain","street","blue","trench","boots"]}
+    ]);
+    photoPresets.aurora={name:"Aurora Kapak",bg:"linear-gradient(135deg,#0f172a,#1e3a8a 34%,#16a34a 68%,#f0abfc)",filter:"saturate(1.18) contrast(1.06)"};
+    photoPresets.sakura={name:"Sakura Soft",bg:"radial-gradient(circle at 35% 20%,#fff 0 8%,transparent 9%),linear-gradient(145deg,#ffb7d5,#7c3aed)",filter:"saturate(1.12) brightness(1.04)"};
+    photoPresets.rain={name:"Yağmur Edit",bg:"linear-gradient(145deg,#0f172a,#334155,#67e8f9)",filter:"contrast(1.12) saturate(1.08)"};
+    photoPresets.atelier={name:"Moda Atölyesi",bg:"linear-gradient(145deg,#2b1f33,#5b3b72,#f7d6e6)",filter:"contrast(1.05)"};
+  })();
+
 
   function loadWorld(){try{return deepMerge(structuredClone(worldDefaults),JSON.parse(storage.getItem(STORAGE)||"{}"))}catch{return structuredClone(worldDefaults)}}
   function deepMerge(base,extra){for(const [k,v] of Object.entries(extra||{})){if(v&&typeof v==="object"&&!Array.isArray(v)&&base[k]&&typeof base[k]==="object"&&!Array.isArray(base[k]))deepMerge(base[k],v);else base[k]=v}return base}
@@ -3638,6 +3802,6 @@ body .u5-nav button.active {
 
 
 <script src="./assets/smooth-mobile.js?v=2026-07-04-mobile-ultra" defer></script>
-<script src="./assets/premium-v2.js?v=2026-07-04-v2" defer></script>
+<script src="./assets/premium-v2.js?v=2026-07-04-v9" defer></script>
 </body>
 </html>
