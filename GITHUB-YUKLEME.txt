@@ -1,6 +1,9 @@
-GITHUB YUKLEME
+HİKAYEMİZ — MASAL STÜDYOSU V8 KURULUMU
 
-1. Bu klasörün içindeki tüm dosyaları repository ana dizinine yükle.
-2. GitHub Pages kullanıyorsan Settings > Pages bölümünden branch seç.
-3. PWA ana açılış sayfası index.html, oyun sayfası oyun.html dosyasıdır.
-4. Eski cache takılırsa telefonda site ayarlarından site verilerini temizle veya yeni gizli sekmede dene.
+1) ZIP içindeki klasörü aç ve TÜM dosya/klasörleri sitenin ana dizinine yükle.
+2) assets, icons ve diğer klasörlerin yapısını değiştirme; anı fotoğrafları assets/memories içindedir.
+3) Ana sayfa / veya /index.html adresinden, oyun ise /oyun.html adresinden açılır.
+4) GitHub Pages kullanıyorsan depo ayarlarından Pages kaynağını ana dalın kök dizini olarak seç.
+5) Eski sürüm görünürse tarayıcıyı yenile; telefondaki eski ana ekran kısayolunu kaldırıp yeniden ekle.
+
+SÜRÜM: 2026-07-17 · V8

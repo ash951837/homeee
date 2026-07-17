@@ -1,7 +1,7 @@
 {
-  "name": "Sümeyye Premium Sürpriz",
+  "name": "Sümeyye'ye Özel Bir Sürpriz",
   "short_name": "Sümeyye",
-  "description": "Sümeyye için hazırlanmış premium mobil sürpriz sitesi, hızlı PWA ve geliştirilmiş Hikayemiz oyun modu.",
+  "description": "Sümeyye için hazırlanmış özel sürpriz sitesi ve Masal Stüdyosu oyunu.",
   "start_url": "./index.html",
   "scope": "./",
   "id": "./index.html",
@@ -10,9 +10,9 @@
     "standalone",
     "minimal-ui"
   ],
-  "background_color": "#08070c",
-  "theme_color": "#141022",
-  "orientation": "portrait-primary",
+  "background_color": "#0B1026",
+  "theme_color": "#0B1026",
+  "orientation": "any",
   "categories": [
     "games",
     "entertainment"
